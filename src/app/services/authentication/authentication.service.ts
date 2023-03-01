@@ -1,5 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
 import { login, logout } from 'src/app/state/auth/auth.action';
 import { selectAuthUser } from 'src/app/state/auth/auth.selector';
@@ -12,7 +13,10 @@ export class AuthenticationService {
 
   //#region Lifecycle
 
-  constructor(private store: Store<any>) { }
+  constructor(
+    private http: HttpClient,
+    private store: Store<any>
+  ) { }
 
   //#endregion
 
@@ -35,6 +39,7 @@ export class AuthenticationService {
    * @param username The username that logged in
    */
   login(username: string): void {
+    this.http.get('http://localhost:3000/posts').subscribe(console.log);
     this.store.dispatch(login({ username }));
   }
 
