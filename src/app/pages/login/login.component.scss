@@ -4,12 +4,10 @@
   flex-direction: row;
   justify-content: center;
 
-  font-family: 'Noto Sans Display', sans-serif;
-
   width: 100vw;
   height: 100vh;
 
-  background: linear-gradient(0deg, rgba(31, 4, 4, 0.95), rgba(47, 47, 59, 0.9)), url(./../../../assets/login.jpg);
+  background: linear-gradient(0deg, rgba(24, 24, 24, 0.95), rgba(31, 31, 31, 0.9)), url(./../../../assets/login.jpg);
   background-size: cover;
 
   &__left,

@@ -6,6 +6,9 @@
   background-color: rgb(39, 39, 39);
 
   .item-wrapper {
+    margin: auto;
+    max-width: 1200px;
+
     .items {
       display: flex;
       flex-direction: row;

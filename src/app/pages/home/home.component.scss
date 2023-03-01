@@ -2,6 +2,11 @@
   width: 100vw;
   height: 100vh;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0)), url(./../../../assets/home.jpg);
-  background-size: cover;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url(https://images.unsplash.com/photo-1591788729390-7212ecda0325?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80);
+
+  .content-wrapper {
+    margin: auto;
+    padding: 45px 0;
+    max-width: 1200px;
+  }
 }
