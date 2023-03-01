@@ -44,8 +44,10 @@
 
   &__error {
     margin: 5px 0 0 0;
+
     font-size: 14px;
-    color: rgb(151, 13, 13);
+    font-weight: 300;
+    color: rgb(255 110 110);
   }
 
   &:focus-within .input__label {
