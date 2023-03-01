@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
 import { login, logout } from 'src/app/state/auth/auth.action';
 import { selectAuthUser } from 'src/app/state/auth/auth.selector';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -36,11 +37,23 @@ export class AuthenticationService {
    * @description
    * Logs user in
    *
-   * @param username The username that logged in
+   * @param username The username that wants to log in
+   * @param password The password rerlated to the username
    */
-  login(username: string): void {
-    this.http.get('http://localhost:3000/posts').subscribe(console.log);
-    this.store.dispatch(login({ username }));
+  login(username: string, password: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      firstValueFrom(
+        this.http.get<Array<any>>(`${environment.api}/users?username=${username}&password=${password}`)
+      ).then(data => {
+        if (data.length > 0) {
+          const user = data[0];
+          this.store.dispatch(login({ id: user.id, username: user.username }));
+          resolve();
+        } else {
+          reject();
+        }
+      });
+    });
   }
 
   /**

@@ -53,8 +53,15 @@
       <button
         class="button"
         (click)="onLogin()"
+        [disabled]="loading"
       >
-        <span class="material-symbols-outlined button__icon">login</span>Login
+        <ng-container *ngIf="!loading">
+          <span class="material-symbols-outlined button__icon">login</span>Login
+        </ng-container>
+
+        <ng-container *ngIf="loading">
+          Login-in...
+        </ng-container>
       </button>
     </form>
   </div>

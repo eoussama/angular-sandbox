@@ -7,5 +7,5 @@ export enum AuthAction {
 }
 
 
-export const login = createAction(AuthAction.Login, props<{ username: string }>());
+export const login = createAction(AuthAction.Login, props<{ id: number, username: string }>());
 export const logout = createAction(AuthAction.Logout);

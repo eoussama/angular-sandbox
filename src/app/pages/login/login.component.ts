@@ -18,6 +18,12 @@ export class LoginComponent implements OnInit {
    */
   form!: FormGroup;
 
+  /**
+   * @description
+   * The loadingg state
+   */
+  loading: boolean;
+
   //#endregion
 
   //#region Lifecycle
@@ -25,7 +31,9 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private auth: AuthenticationService
-  ) { }
+  ) {
+    this.loading = false;
+  }
 
   ngOnInit(): void {
     this.createForm();
@@ -41,9 +49,16 @@ export class LoginComponent implements OnInit {
    */
   onLogin(): void {
     this.form.markAllAsTouched();
-    
+
     if (this.form.valid) {
-      this.auth.login(this.form.value.username);
+      this.loading = true;
+
+      const username = this.form.value.username;
+      const password = this.form.value.password;
+
+      this.auth.login(username, password)
+        .catch(() => alert('Invalid username or password!'))
+        .finally(() => this.loading = false)
     }
   }
 
