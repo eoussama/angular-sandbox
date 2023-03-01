@@ -9,10 +9,16 @@ import { IAuthState } from './auth.type';
  *
  * @param state The app state
  */
-export const selectAuthState = (state: IAppState) => state.user;
+export const selectAuthState = (state: IAppState) => state.auth;
 
 /**
  * @description
  * Selects the authenticated user
  */
 export const selectAuthUser = createSelector(selectAuthState, (state: IAuthState) => state);
+
+/**
+ * @description
+ * Selects the authenticated user's name
+ */
+export const selectAuthUserName = createSelector(selectAuthUser, (state: IAuthState) => state.username ?? '');

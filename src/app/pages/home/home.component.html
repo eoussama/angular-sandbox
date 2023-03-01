@@ -1,9 +1,6 @@
 <div class="root">
-  <div
-    *ngIf="user$ | async as user"
-    class="title"
-  >
-    Welcome back, <u>{{ user?.username }}</u>!
+  <div class="title">
+    Welcome back, <u>{{ user$ | async }}</u>!
   </div>
   <button
     class="button"

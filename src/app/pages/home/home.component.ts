@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { IAuthState } from 'src/app/state/auth/auth.type';
+import { selectAuthUserName } from 'src/app/state/auth/auth.selector';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
    * @description
    * The user's name
    */
-  user$!: Observable<IAuthState>;
+  user$!: Observable<string>;
 
   //#endregion
 
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.user$ = this.store.select('user');
+    this.user$ = this.store.select(selectAuthUserName);
   }
 
   //#endregion

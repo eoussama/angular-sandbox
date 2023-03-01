@@ -10,5 +10,5 @@ export interface IAppState {
    * @description
    * The authentication state
    */
-  user: IAuthState;
+  auth: IAuthState;
 }
