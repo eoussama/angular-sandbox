@@ -1,0 +1,40 @@
+.button {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+
+  color: #ffffff;
+  background-color: #000000;
+
+  font-weight: 400;
+  font-family: 'Noto Sans Display', sans-serif;
+
+  transition-duration: 0.2s;
+  transition-property: background-color outline;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    opacity: 0;
+    font-size: 22px;
+
+    margin-right: 5px;
+    margin-left: -35px;
+
+    transition-duration: 0.2s;
+    transition-property: margin opacity;
+  }
+
+  &:hover {
+    background-color: #141414;
+
+    .button__icon {
+      opacity: 1;
+      margin-left: 0;
+    }
+  }
+}
