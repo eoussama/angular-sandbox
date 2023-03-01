@@ -46,9 +46,13 @@ export class AuthenticationService {
         this.http.get<Array<any>>(`${environment.api}/users?username=${username}&password=${password}`)
       ).then(data => {
         if (data.length > 0) {
-          const user = data[0];
-          this.store.dispatch(login({ id: user.id, username: user.username }));
-          resolve();
+
+          // Simulating latency for 1.2 second
+          setTimeout(() => {
+            const user = data[0];
+            this.store.dispatch(login({ id: user.id, username: user.username }));
+            resolve();
+          }, 1200);
         } else {
           reject();
         }

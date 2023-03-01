@@ -8,12 +8,14 @@ import { AuthenticationGuard } from './guards/authentication/authentication.guar
     RouterModule.forRoot([
       {
         path: 'home',
+        data: { animation: 'HomePage' },
         canActivateChild: [AuthenticationGuard],
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'login',
         canActivateChild: [GuestGuard],
+        data: { animation: 'LoginPage' },
         loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)
       },
       {

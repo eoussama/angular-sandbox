@@ -24,9 +24,23 @@
 
     margin-right: 5px;
     margin-left: -25px;
-
+    
     transition-duration: 0.2s;
     transition-property: margin opacity;
+    
+    &--spin {
+      opacity: 1;
+      margin-left: 0;
+
+      animation-name: spin;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.8;
   }
 
   &:hover {
@@ -36,5 +50,15 @@
       opacity: 1;
       margin-left: 0;
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
