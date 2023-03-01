@@ -1,1 +1,11 @@
-{{ superhero | json }}
+<div class="card">
+  <img
+    class="card__image"
+    [src]="superhero.image"
+    [alt]="superhero.name"
+  />
+
+  <div class="card__content">
+    <div class="card__title">{{ superhero.name }}</div>
+  </div>
+</div>
