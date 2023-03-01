@@ -1,9 +1,9 @@
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { IAuthState } from 'src/app/state/auth/auth.type';
 import { selectAuthUserName } from 'src/app/state/auth/auth.selector';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+
 
 
 @Component({
