@@ -1,0 +1,4 @@
+<div class="root">
+  <div *ngIf="user$ | async as user" class="title">Welcome back, <u>{{ user?.username }}</u>!</div>
+  <button class="button" (click)="onLogout()">Logout</button>
+</div>
