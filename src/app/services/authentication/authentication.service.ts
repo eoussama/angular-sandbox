@@ -1,7 +1,8 @@
 import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { firstValueFrom, Observable } from 'rxjs';
-import { login, logout } from 'src/app/state/auth.action';
+import { login, logout } from 'src/app/state/auth/auth.action';
+import { selectAuthUser } from 'src/app/state/auth/auth.selector';
 
 
 @Injectable({
@@ -23,7 +24,7 @@ export class AuthenticationService {
    */
   isLoggedIn(): Observable<boolean> {
     return new Observable(observer => {
-      firstValueFrom(this.store.select('user')).then(e => observer.next(Boolean(e.username)));
+      firstValueFrom(this.store.select(selectAuthUser)).then(e => observer.next(Boolean(e?.username)));
     });
   }
 

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
-import { userReducer } from './state/auth.reducer';
 import { AppRoutingModule } from './app-routing.module';
+
+import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './state/auth.effect';
+import { AuthEffects } from './state/auth/auth.effect';
+import { reducers } from './state';
+
 
 @NgModule({
   declarations: [
@@ -15,8 +17,8 @@ import { AuthEffects } from './state/auth.effect';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EffectsModule.forRoot([AuthEffects]),
-    StoreModule.forRoot({ user: userReducer })
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

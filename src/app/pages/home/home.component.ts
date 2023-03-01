@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
-import { UserState } from 'src/app/state/auth.type';
+import { IAuthState } from 'src/app/state/auth/auth.type';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
    * @description
    * The user's name
    */
-  user$!: Observable<UserState>;
+  user$!: Observable<IAuthState>;
 
   //#endregion
 

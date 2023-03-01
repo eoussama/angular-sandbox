@@ -1,12 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
 import { login, logout } from './auth.action';
-import { UserState } from './auth.type';
+import { IAuthState } from './auth.type';
 
-export const initialState: UserState = {
+export const initialState: IAuthState = {
   username: null
 };
 
-export const userReducer = createReducer(
+export const authReducer = createReducer(
   initialState,
   on(login, (state, action) => ({ ...state, username: action.username })),
   on(logout, (state) => ({ ...state, username: null }))
