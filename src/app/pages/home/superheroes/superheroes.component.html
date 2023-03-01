@@ -1,1 +1,29 @@
-<p>superheroes works!</p>
+<div class="root">
+  <h2 class="title">Superheroes</h2>
+
+  <div class="content">
+    <label class="input input--password">
+      <span class="input__label">
+        <span class="material-symbols-outlined input__icon">search</span> Search
+      </span>
+
+      <input
+        autocomplete
+        type="serch"
+        class="input__field"
+        placeholder="Search for a superhero..."
+      >
+    </label>
+
+    <div class="superheroes-wrapper">
+      <ul class="superheroes">
+        <li
+          *ngFor="let superhero of superheroes$ | async"
+          class="superheroe"
+        >
+          <app-thumb [superhero]="superhero"></app-thumb>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
