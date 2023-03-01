@@ -20,7 +20,7 @@ export class GuestGuard implements CanActivate, CanActivateChild {
     return new Promise(resolve => {
       this.auth.isLoggedIn().subscribe(authorized => {
         if (authorized) {
-          this.router.navigate(['/home'])
+          this.router.navigate(['/dash'])
         }
 
         resolve(!authorized);

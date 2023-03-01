@@ -1,0 +1,37 @@
+<header class="header">
+  <nav class="item-wrapper">
+    <ul class="items">
+      <li class="item item--title">
+        Welcome back, <u>{{ user$ | async }}</u>!
+      </li>
+
+      <li
+        class="item item--link"
+        routerLink="home"
+        routerLinkActive="item--active"
+      >Home</li>
+
+      <li
+        class="item item--link"
+        routerLink="superheroes"
+        routerLinkActive="item--active"
+      >Superheroes</li>
+
+      <li
+        class="item item--link"
+        routerLink="favorites"
+        routerLinkActive="item--active"
+      >Favorites</li>
+
+      <li class="item item--button">
+        <button
+          class="button"
+          (click)="onLogout()"
+        >
+          <span class="material-symbols-outlined button__icon">logout</span>
+          Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

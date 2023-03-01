@@ -12,7 +12,7 @@ export class AuthEffects {
 
   loginNavigation$ = createEffect(() => this.actions$.pipe(
     ofType(AuthAction.Login),
-    tap(() => this.router.navigate(['/home']))
+    tap(() => this.router.navigate(['/dash']))
   ), { dispatch: false });
 
   logoutNavigation$ = createEffect(() => this.actions$.pipe(

@@ -1,13 +1,4 @@
 <div class="root">
-  <div class="title">
-    Welcome back, <u>{{ user$ | async }}</u>!
-  </div>
-
-  <button
-    class="button"
-    (click)="onLogout()"
-  >
-    <span class="material-symbols-outlined button__icon">logout</span>
-    Logout
-  </button>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
 </div>

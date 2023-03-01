@@ -43,7 +43,7 @@ export class AuthenticationService {
   login(username: string, password: string): Promise<void> {
     return new Promise((resolve, reject) => {
       firstValueFrom(
-        this.http.get<Array<any>>(`${environment.api}/users?username=${username}&password=${password}`)
+        this.http.get<Array<any>>(`${environment.api.auth}/users?username=${username}&password=${password}`)
       ).then(data => {
         if (data.length > 0) {
 

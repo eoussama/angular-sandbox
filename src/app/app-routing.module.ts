@@ -7,7 +7,7 @@ import { AuthenticationGuard } from './guards/authentication/authentication.guar
   imports: [
     RouterModule.forRoot([
       {
-        path: 'home',
+        path: 'dash',
         data: { animation: 'HomePage' },
         canActivateChild: [AuthenticationGuard],
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
@@ -21,7 +21,7 @@ import { AuthenticationGuard } from './guards/authentication/authentication.guar
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home'
+        redirectTo: 'dash'
       },
       {
         path: '**',

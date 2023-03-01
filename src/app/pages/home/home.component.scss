@@ -1,26 +1,7 @@
 .root {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-
-  text-align: center;
-  font-family: 'Noto Sans Display', sans-serif;
-
   width: 100vw;
   height: 100vh;
 
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.795), rgba(0, 0, 0, 0)), url(./../../../assets/home.jpg);
   background-size: cover;
-
-  .title {
-    margin: 0;
-    padding: 0;
-
-    width: 100%;
-    font-size: 72px;
-
-    color: #ffffff;
-    text-shadow: 1px 1px #000000;
-  }
 }
