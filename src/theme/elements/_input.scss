@@ -42,6 +42,12 @@
     }
   }
 
+  &__error {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: rgb(151, 13, 13);
+  }
+
   &:focus-within .input__label {
     color: #080808;
   }

@@ -40,16 +40,26 @@ export class LoginComponent implements OnInit {
    * Logs the user in
    */
   onLogin(): void {
-    if (!this.form.valid) {
-      return alert('Fill-in the loggin form');
+    this.form.markAllAsTouched();
+    
+    if (this.form.valid) {
+      this.auth.login(this.form.value.username);
     }
-
-    this.auth.login(this.form.value.username);
   }
 
   //#endregion
 
   //#region Methods
+
+  /**
+   * @description
+   * Checks if the control has any error
+   *
+   * @param controlName The target name of the control
+   */
+  hasError(controlName: string): boolean {
+    return Boolean(this.form.get(controlName)?.touched && this.form.get(controlName)?.hasError('required'));
+  }
 
   /**
    * @description
