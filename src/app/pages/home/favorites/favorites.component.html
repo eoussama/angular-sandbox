@@ -7,12 +7,14 @@
   <div class="content">
     <div class="superheroes-wrapper">
       <ul class="superheroes">
-        <li
-          *ngFor="let superhero of favorites$ | favorite | async"
-          class="superheroe"
-        >
-          <app-thumb [superhero]="superhero"></app-thumb>
-        </li>
+        <ng-container *ngFor="let superhero of favorites$ | favorite | async">
+          <li
+            *ngIf="superhero.favorite"
+            class="superheroe"
+          >
+            <app-thumb [superhero]="superhero"></app-thumb>
+          </li>
+        </ng-container>
       </ul>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { firstValueFrom, Observable, tap } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { Pipe, PipeTransform } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites/favorites.service';
 

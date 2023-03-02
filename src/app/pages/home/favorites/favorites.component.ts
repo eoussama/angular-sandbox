@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { IAppState } from 'src/app/state/app/app.type';
 import { selectFavorites } from 'src/app/state/favorites/favorites.selector';
+import { Superhero } from 'src/app/models/superhero.model';
 
 
 @Component({
@@ -29,6 +30,21 @@ export class FavoritesComponent implements OnInit {
   ngOnInit(): void {
     this.favorites$ = this.store.select(selectFavorites);
   }
+
+  //#endregion
+
+  //#region Methods
+
+  /**
+   * @description
+   * Tracks rendered elements
+   *
+   * @param index The index of the element
+   * @param superheroes The superhero in question
+   */
+  trackFn(index: number, superheroes: Superhero) {
+    return superheroes.id;
+  };
 
   //#endregion
 }
