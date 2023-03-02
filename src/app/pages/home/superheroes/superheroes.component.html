@@ -8,10 +8,12 @@
       </span>
 
       <input
+        #input
         autocomplete
-        type="serch"
+        type="search"
         class="input__field"
         placeholder="Search for a superhero..."
+        [(ngModel)]="search"
       >
     </label>
 
@@ -25,7 +27,7 @@
         </li>
       </ul>
 
-      <div id="cardLoader">
+      <div [hidden]="search.length > 0" id="cardLoader">
         <app-loader></app-loader>
       </div>
     </div>

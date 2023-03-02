@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom, forkJoin, map, tap } from 'rxjs';
+import { firstValueFrom, forkJoin, map } from 'rxjs';
 import { Superhero } from 'src/app/models/superhero.model';
 import { environment } from 'src/environments/environment';
 import { ISuperheroResponse } from 'src/app/types/superhero-response.type';
+import { ISuperheroSearchResponse } from 'src/app/types/superhero-search-response.type';
 
 
 @Injectable({
@@ -30,6 +31,26 @@ export class SuperheroService {
       firstValueFrom(this.http.get<ISuperheroResponse>(`${environment.api.superheroes}/${id}`))
         .then(data => {
           resolve(new Superhero(data));
+        })
+        .catch(() => reject())
+    })
+  }
+
+  /**
+   * @description
+   * Fetches info on a particular superhero
+   *
+   * @param search The search query
+   */
+  getSuperheroBySearch(search: string): Promise<Array<Superhero>> {
+    return new Promise((resolve, reject) => {
+      firstValueFrom(this.http.get<ISuperheroSearchResponse>(`${environment.api.superheroes}/search/${search}`))
+        .then(data => {
+          if (data.error) {
+            reject();
+          }
+
+          resolve(data.results?.map(e => new Superhero(e)) ?? []);
         })
         .catch(() => reject())
     })

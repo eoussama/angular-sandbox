@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { BehaviorSubject, combineLatest, debounce, debounceTime, forkJoin, fromEvent, merge, withLatestFrom } from 'rxjs';
 import { Superhero } from 'src/app/models/superhero.model';
 import { SuperheroService } from 'src/app/services/superhero/superhero.service';
 
@@ -25,6 +25,18 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   page: number;
 
+  /**
+   * @description
+   * The search query
+   */
+  search: string;
+
+  /**
+   * @description
+   * Reference of the searcg input
+   */
+  @ViewChild('input') input!: ElementRef;
+
   //#endregion
 
   //#region Lifecycle
@@ -33,6 +45,7 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
     private superhero: SuperheroService
   ) {
     this.page = 1;
+    this.search = '';
     this.superheroes$ = new BehaviorSubject<Array<Superhero>>([]);
   }
 
@@ -41,6 +54,7 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    this.searchListen();
     this.scrollListen();
   }
 
@@ -52,6 +66,18 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
 
   //#region Event listeners
 
+  /**
+   * @description
+   * Injects a searchh query
+   *
+   * @param e The search object
+   */
+  onSearch(): void {
+    if (this.search.length > 0) {
+      this.loadSuperheroes();
+    }
+  }
+
   //#endregion
 
   //#region Methods
@@ -61,10 +87,53 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
    * Loads the list of superheroes
    */
   private async loadSuperheroes(): Promise<void> {
+    if (this.search.length > 0) {
+      this.paginateSearch();
+    } else {
+      this.paginate();
+    }
+  }
+
+  /**
+   * @description
+   * Paginates search results
+   */
+  private async paginateSearch(): Promise<void> {
+    this.page = 1;
+    this.superheroes$.next([]);
+
+    try {
+      const data = await this.superhero.getSuperheroBySearch(this.search);
+      this.superheroes$.next(data);
+    } catch (err) { }
+  }
+
+  /**
+   * @description
+   * Paginates the list
+   */
+  private async paginate(): Promise<void> {
+    if (this.page === 1) {
+      this.superheroes$.next([]);
+    }
+
     const data = await this.superhero.getSuperheroes(this.page++);
     const superheroes = [...this.superheroes$.getValue(), ...data]
 
     this.superheroes$.next(superheroes);
+  }
+
+  /**
+   * @description
+   * Listens to search updates
+   */
+  private searchListen(): void {
+    merge(
+      fromEvent(this.input.nativeElement, 'search'),
+      fromEvent(this.input.nativeElement, 'input')
+    )
+      .pipe(debounceTime(300))
+      .subscribe(() => this.loadSuperheroes());
   }
 
   /**

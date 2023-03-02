@@ -4,6 +4,7 @@ import { SuperheroesComponent } from './superheroes.component';
 import { RouterModule } from '@angular/router';
 import { ThumbModule } from 'src/app/components/thumb/thumb.module';
 import { LoaderModule } from 'src/app/components/loader/loader.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { LoaderModule } from 'src/app/components/loader/loader.module';
   imports: [
     CommonModule,
     ThumbModule,
+    FormsModule,
     LoaderModule,
     RouterModule.forChild([
       {
