@@ -44,7 +44,7 @@ export class SuperheroService {
   getSuperheroes(page: number): Promise<Array<Superhero>> {
     return new Promise((resolve, reject) => {
       const maxId = environment.totalEntries;
-      const pageSize = environment.paegSize;
+      const pageSize = environment.pageSize;
       const totalPages = Math.ceil(maxId / 10);
       const targetPage = Math.min(Math.max(1, page), totalPages) - 1
       const first = pageSize * targetPage;

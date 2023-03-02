@@ -1,11 +1,17 @@
-<div class="card">
-  <img
-    class="card__image"
-    [src]="superhero.image"
-    [alt]="superhero.name"
-  />
+<div
+  class="card"
+  [ngClass]="{'card--loading': loader}"
+>
+  <ng-container *ngIf="!loader">
+    <img
+      loading="lazy"
+      class="card__image"
+      [src]="superhero.image"
+      [alt]="superhero.name"
+    />
 
-  <div class="card__content">
-    <div class="card__title">{{ superhero.name }}</div>
-  </div>
+    <div class="card__content">
+      <div class="card__title">{{ superhero.name }}</div>
+    </div>
+  </ng-container>
 </div>
