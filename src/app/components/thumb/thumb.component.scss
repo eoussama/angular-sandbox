@@ -11,6 +11,43 @@
   transition-duration: 0.2s;
   transition-property: transform;
 
+  &__id {
+    top: 10px;
+    left: 10px;
+    position: absolute;
+
+    z-index: 1;
+    opacity: 0.6;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000, -2px -2px #000000;
+
+    font-size: 46px;
+    font-family: 'Bangers';
+  }
+
+  &__favorite {
+    bottom: 4px;
+    right: 10px;
+    position: absolute;
+    
+    z-index: 1;
+    opacity: 0;
+    color: #ffffff;
+    user-select: none;
+
+    transition-duration: 0.2s;
+    transition-property: opacity color transform;
+
+    span {
+      font-size: 30px;
+    }
+
+    &:hover {
+      color: rgb(223, 93, 93);
+      transform: scale(1.1);
+    }
+  }
+
   &__content {
     position: absolute;
     width: 100%;
@@ -46,7 +83,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  
+
     box-shadow: 0 2px 30px #00000011;
 
     background-size: 100% 200%;
@@ -58,6 +95,10 @@
 
     .card__image {
       transform: scale(1.2);
+    }
+
+    .card__favorite {
+      opacity: 1;
     }
   }
 }

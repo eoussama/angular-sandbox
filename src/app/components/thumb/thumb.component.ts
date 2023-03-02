@@ -33,4 +33,13 @@ export class ThumbComponent {
 
   //#endregion
 
+  //#region Event listeners
+
+  onFavorite(e: MouseEvent): void {
+    e.stopPropagation();
+    console.log('favorite');
+  }
+
+  //#region 
+
 }

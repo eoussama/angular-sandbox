@@ -3,6 +3,8 @@
   [ngClass]="{'card--loading': loader}"
 >
   <ng-container *ngIf="!loader">
+    <span class="card__id">#{{ superhero.id }}</span>
+
     <img
       loading="lazy"
       class="card__image"
@@ -12,6 +14,14 @@
 
     <div class="card__content">
       <div class="card__title">{{ superhero.name }}</div>
+      <div class="card__favorite">
+        <span
+          class="material-symbols-outlined"
+          (click)="onFavorite($event)"
+        >
+          heart_plus
+        </span>
+      </div>
     </div>
   </ng-container>
 </div>
