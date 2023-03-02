@@ -8,7 +8,13 @@ import { FavoritesService } from 'src/app/services/favorites/favorites.service';
 })
 export class FavoritePipe implements PipeTransform {
 
+  //#region Lifecycle
+
   constructor(private favorites: FavoritesService) { }
+
+  //#endregion
+
+  //#region Methods
 
   transform(value: Observable<Array<number>>): any {
     return new Observable(observer => {
@@ -19,4 +25,6 @@ export class FavoritePipe implements PipeTransform {
         });
     });
   }
+
+  //#endregion
 }

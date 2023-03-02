@@ -4,6 +4,7 @@
     'card--loading': loader,
     'card--favorited': isFavorited()
   }"
+  (click)="onClick()"
 >
   <ng-container *ngIf="!loader">
     <span class="card__id">#{{ superhero.id }}</span>

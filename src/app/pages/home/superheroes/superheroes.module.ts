@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { ThumbModule } from 'src/app/components/thumb/thumb.module';
 import { LoaderModule } from 'src/app/components/loader/loader.module';
 import { FormsModule } from '@angular/forms';
+import { SuperheroResolver } from 'src/app/resolvers/superhero/superhero.resolver';
 
 
 
@@ -21,6 +22,13 @@ import { FormsModule } from '@angular/forms';
       {
         path: '',
         component: SuperheroesComponent
+      },
+      {
+        path: ':id',
+        loadChildren: () => import('./detail/detail.module').then(m => m.DetailModule),
+        resolve: {
+          superhero: SuperheroResolver
+        }
       }
     ])
   ]
