@@ -31,6 +31,7 @@
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.0",
     "@types/jasmine": "~4.3.0",
+    "cypress": "^12.7.0",
     "jasmine-core": "~4.5.0",
     "json-server": "^0.17.2",
     "karma": "~6.4.0",
