@@ -8,11 +8,10 @@
     <div class="superheroes-wrapper">
       <ul class="superheroes">
         <li
-          *ngFor="let superhero of favorites$ | async"
+          *ngFor="let superhero of favorites$ | favorite | async"
           class="superheroe"
         >
-          {{ superhero }}
-          <!-- <app-thumb [superhero]="superhero"></app-thumb> -->
+          <app-thumb [superhero]="superhero"></app-thumb>
         </li>
       </ul>
     </div>

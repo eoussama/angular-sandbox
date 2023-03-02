@@ -2,10 +2,13 @@ import { selectAuthUserId } from 'src/app/state/auth/auth.selector';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, forkJoin, map } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { update } from 'src/app/state/favorites/favoritesd.action';
 import { IAppState } from 'src/app/state/app/app.type';
+import { Superhero } from 'src/app/models/superhero.model';
+import { selectFavorites } from 'src/app/state/favorites/favorites.selector';
+import { ISuperheroResponse } from 'src/app/types/superhero-response.type';
 
 
 @Injectable({
@@ -23,6 +26,28 @@ export class FavoritesService {
   //#endregion
 
   //#region Methods
+
+  /**
+   * @description
+   * Loads favorites list
+   */
+  loadFavorites(favorites: Array<number>): Promise<Array<Superhero>> {
+    return new Promise(async (resolve, reject) => {
+      firstValueFrom(
+        forkJoin(
+          // Generating a batch of numbers
+          favorites
+
+            // Generating api calls
+            .map(e => this.http.get<ISuperheroResponse>(`${environment.api.superheroes}/${e}`))
+
+          // Mapping the values
+        ).pipe(map(e => e.map(e => new Superhero(e, true))))
+      )
+        .then(data => resolve(data))
+        .catch(() => reject());
+    });
+  }
 
   /**
    * @description
