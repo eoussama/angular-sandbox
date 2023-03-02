@@ -5,6 +5,7 @@ import { firstValueFrom, Observable } from 'rxjs';
 import { login, logout } from 'src/app/state/auth/auth.action';
 import { selectAuthUser } from 'src/app/state/auth/auth.selector';
 import { environment } from 'src/environments/environment';
+import { reset, update } from 'src/app/state/favorites/favoritesd.action';
 
 
 @Injectable({
@@ -50,7 +51,10 @@ export class AuthenticationService {
           // Simulating latency for 1.2 second
           setTimeout(() => {
             const user = data[0];
+
             this.store.dispatch(login({ id: user.id, username: user.username }));
+            this.store.dispatch(update({ favorites: user.favorites }))
+
             resolve();
           }, 1200);
         } else {
@@ -66,6 +70,7 @@ export class AuthenticationService {
    */
   logout(): void {
     this.store.dispatch(logout());
+    this.store.dispatch(reset());
   }
 
   //#endregion

@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { update } from 'src/app/state/favorites/favoritesd.action';
 
 
 @Injectable({
@@ -36,7 +37,10 @@ export class FavoritesService {
       const newUser = { ...user, favorites }
 
       firstValueFrom(this.http.put<any>(`${environment.api.auth}/users/${userId}`, newUser))
-        .then(() => resolve())
+        .then(() => {
+          this.store.dispatch(update({ favorites }));
+          resolve();
+        })
         .catch(() => reject());
     })
   }
@@ -55,7 +59,10 @@ export class FavoritesService {
       const newUser = { ...user, favorites }
 
       firstValueFrom(this.http.put<any>(`${environment.api.auth}/users/${userId}`, newUser))
-        .then(() => resolve())
+        .then(() => {
+          this.store.dispatch(update({ favorites }));
+          resolve();
+        })
         .catch(() => reject());
     })
   }

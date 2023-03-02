@@ -1,4 +1,5 @@
 import { IAuthState } from '../auth/auth.type';
+import { IFavoriteState } from '../favorites/favorites.type';
 
 /**
  * @description
@@ -11,4 +12,10 @@ export interface IAppState {
    * The authentication state
    */
   auth: IAuthState;
+
+  /**
+   * @description
+   * Favorited superheroes sate
+   */
+  favorites: IFavoriteState;
 }
