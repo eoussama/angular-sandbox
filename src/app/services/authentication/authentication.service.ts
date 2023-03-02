@@ -6,6 +6,7 @@ import { login, logout } from 'src/app/state/auth/auth.action';
 import { selectAuthUser } from 'src/app/state/auth/auth.selector';
 import { environment } from 'src/environments/environment';
 import { reset, update } from 'src/app/state/favorites/favoritesd.action';
+import { IAppState } from 'src/app/state/app/app.type';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class AuthenticationService {
 
   constructor(
     private http: HttpClient,
-    private store: Store<any>
+    private store: Store<IAppState>
   ) { }
 
   //#endregion

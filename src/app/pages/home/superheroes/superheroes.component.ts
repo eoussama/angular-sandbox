@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { BehaviorSubject, combineLatest, debounce, debounceTime, forkJoin, fromEvent, merge, withLatestFrom } from 'rxjs';
+import { BehaviorSubject, debounceTime, fromEvent, merge } from 'rxjs';
 import { Superhero } from 'src/app/models/superhero.model';
 import { SuperheroService } from 'src/app/services/superhero/superhero.service';
 
@@ -157,5 +157,6 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
 
     observer.observe(cardLoader);
   }
+  
   //#endregion
 }

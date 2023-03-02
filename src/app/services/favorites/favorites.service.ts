@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { update } from 'src/app/state/favorites/favoritesd.action';
+import { IAppState } from 'src/app/state/app/app.type';
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class FavoritesService {
 
   constructor(
     private http: HttpClient,
-    private store: Store<any>
+    private store: Store<IAppState>
   ) { }
 
   //#endregion

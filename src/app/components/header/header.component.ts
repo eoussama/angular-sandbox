@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { Component } from '@angular/core';
 import { selectAuthUserName } from 'src/app/state/auth/auth.selector';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { IAppState } from 'src/app/state/app/app.type';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class HeaderComponent {
   //#region Lifecycle
 
   constructor(
-    private store: Store<any>,
+    private store: Store<IAppState>,
     private auth: AuthenticationService
   ) { }
 

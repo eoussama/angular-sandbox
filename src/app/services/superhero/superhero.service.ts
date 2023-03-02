@@ -5,6 +5,9 @@ import { Superhero } from 'src/app/models/superhero.model';
 import { environment } from 'src/environments/environment';
 import { ISuperheroResponse } from 'src/app/types/superhero-response.type';
 import { ISuperheroSearchResponse } from 'src/app/types/superhero-search-response.type';
+import { selectFavorites } from 'src/app/state/favorites/favorites.selector';
+import { IAppState } from 'src/app/state/app/app.type';
+import { Store } from '@ngrx/store';
 
 
 @Injectable({
@@ -14,7 +17,10 @@ export class SuperheroService {
 
   //#region Lifecycle
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private store: Store<IAppState>
+  ) { }
 
   //#endregion
 
@@ -45,12 +51,15 @@ export class SuperheroService {
   getSuperheroBySearch(search: string): Promise<Array<Superhero>> {
     return new Promise((resolve, reject) => {
       firstValueFrom(this.http.get<ISuperheroSearchResponse>(`${environment.api.superheroes}/search/${search}`))
-        .then(data => {
+        .then(async data => {
           if (data.error) {
             reject();
           }
 
-          resolve(data.results?.map(e => new Superhero(e)) ?? []);
+          const favorites = await firstValueFrom(this.store.select(selectFavorites))
+          const superheroes = data.results?.map(e => new Superhero(e, favorites.includes(parseInt(e.id)))) ?? [];
+
+          resolve(superheroes);
         })
         .catch(() => reject())
     })
@@ -63,13 +72,15 @@ export class SuperheroService {
    * @param page The target page
    */
   getSuperheroes(page: number): Promise<Array<Superhero>> {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const maxId = environment.totalEntries;
       const pageSize = environment.pageSize;
       const totalPages = Math.ceil(maxId / 10);
       const targetPage = Math.min(Math.max(1, page), totalPages) - 1
       const first = pageSize * targetPage;
       const nextBatch = Math.min(pageSize, Math.abs(maxId - first));
+
+      const favorites = await firstValueFrom(this.store.select(selectFavorites))
 
       firstValueFrom(
         forkJoin(
@@ -83,7 +94,7 @@ export class SuperheroService {
             .map(e => this.http.get<ISuperheroResponse>(`${environment.api.superheroes}/${e}`))
 
           // Mapping the values
-        ).pipe(map(e => e.map(e => new Superhero(e))))
+        ).pipe(map(e => e.map(e => new Superhero(e, favorites.includes(parseInt(e.id))))))
       )
         .then(data => resolve(data))
         .catch(() => reject())

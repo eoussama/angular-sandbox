@@ -1,6 +1,20 @@
 <div class="root">
-  <h2 class="title">Favorites</h2>
+  <h2
+    *ngIf="favorites$ | async as favorites"
+    class="title"
+  >Favorites [{{ favorites.length }}]</h2>
 
   <div class="content">
+    <div class="superheroes-wrapper">
+      <ul class="superheroes">
+        <li
+          *ngFor="let superhero of favorites$ | async"
+          class="superheroe"
+        >
+          {{ superhero }}
+          <!-- <app-thumb [superhero]="superhero"></app-thumb> -->
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

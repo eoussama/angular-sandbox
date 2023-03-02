@@ -1,4 +1,6 @@
 .card {
+  --color-favorite: rgb(223, 93, 93);
+
   cursor: pointer;
   overflow: hidden;
   position: relative;
@@ -43,7 +45,7 @@
     }
 
     &:hover {
-      color: rgb(223, 93, 93);
+      color: var(--color-favorite);
       transform: scale(1.1);
     }
   }
@@ -88,6 +90,15 @@
 
     background-size: 100% 200%;
     background-image: linear-gradient(to bottom, rgb(216, 216, 216), #ffffff, rgb(216, 216, 216));
+  }
+
+  &--favorited {
+    outline: 3px solid var(--color-favorite);
+
+    .card__favorite {
+      opacity: 1;
+      color: var(--color-favorite);
+    }
   }
 
   &:hover:not(&--loading) {

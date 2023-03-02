@@ -1,6 +1,9 @@
 <div
   class="card"
-  [ngClass]="{'card--loading': loader}"
+  [ngClass]="{
+    'card--loading': loader,
+    'card--favorited': isFavorited()
+  }"
 >
   <ng-container *ngIf="!loader">
     <span class="card__id">#{{ superhero.id }}</span>

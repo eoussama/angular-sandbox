@@ -44,6 +44,8 @@ export class ThumbComponent {
    */
   onFavorite(e: MouseEvent): void {
     e.stopPropagation();
+
+    this.superhero.favorite = true;
     this.favorites.favoriteSuperhero(this.superhero.id);
   }
 
@@ -55,9 +57,22 @@ export class ThumbComponent {
    */
   onUnfavorite(e: MouseEvent): void {
     e.stopPropagation();
+
+    this.superhero.favorite = false;
     this.favorites.unfavoriteSuperhero(this.superhero.id);
   }
 
-  //#region 
+  //#endregion
 
+  //#region Methods
+
+  /**
+   * @description
+   * Checks if the superhero has been favorited
+   */
+  isFavorited(): boolean {
+    return this.superhero?.favorite;
+  }
+
+  //#endregion
 }

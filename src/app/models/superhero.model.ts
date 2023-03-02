@@ -12,10 +12,10 @@ export class Superhero {
    */
   favorite: boolean;
 
-  constructor(model: ISuperheroBaseResponse) {
+  constructor(model: ISuperheroBaseResponse, isFavorite: boolean = false) {
     this.id = parseInt(model.id);
     this.name = model.name;
     this.image = model.image.url;
-    this.favorite = false;
+    this.favorite = isFavorite;
   }
 }

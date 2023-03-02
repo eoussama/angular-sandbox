@@ -13,3 +13,18 @@
     margin-top: -24px;
   }
 }
+
+.superheroes-wrapper {
+  margin-top: 20px;
+  
+  .superheroes {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    list-style-type: none;
+
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
