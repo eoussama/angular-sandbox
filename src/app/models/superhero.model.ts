@@ -5,12 +5,17 @@ export class Superhero {
   id: number;
   name: string;
   image: string;
-  // biography: string;
+
+  /**
+   * @description
+   * If the superhero is favorited.
+   */
+  favorite: boolean;
 
   constructor(model: ISuperheroBaseResponse) {
     this.id = parseInt(model.id);
     this.name = model.name;
     this.image = model.image.url;
-    // this.biography = model.biography;
+    this.favorite = false;
   }
 }

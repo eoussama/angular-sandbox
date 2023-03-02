@@ -22,3 +22,10 @@ export const selectAuthUser = createSelector(selectAuthState, (state: IAuthState
  * Selects the authenticated user's name
  */
 export const selectAuthUserName = createSelector(selectAuthUser, (state: IAuthState) => state.username ?? '');
+
+
+/**
+ * @description
+ * Selects the authenticated user's ID
+ */
+export const selectAuthUserId = createSelector(selectAuthUser, (state: IAuthState) => state.id ?? '');

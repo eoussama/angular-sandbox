@@ -16,10 +16,19 @@
       <div class="card__title">{{ superhero.name }}</div>
       <div class="card__favorite">
         <span
+          *ngIf="!superhero.favorite"
           class="material-symbols-outlined"
           (click)="onFavorite($event)"
         >
           heart_plus
+        </span>
+
+        <span
+          *ngIf="superhero.favorite"
+          class="material-symbols-outlined"
+          (click)="onUnfavorite($event)"
+        >
+          favorite
         </span>
       </div>
     </div>

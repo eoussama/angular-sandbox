@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Superhero } from 'src/app/models/superhero.model';
+import { FavoritesService } from 'src/app/services/favorites/favorites.service';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class ThumbComponent {
 
   //#region Lifecycle
 
-  constructor() {
+  constructor(private favorites: FavoritesService) {
     this.loader = false;
   }
 
@@ -35,9 +36,26 @@ export class ThumbComponent {
 
   //#region Event listeners
 
+  /**
+   * @description
+   * Favorites a superhero
+   *
+   * @param e The mouse event
+   */
   onFavorite(e: MouseEvent): void {
     e.stopPropagation();
-    console.log('favorite');
+    this.favorites.favoriteSuperhero(this.superhero.id);
+  }
+
+  /**
+   * @description
+   * Unfavorites a superhero
+   *
+   * @param e The mouse event
+   */
+  onUnfavorite(e: MouseEvent): void {
+    e.stopPropagation();
+    this.favorites.unfavoriteSuperhero(this.superhero.id);
   }
 
   //#region 
