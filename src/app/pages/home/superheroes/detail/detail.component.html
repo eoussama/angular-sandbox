@@ -1,1 +1,118 @@
-<p *ngIf="superhero$ | async as superhero">{{ superhero.name }}</p>
+<ng-container *ngIf="superhero$ | async as superhero">
+  <div class="root">
+    <div class="left">
+      <img
+        loading="lazy"
+        class="image"
+        [src]="superhero.image"
+        [alt]="superhero.name + '\'s picture'"
+      />
+    </div>
+
+    <div class="right">
+      <div class="info">
+        <h3 class="title">#{{ superhero.id}} - {{ superhero.name }}</h3>
+        <div class="content">
+          <ul class="list llist--personal">
+            <li>Fullname: <span class="highlight">{{ superhero.fullName }}</span></li>
+            <li>Race: <span class="highlight">{{ superhero.race }}</span></li>
+            <li>Gender: <span class="highlight">{{ superhero.gender }}</span></li>
+            <li>Height: <span class="highlight">{{ superhero.height }}</span> cm</li>
+            <li>Weight: <span class="highlight">{{ superhero.weight }}</span> Kg</li>
+            <li>Eye color: <span class="highlight">{{ superhero.eyeColor }}</span></li>
+            <li>Hair color: <span class="highlight">{{ superhero.hairColor }}</span></li>
+            <li>Birth place: <span class="highlight">{{ superhero.birthPlace }}</span></li>
+          </ul>
+
+          <ul class="list llist--professional">
+            <li>Alignment: <span class="highlight">{{ superhero.alignment }}</span></li>
+            <li>Occupation: <span class="highlight">{{ superhero.occupation }}</span></li>
+            <li>Alter-ego: <span class="highlight">{{ superhero.alterEgo }}</span></li>
+            <li>Aliases: <span class="highlight">{{ superhero.aliases }}</span></li>
+            <li>Bases: <span class="highlight">{{ superhero.bases }}</span></li>
+            <li>Debute: <span class="highlight">{{ superhero.debute }}</span></li>
+            <li>Publisher: <span class="highlight">{{ superhero.publisher }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="connections">
+    <div class="stats">
+      <h5 class="subtitle">Stats</h5>
+
+      <ul class="list list--progress">
+        <li class="item">
+          <span class="label">Power</span>
+          <progress
+            class="bar bar--power"
+            max="100"
+            [value]="superhero.stats.power"
+          ></progress>
+        </li>
+
+        <li class="item">
+          <span class="label">Speed</span>
+          <progress
+            class="bar bar--speed"
+            max="100"
+            [value]="superhero.stats.speed"
+          ></progress>
+        </li>
+
+        <li class="item">
+          <span class="label">Combat</span>
+          <progress
+            class="bar bar--combat"
+            max="100"
+            [value]="superhero.stats.combat"
+          ></progress>
+        </li>
+
+        <li class="item">
+          <span class="label">Strength</span>
+          <progress
+            class="bar bar--strength"
+            max="100"
+            [value]="superhero.stats.strength"
+          ></progress>
+        </li>
+
+        <li class="item">
+          <span class="label">Durability</span>
+          <progress
+            class="bar bar--durability"
+            max="100"
+            [value]="superhero.stats.durability"
+          ></progress>
+        </li>
+
+        <li class="item">
+          <span class="label">Intelligence</span>
+          <progress
+            class="bar bar--intelligence"
+            max="100"
+            [value]="superhero.stats.intelligence"
+          ></progress>
+        </li>
+      </ul>
+    </div>
+
+    <div class="groups">
+      <h5 class="subtitle">Affiliations</h5>
+
+      <ul class="list">
+        <li *ngFor="let group of superhero.affiliations"><span class="highlight">{{ group }}</span></li>
+      </ul>
+    </div>
+
+    <div class="relatives">
+      <h5 class="subtitle">Relatives</h5>
+
+      <ul class="list">
+        <li *ngFor="let relative of superhero.relatives"><span class="highlight">{{ relative }}</span></li>
+      </ul>
+    </div>
+  </div>
+</ng-container>

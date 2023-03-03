@@ -1,0 +1,141 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+
+  .left {
+    .image {
+      width: 100%;
+      height: 100%;
+      max-width: 250px;
+
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .right {
+    flex: 1;
+    padding: 0 20px;
+
+    .info {
+      padding: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      width: 100%;
+      height: 100%;
+
+      .title {
+        border-bottom: 1px solid #eeeeee;
+
+        margin: 0;
+        padding: 0;
+        margin-top: -10px;
+
+        width: 100%;
+
+        font-size: 72px;
+        font-family: 'Bangers', cursive;
+
+        color: #f1f1f1;
+        text-shadow: 1px 1px #000000, -1px -1px #000000;
+      }
+
+      .content {
+        margin: 15px 0;
+
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+.connections {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .stats,
+  .groups,
+  .relatives {
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .subtitle {
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  margin-right: 60px;
+  list-style-type: none;
+
+  font-size: 16px;
+  color: rgb(126, 126, 126);
+
+  .highlight {
+    color: rgb(27, 27, 27);
+  }
+
+  &--progress {
+    width: 100%;
+
+    .item {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .label {
+        width: 100px;
+      }
+
+      .bar {
+        flex: 1;
+        width: 100%;
+
+        &--power {
+          accent-color: rgb(230, 230, 230);
+        }
+
+        &--speed {
+          accent-color: rgb(230, 230, 230);
+        }
+
+        &--combat {
+          accent-color: rgb(230, 230, 230);
+        }
+
+        &--strength {
+          accent-color: rgb(230, 230, 230);
+        }
+
+        &--durability {
+          accent-color: rgb(230, 230, 230);
+        }
+
+        &--intelligence {
+          accent-color: rgb(230, 230, 230);
+        }
+      }
+    }
+  }
+}
