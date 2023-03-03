@@ -86,5 +86,13 @@ export class ThumbComponent {
     return this.superhero?.favorite;
   }
 
+  /**
+   * @description
+   * Returns the thumb's ID
+   */
+  getId(): string {
+    return this.superhero?.id.toString();
+  }
+
   //#endregion
 }

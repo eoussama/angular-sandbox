@@ -6,6 +6,7 @@
     "clean": "rm -rf .angular",
     "start": "npm run clean && ng serve",
     "build": "ng build",
+    "e2e": "npx cypress open",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "api": "npx json-server --watch ./data/db.json"

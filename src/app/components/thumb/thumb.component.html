@@ -1,5 +1,6 @@
 <div
   class="card"
+  [id]="'superheroe-' + getId()"
   [ngClass]="{
     'card--loading': loader,
     'card--favorited': isFavorited()
