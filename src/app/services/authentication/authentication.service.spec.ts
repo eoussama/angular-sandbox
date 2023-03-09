@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { AuthenticationService } from './authentication.service';
+import { of } from 'rxjs';
 
 describe('AuthenticationService', () => {
   let service: AuthenticationService;
@@ -16,5 +17,35 @@ describe('AuthenticationService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should return true when user is logged in', (done) => {
+    // Mock the store to return a user object
+    spyOn(service['store'], 'select').and.returnValue(of({ username: 'admin' }));
+
+    service.isLoggedIn().subscribe(isLoggedIn => {
+      expect(isLoggedIn).toBe(true);
+      done();
+    });
+  });
+
+  it('should return false when user is not logged in', (done) => {
+    // Mock the store to return an empty user object
+    spyOn(service['store'], 'select').and.returnValue(of({}));
+
+    service.isLoggedIn().subscribe(isLoggedIn => {
+      expect(isLoggedIn).toBe(false);
+      done();
+    });
+  });
+
+  it('should log out a user', () => {
+    // Spy on the store.dispatch method to verify that logout and reset actions are dispatched
+    const dispatchSpy = spyOn(service['store'], 'dispatch').and.callThrough();
+
+    service.logout();
+
+    expect(dispatchSpy).toHaveBeenCalledWith({ type: '[Auth] Logout' });
+    expect(dispatchSpy).toHaveBeenCalledWith({ type: '[Favorites] Reset' });
   });
 });
