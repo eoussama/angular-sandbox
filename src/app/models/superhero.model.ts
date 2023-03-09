@@ -42,39 +42,39 @@ export class Superhero {
    */
   favorite: boolean;
 
-  constructor(model: ISuperheroBaseResponse, isFavorite: boolean = false) {
-    this.name = model.name ?? '';
-    this.id = parseInt(model.id ?? '');
-    this.image = model.image.url ?? '';
+  constructor(model?: ISuperheroBaseResponse, isFavorite: boolean = false) {
+    this.name = model?.name ?? '';
+    this.id = parseInt(model?.id ?? '');
+    this.image = model?.image?.url ?? '';
 
-    this.occupation = model.work.occupation ?? '';
-    this.bases = model.work.base.split(', ') ?? [];
+    this.occupation = model?.work?.occupation ?? '';
+    this.bases = model?.work?.base?.split(', ') ?? [];
 
-    this.race = model.appearance.race ?? '';
-    this.gender = model.appearance.gender ?? '';
-    this.eyeColor = model.appearance['eye-color'] ?? '';
-    this.hairColor = model.appearance['hair-color'] ?? '';
-    this.height = parseInt(model.appearance.height[1] ?? '');
-    this.weight = parseInt(model.appearance.weight[1] ?? '');
+    this.race = model?.appearance?.race ?? '';
+    this.gender = model?.appearance?.gender ?? '';
+    this.eyeColor = model?.appearance ? (model?.appearance['eye-color'] ?? '') : '';
+    this.hairColor = model?.appearance ? (model?.appearance['hair-color'] ?? '') : '';
+    this.height = parseInt(model?.appearance?.height[1] ?? '');
+    this.weight = parseInt(model?.appearance?.weight[1] ?? '');
 
-    this.aliases = model.biography.aliases ?? [];
-    this.publisher = model.biography.publisher ?? '';
-    this.alignment = model.biography.alignment ?? '';
-    this.fullName = model.biography['full-name'] ?? '';
-    this.alterEgo = model.biography['alter-egos'] ?? '';
-    this.debute = model.biography['first-appearance'] ?? '';
-    this.birthPlace = model.biography['place-of-birth'] ?? '';
+    this.aliases = model?.biography?.aliases ?? [];
+    this.publisher = model?.biography?.publisher ?? '';
+    this.alignment = model?.biography?.alignment ?? '';
+    this.fullName = model?.biography ? (model?.biography['full-name'] ?? '') : '';
+    this.alterEgo = model?.biography ? (model?.biography['alter-egos'] ?? '') : '';
+    this.debute = model?.biography ? (model?.biography['first-appearance'] ?? '') : '';
+    this.birthPlace = model?.biography ? (model?.biography['place-of-birth'] ?? '') : '';
 
-    this.relatives = model.connections.relatives.split(', ');
-    this.affiliations = model.connections['group-affiliation'].split(', ');
+    this.relatives = model?.connections?.relatives?.split(', ') ?? [];
+    this.affiliations = model?.connections ? (model?.connections['group-affiliation']?.split(', ') ?? []) : [];
 
     this.stats = {
-      power: parseInt(model.powerstats.power ?? ''),
-      speed: parseInt(model.powerstats.speed ?? ''),
-      combat: parseInt(model.powerstats.combat ?? ''),
-      strength: parseInt(model.powerstats.strength ?? ''),
-      durability: parseInt(model.powerstats.durability ?? ''),
-      intelligence: parseInt(model.powerstats.intelligence ?? '')
+      power: parseInt(model?.powerstats?.power ?? ''),
+      speed: parseInt(model?.powerstats?.speed ?? ''),
+      combat: parseInt(model?.powerstats?.combat ?? ''),
+      strength: parseInt(model?.powerstats?.strength ?? ''),
+      durability: parseInt(model?.powerstats?.durability ?? ''),
+      intelligence: parseInt(model?.powerstats?.intelligence ?? '')
     }
 
     this.favorite = isFavorite;

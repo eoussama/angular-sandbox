@@ -1,6 +1,9 @@
+import { StoreModule } from '@ngrx/store';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FavoritesComponent } from './favorites.component';
+import { FavoritePipe } from 'src/app/pipes/favorite/favorite.pipe';
 
 describe('FavoritesComponent', () => {
   let component: FavoritesComponent;
@@ -8,9 +11,10 @@ describe('FavoritesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavoritesComponent ]
+      imports: [HttpClientTestingModule, StoreModule.forRoot({})],
+      declarations: [FavoritesComponent, FavoritePipe]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(FavoritesComponent);
     component = fixture.componentInstance;

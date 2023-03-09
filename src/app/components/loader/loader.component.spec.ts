@@ -1,5 +1,8 @@
+import { StoreModule } from '@ngrx/store';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { ThumbModule } from '../thumb/thumb.module';
 import { LoaderComponent } from './loader.component';
 
 describe('LoaderComponent', () => {
@@ -8,9 +11,10 @@ describe('LoaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoaderComponent ]
+      imports: [ThumbModule, HttpClientTestingModule, StoreModule.forRoot({})],
+      declarations: [LoaderComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LoaderComponent);
     component = fixture.componentInstance;
