@@ -6,9 +6,11 @@
     "clean": "rm -rf .angular",
     "start": "npm run clean && ng serve",
     "build": "ng build",
-    "e2e": "npx cypress open",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "jest --no-cache",
+    "test:watch": "jest --watch",
+    "e2e": "npx cypress open",
+    "cov": "jest --coverage",
     "api": "npx json-server --watch ./data/db.json"
   },
   "private": true,
@@ -31,15 +33,36 @@
     "@angular-devkit/build-angular": "^15.0.4",
     "@angular/cli": "~15.0.4",
     "@angular/compiler-cli": "^15.0.0",
-    "@types/jasmine": "~4.3.0",
+    "@types/jest": "^29.4.0",
     "cypress": "^12.7.0",
-    "jasmine-core": "~4.5.0",
+    "jest": "^29.5.0",
+    "jest-preset-angular": "^13.0.0",
     "json-server": "^0.17.2",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.8.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "maxWorkers": 4,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup.jest.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_mobules/",
+      "<rootDir>/dist/"
+    ],
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1"
+    },
+    "globals": {
+      "transform": {
+        "<transform_regex>": [
+          "ts-jest",
+          {
+            "tsConfig": "<rootDir>/tscondig.spec.json",
+            "stringifyContentPathRegex": "\\.html$"
+          }
+        ]
+      }
+    }
   }
 }

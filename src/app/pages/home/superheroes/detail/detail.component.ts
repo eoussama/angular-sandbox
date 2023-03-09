@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Superhero } from 'src/app/models/superhero.model';
@@ -8,7 +8,7 @@ import { Superhero } from 'src/app/models/superhero.model';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
 
   //#region Properties
 
@@ -25,10 +25,6 @@ export class DetailComponent implements OnInit {
   //#region Lifecycle
 
   constructor(private activatedRpute: ActivatedRoute) { }
-
-  ngOnInit(): void {
-    this.activatedRpute.data.subscribe(console.log);
-  }
 
   //#endregion
 }

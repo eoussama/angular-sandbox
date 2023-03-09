@@ -21,7 +21,7 @@ describe('AuthenticationService', () => {
 
   it('should return true when user is logged in', (done) => {
     // Mock the store to return a user object
-    spyOn(service['store'], 'select').and.returnValue(of({ username: 'admin' }));
+    jest.spyOn(service['store'], 'select').mockReturnValue(of({ username: 'admin' }));
 
     service.isLoggedIn().subscribe(isLoggedIn => {
       expect(isLoggedIn).toBe(true);
@@ -31,7 +31,7 @@ describe('AuthenticationService', () => {
 
   it('should return false when user is not logged in', (done) => {
     // Mock the store to return an empty user object
-    spyOn(service['store'], 'select').and.returnValue(of({}));
+    jest.spyOn(service['store'], 'select').mockReturnValue(of({}));
 
     service.isLoggedIn().subscribe(isLoggedIn => {
       expect(isLoggedIn).toBe(false);
@@ -41,7 +41,7 @@ describe('AuthenticationService', () => {
 
   it('should log out a user', () => {
     // Spy on the store.dispatch method to verify that logout and reset actions are dispatched
-    const dispatchSpy = spyOn(service['store'], 'dispatch').and.callThrough();
+    const dispatchSpy = jest.spyOn(service['store'], 'dispatch').mockImplementation();
 
     service.logout();
 

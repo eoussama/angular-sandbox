@@ -39,20 +39,10 @@ describe('FavoritesService', () => {
       } as any, true)
     ];
 
-    spyOn(service['http'], 'get').and.returnValues(
-      of({
-        id: 1,
-        name: 'Superman'
-      }),
-      of({
-        id: 2,
-        name: 'Batman'
-      }),
-      of({
-        id: 3,
-        name: 'Wonder Woman'
-      })
-    );
+    jest.spyOn(service['http'], 'get')
+      .mockReturnValueOnce(of({ id: 1, name: 'Superman' }))
+      .mockReturnValueOnce(of({ id: 2, name: 'Batman' }))
+      .mockReturnValueOnce(of({ id: 3, name: 'Wonder Woman' }));
 
     const actualSuperheroes = await service.loadFavorites(superheroIds);
 
@@ -69,11 +59,11 @@ describe('FavoritesService', () => {
       favorites: []
     };
 
-    spyOn(service['store'], 'select').and.returnValue(of(userId));
-    spyOn(service['http'], 'get').and.returnValue(of(user));
-    spyOn(service['http'], 'put').and.returnValue(of(null));
+    jest.spyOn(service['store'], 'select').mockReturnValue(of(userId));
+    jest.spyOn(service['http'], 'get').mockReturnValue(of(user));
+    jest.spyOn(service['http'], 'put').mockReturnValue(of(null));
 
-    const updateSpy = spyOn(service['store'], 'dispatch');
+    const updateSpy = jest.spyOn(service['store'], 'dispatch');
 
     await service.favoriteSuperhero(superheroId);
 
@@ -90,11 +80,11 @@ describe('FavoritesService', () => {
       favorites: [1, 2, 3]
     };
 
-    spyOn(service['store'], 'select').and.returnValue(of(userId));
-    spyOn(service['http'], 'get').and.returnValue(of(user));
-    spyOn(service['http'], 'put').and.returnValue(of(null));
+    jest.spyOn(service['store'], 'select').mockReturnValue(of(userId));
+    jest.spyOn(service['http'], 'get').mockReturnValue(of(user));
+    jest.spyOn(service['http'], 'put').mockReturnValue(of(null));
 
-    const updateSpy = spyOn(service['store'], 'dispatch');
+    const updateSpy = jest.spyOn(service['store'], 'dispatch');
 
     await service.unfavoriteSuperhero(superheroId);
 
