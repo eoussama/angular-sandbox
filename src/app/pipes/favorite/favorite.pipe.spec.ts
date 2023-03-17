@@ -36,7 +36,7 @@ describe('FavoritePipe', () => {
     it('transforms an observable of array of numbers to an observable of superhero objects', inject([FavoritesService], async (favorites: FavoritesService) => {
         let pipe = new FavoritePipe(favorites);
 
-        const input = of([1, 2, 3]);
+        const input = [1, 2, 3];
         const output = await firstValueFrom(pipe.transform(input)) as Array<Superhero>;
 
         expect(output[1].name).toEqual('Superhero 2');
