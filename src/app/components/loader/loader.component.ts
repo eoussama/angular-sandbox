@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 
@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss']
 })
-export class LoaderComponent {
+export class LoaderComponent implements OnChanges {
 
   //#region Properties
 
@@ -17,12 +17,34 @@ export class LoaderComponent {
    */
   items: Array<number>;
 
+  /**
+   * @description
+   * The number of the loading cards
+   */
+  @Input()
+  count: number;
+
   //#endregion
 
   //#region Lifecycle
 
   constructor() {
-    this.items = [...Array(environment.pageSize)];
+    this.items = [];
+    this.count = environment.pageSize;
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if ('count' in changes) {
+      this.generateCards();
+    }
+  }
+
+  //#endregion
+
+  //#region Methods
+
+  private generateCards(): void {
+    this.items = [...Array(this.count)];
   }
 
   //#endregion
