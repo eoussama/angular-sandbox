@@ -54,32 +54,10 @@
   }
 }
 
-.connections {
+.more {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
-
-  .stats,
-  .groups,
-  .relatives {
-    padding: 20px;
-    border-radius: 8px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-    width: 100%;
-    height: 100%;
-  }
-
-  .subtitle {
-    margin: 0;
-    padding: 0;
-
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
 }
 
 .list {
@@ -95,47 +73,47 @@
     color: rgb(27, 27, 27);
   }
 
-  &--progress {
-    width: 100%;
+  // &--progress {
+  //   width: 100%;
 
-    .item {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+  //   .item {
+  //     width: 100%;
+  //     display: flex;
+  //     flex-direction: row;
+  //     align-items: center;
 
-      .label {
-        width: 100px;
-      }
+  //     .label {
+  //       width: 100px;
+  //     }
 
-      .bar {
-        flex: 1;
-        width: 100%;
+  //     .bar {
+  //       flex: 1;
+  //       width: 100%;
 
-        &--power {
-          accent-color: rgb(230, 230, 230);
-        }
+  //       &--power {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
 
-        &--speed {
-          accent-color: rgb(230, 230, 230);
-        }
+  //       &--speed {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
 
-        &--combat {
-          accent-color: rgb(230, 230, 230);
-        }
+  //       &--combat {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
 
-        &--strength {
-          accent-color: rgb(230, 230, 230);
-        }
+  //       &--strength {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
 
-        &--durability {
-          accent-color: rgb(230, 230, 230);
-        }
+  //       &--durability {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
 
-        &--intelligence {
-          accent-color: rgb(230, 230, 230);
-        }
-      }
-    }
-  }
+  //       &--intelligence {
+  //         accent-color: rgb(230, 230, 230);
+  //       }
+  //     }
+  //   }
+  // }
 }
