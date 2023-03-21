@@ -7,7 +7,7 @@ import { SuperheroService } from 'src/app/services/superhero/superhero.service';
 @Component({
   selector: 'app-superheroes',
   templateUrl: './superheroes.component.html',
-  styleUrls: ['./superheroes.component.scss']
+  styleUrls: ['./superheroes.component.scss', './../../../components/input/input.component.scss']
 })
 export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
 
@@ -157,6 +157,6 @@ export class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {
 
     observer.observe(cardLoader);
   }
-  
+
   //#endregion
 }
