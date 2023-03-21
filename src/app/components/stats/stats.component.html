@@ -1,0 +1,57 @@
+<app-card title="Stats">
+  <ul class="list list--progress">
+    <li class="item">
+      <span class="label">Power</span>
+      <progress
+        class="bar bar--power"
+        max="100"
+        [value]="stats.power"
+      ></progress>
+    </li>
+
+    <li class="item">
+      <span class="label">Speed</span>
+      <progress
+        class="bar bar--speed"
+        max="100"
+        [value]="stats.speed"
+      ></progress>
+    </li>
+
+    <li class="item">
+      <span class="label">Combat</span>
+      <progress
+        class="bar bar--combat"
+        max="100"
+        [value]="stats.combat"
+      ></progress>
+    </li>
+
+    <li class="item">
+      <span class="label">Strength</span>
+      <progress
+        class="bar bar--strength"
+        max="100"
+        [value]="stats.strength"
+      ></progress>
+    </li>
+
+    <li class="item">
+      <span class="label">Durability</span>
+      <progress
+        class="bar bar--durability"
+        max="100"
+        [value]="stats.durability"
+      ></progress>
+    </li>
+
+    <li class="item">
+      <span class="label">Intelligence</span>
+      <progress
+        class="bar bar--intelligence"
+        max="100"
+        [value]="stats.intelligence"
+      ></progress>
+    </li>
+  </ul>
+</app-card>

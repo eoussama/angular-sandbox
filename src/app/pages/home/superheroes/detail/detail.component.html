@@ -39,63 +39,7 @@
   </div>
 
   <div class="more">
-    <app-card title="Stats">
-      <ul class="list list--progress">
-        <li class="item">
-          <span class="label">Power</span>
-          <progress
-            class="bar bar--power"
-            max="100"
-            [value]="superhero.stats.power"
-          ></progress>
-        </li>
-
-        <li class="item">
-          <span class="label">Speed</span>
-          <progress
-            class="bar bar--speed"
-            max="100"
-            [value]="superhero.stats.speed"
-          ></progress>
-        </li>
-
-        <li class="item">
-          <span class="label">Combat</span>
-          <progress
-            class="bar bar--combat"
-            max="100"
-            [value]="superhero.stats.combat"
-          ></progress>
-        </li>
-
-        <li class="item">
-          <span class="label">Strength</span>
-          <progress
-            class="bar bar--strength"
-            max="100"
-            [value]="superhero.stats.strength"
-          ></progress>
-        </li>
-
-        <li class="item">
-          <span class="label">Durability</span>
-          <progress
-            class="bar bar--durability"
-            max="100"
-            [value]="superhero.stats.durability"
-          ></progress>
-        </li>
-
-        <li class="item">
-          <span class="label">Intelligence</span>
-          <progress
-            class="bar bar--intelligence"
-            max="100"
-            [value]="superhero.stats.intelligence"
-          ></progress>
-        </li>
-      </ul>
-    </app-card>
+    <app-stats [stats]="superhero.stats"></app-stats>
 
     <app-card title="Affiliations">
       <li *ngFor="let group of superhero.affiliations"><span class="highlight">{{ group }}</span></li>

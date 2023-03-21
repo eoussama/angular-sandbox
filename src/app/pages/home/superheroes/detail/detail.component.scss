@@ -16,7 +16,7 @@
 
   .right {
     flex: 1;
-    padding: 0 20px;
+    padding: 0 0 0 20px;
 
     .info {
       padding: 20px;
@@ -72,48 +72,4 @@
   .highlight {
     color: rgb(27, 27, 27);
   }
-
-  // &--progress {
-  //   width: 100%;
-
-  //   .item {
-  //     width: 100%;
-  //     display: flex;
-  //     flex-direction: row;
-  //     align-items: center;
-
-  //     .label {
-  //       width: 100px;
-  //     }
-
-  //     .bar {
-  //       flex: 1;
-  //       width: 100%;
-
-  //       &--power {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-
-  //       &--speed {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-
-  //       &--combat {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-
-  //       &--strength {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-
-  //       &--durability {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-
-  //       &--intelligence {
-  //         accent-color: rgb(230, 230, 230);
-  //       }
-  //     }
-  //   }
-  // }
 }

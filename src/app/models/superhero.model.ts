@@ -1,4 +1,5 @@
 import { ISuperheroBaseResponse } from '../types/superhero-response-base.type';
+import { Stats } from './stats.model';
 
 
 export class Superhero {
@@ -6,14 +7,7 @@ export class Superhero {
   name: string;
   image: string;
 
-  stats: {
-    combat: number;
-    durability: number;
-    intelligence: number;
-    power: number;
-    speed: number;
-    strength: number;
-  };
+  stats: Stats;
 
   bases: Array<string>;
   occupation: string;
@@ -65,17 +59,9 @@ export class Superhero {
     this.debute = model?.biography ? (model?.biography['first-appearance'] ?? '') : '';
     this.birthPlace = model?.biography ? (model?.biography['place-of-birth'] ?? '') : '';
 
+    this.stats = new Stats(model?.powerstats);
     this.relatives = model?.connections?.relatives?.split(', ') ?? [];
     this.affiliations = model?.connections ? (model?.connections['group-affiliation']?.split(', ') ?? []) : [];
-
-    this.stats = {
-      power: parseInt(model?.powerstats?.power ?? ''),
-      speed: parseInt(model?.powerstats?.speed ?? ''),
-      combat: parseInt(model?.powerstats?.combat ?? ''),
-      strength: parseInt(model?.powerstats?.strength ?? ''),
-      durability: parseInt(model?.powerstats?.durability ?? ''),
-      intelligence: parseInt(model?.powerstats?.intelligence ?? '')
-    }
 
     this.favorite = isFavorite;
   }
