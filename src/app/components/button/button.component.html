@@ -1,0 +1,12 @@
+<button
+  class="button"
+  [disabled]="loading"
+>
+  <ng-container *ngIf="!loading">
+    <span class="material-symbols-outlined button__icon">{{ icon }}</span>{{ label }}
+  </ng-container>
+
+  <ng-container *ngIf="loading">
+    <span class="material-symbols-outlined button__icon button__icon--spin">{{ loadingIcon }}</span>{{ loadingLabel }}
+  </ng-container>
+</button>

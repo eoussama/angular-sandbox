@@ -31,19 +31,13 @@
         placeholder="Enter your password"
       ></app-input>
 
-      <button
-        class="button"
+      <app-button
+        icon="login"
+        label="Login"
+        [loading]="loading"
         (click)="onLogin()"
-        [disabled]="loading"
-      >
-        <ng-container *ngIf="!loading">
-          <span class="material-symbols-outlined button__icon">login</span>Login
-        </ng-container>
-
-        <ng-container *ngIf="loading">
-          <span class="material-symbols-outlined button__icon button__icon--spin">hourglass_top</span>Login-in...
-        </ng-container>
-      </button>
+        loadingLabel="Login-in..."
+      ></app-button>
     </form>
   </div>
 </div>

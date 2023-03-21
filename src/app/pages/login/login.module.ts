@@ -4,6 +4,7 @@ import { LoginComponent } from './login.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InputModule } from 'src/app/components/input/input.module';
+import { ButtonModule } from 'src/app/components/button/button.module';
 
 
 
@@ -14,6 +15,7 @@ import { InputModule } from 'src/app/components/input/input.module';
   imports: [
     CommonModule,
     InputModule,
+    ButtonModule,
     ReactiveFormsModule,
     RouterModule.forChild([
       {
