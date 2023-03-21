@@ -1,0 +1,57 @@
+.input {
+  display: flex;
+  margin-bottom: 25px;
+  flex-direction: column;
+
+  &__label {
+    color: #ffffff;
+    font-weight: 100;
+    margin-bottom: 5px;
+    
+    transition-duration: 0.2s;
+    transition-property: color;
+
+    display: flex;
+    align-items: center;
+  }
+  
+  &__icon {
+    font-size: 22px;
+    margin-right: 5px;
+  }
+  
+  &__field {
+    border: none;
+    border-radius: 5px;
+    
+    padding: 10px 15px;
+    background-color: #ffffff;
+    
+    font-weight: 400;
+    font-family: 'Noto Sans Display', sans-serif;
+    
+    transition-duration: 0.2s;
+    transition-property: outline;
+    
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    
+    &:focus {
+      outline: 2px solid #080808;
+    }
+  }
+  
+  &__error {
+    margin: 5px 0 0 0;
+    
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(255 110 110);
+  }
+  
+  &:focus-within .input__label {
+    font-weight: 500;
+  }
+}

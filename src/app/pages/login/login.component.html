@@ -12,43 +12,24 @@
       [formGroup]="form"
       class="form"
     >
-      <label class="input input--email">
-        <span class="input__label">
-          <span class="material-symbols-outlined input__icon">account_circle</span>
-          Username
-        </span>
+      <app-input
+        label="Username"
+        icon="account_circle"
+        autocomplete="username"
+        formControlName="username"
+        error="Fill in your username"
+        placeholder="Enter your username"
+      ></app-input>
 
-        <input
-          type="text"
-          autocomplete="username"
-          placeholder="Enter your username"
-          class="input__field"
-          formControlName="username"
-        >
-        <span
-          *ngIf="hasError('username')"
-          class="input__error"
-        >Fill in your username</span>
-      </label>
-
-      <label class="input input--password">
-        <span class="input__label">
-          <span class="material-symbols-outlined input__icon">lock</span> Password
-        </span>
-
-        <input
-          type="password"
-          autocomplete="current-password"
-          placeholder="Enter your password"
-          class="input__field"
-          formControlName="password"
-        >
-
-        <span
-          *ngIf="hasError('password')"
-          class="input__error"
-        >Fill in your password</span>
-      </label>
+      <app-input
+        icon="lock"
+        type="password"
+        label="Password"
+        autocomplete="password"
+        formControlName="password"
+        error="Fill in your password"
+        placeholder="Enter your password"
+      ></app-input>
 
       <button
         class="button"

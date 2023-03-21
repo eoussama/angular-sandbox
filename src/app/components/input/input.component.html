@@ -1,0 +1,19 @@
+<label class="input input--email">
+  <span class="input__label">
+    <span class="material-symbols-outlined input__icon">{{ icon }}</span>
+    {{ label }}
+  </span>
+
+  <input
+    #input
+    [type]="type"
+    [(ngModel)]="value"
+    class="input__field"
+    [placeholder]="placeholder"
+    [autocomplete]="autocomplete"
+  >
+  <span
+    *ngIf="hasError()"
+    class="input__error"
+  >{{ error }}</span>
+</label>
