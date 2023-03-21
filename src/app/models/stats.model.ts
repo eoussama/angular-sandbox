@@ -41,12 +41,12 @@ export class Stats {
    */
   strength: number;
 
-  constructor(model?: { [key in keyof Stats]: string }) {
-    this.combat = parseInt(model?.combat ?? '');
-    this.durability = parseInt(model?.durability ?? '');
-    this.intelligence = parseInt(model?.intelligence ?? '');
-    this.power = parseInt(model?.power ?? '');
-    this.speed = parseInt(model?.speed ?? '');
-    this.strength = parseInt(model?.strength ?? '');
+  constructor(model?: { [key in keyof Stats]: number | string }) {
+    this.combat = parseInt(model?.combat as string);
+    this.durability = parseInt(model?.durability as string);
+    this.intelligence = parseInt(model?.intelligence as string);
+    this.power = parseInt(model?.power as string);
+    this.speed = parseInt(model?.speed as string);
+    this.strength = parseInt(model?.strength as string);
   }
 }
