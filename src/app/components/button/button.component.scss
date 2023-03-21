@@ -3,9 +3,9 @@
 
   border: none;
   border-radius: 5px;
-  
-  width: 100%;
-  padding: 15px;
+
+  padding: 20px 50px;
+  max-height: 45px;
 
   color: #ffffff;
   background-color: #000000;
@@ -24,12 +24,12 @@
     opacity: 0;
     font-size: 22px;
 
-    margin-right: 5px;
-    margin-left: -25px;
-    
+    min-width: 20px;
+    margin-left: -20px;
+
     transition-duration: 0.2s;
     transition-property: margin opacity;
-    
+
     &--spin {
       opacity: 1;
       margin-left: 0;
@@ -40,7 +40,12 @@
       animation-iteration-count: infinite;
     }
   }
-  
+
+  &__button {
+    transition-duration: 0.2s;
+    transition-property: margin-left;
+  }
+
   &:disabled {
     opacity: 0.8;
   }
@@ -51,6 +56,25 @@
     .button__icon {
       opacity: 1;
       margin-left: 0;
+    }
+
+    .button__label {
+      margin-left: 5px;
+    }
+  }
+
+  &:not(&--icon) &__icon {
+    display: none;
+  }
+
+  &--full {
+    width: 100%;
+    padding: 20px;
+  }
+
+  &--loading {
+    .button__label {
+      margin-left: 5px;
     }
   }
 }

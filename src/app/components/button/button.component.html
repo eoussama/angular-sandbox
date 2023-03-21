@@ -1,12 +1,19 @@
 <button
   class="button"
+  [ngClass]="{
+    'button--full': full,
+    'button--icon': hasIcon(),
+    'button--loading': loading
+  }"
   [disabled]="loading"
 >
   <ng-container *ngIf="!loading">
-    <span class="material-symbols-outlined button__icon">{{ icon }}</span>{{ label }}
+    <span class="material-symbols-outlined button__icon">{{ icon }}</span>
+    <span class="button__label">{{ label }}</span>
   </ng-container>
 
   <ng-container *ngIf="loading">
-    <span class="material-symbols-outlined button__icon button__icon--spin">{{ loadingIcon }}</span>{{ loadingLabel }}
+    <span class="material-symbols-outlined button__icon button__icon--spin">{{ loadingIcon }}</span>
+    <span class="button__label">{{ loadingLabel }}</span>
   </ng-container>
 </button>

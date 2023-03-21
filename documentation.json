@@ -2031,6 +2031,225 @@
             "templateData": "<main [@routeAnimations]=\"getRouteAnimationData(outlet)\">\n  <router-outlet #outlet=\"outlet\"></router-outlet>\n</main>"
         },
         {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-c66a46a9024e151487fea875e8b39b3f221fec0505593f15b1e43d988e4801e038242c6a56c29f48929347f0de40e72bf4bf2ec2f321e9347ed180d33f37835f",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 347,
+                            "end": 386,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 348,
+                                "end": 359,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The button&#39;s icon</p>\n"
+                        }
+                    ],
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 265,
+                            "end": 305,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 266,
+                                "end": 277,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The button&#39;s lavel</p>\n"
+                        }
+                    ],
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "loading",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 428,
+                            "end": 467,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 429,
+                                "end": 440,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The loading state</p>\n"
+                        }
+                    ],
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "loadingIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 513,
+                            "end": 551,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 514,
+                                "end": 525,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The loading icon</p>\n"
+                        }
+                    ],
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "loadingLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 600,
+                            "end": 639,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 601,
+                                "end": 612,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The loading label</p>\n"
+                        }
+                    ],
+                    "line": 45,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "click",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nThhe click event\n",
+                    "description": "<p>Thhe click event</p>\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 689,
+                            "end": 727,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 690,
+                                "end": 701,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>Thhe click event</p>\n"
+                        }
+                    ],
+                    "line": 52,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The button's lavel\n   */\n  @Input()\n  label: string\n\n  /**\n   * @description\n   * The button's icon\n   */\n  @Input()\n  icon: string;\n\n  /**\n   * @description\n   * The loading state\n   */\n  @Input()\n  loading: boolean;\n\n  /**\n   * @description\n   * The loading icon\n   */\n  @Input()\n  loadingIcon: string;\n\n  /**\n   * @description\n   * The loading label\n   */\n  @Input()\n  loadingLabel: string;\n\n  /**\n   * @description\n   * Thhe click event\n   */\n  @Output()\n  click: EventEmitter<void>;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor() {\n    this.icon = '';\n    this.label = '';\n    this.loading = false;\n    this.loadingLabel = '';\n    this.loadingIcon = 'hourglass_top';\n\n    this.click = new EventEmitter();\n  }\n\n  //#endregion\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".button {\n  cursor: pointer;\n\n  border: none;\n  border-radius: 5px;\n  \n  padding: 20px 50px;\n  max-height: 45px;\n\n  color: #ffffff;\n  background-color: #000000;\n\n  font-weight: 400;\n  font-family: 'Noto Sans Display', sans-serif;\n\n  transition-duration: 0.2s;\n  transition-property: background-color outline;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &__icon {\n    opacity: 0;\n    font-size: 22px;\n\n    // margin-right: 5px;\n    // margin-left: -25px;\n    \n    transition-duration: 0.2s;\n    transition-property: margin opacity;\n    \n    &--spin {\n      opacity: 1;\n      margin-left: 0;\n\n      animation-name: spin;\n      animation-duration: 2s;\n      animation-timing-function: linear;\n      animation-iteration-count: infinite;\n    }\n  }\n  \n  &:disabled {\n    opacity: 0.8;\n  }\n\n  &:hover {\n    background-color: #141414;\n\n    .button__icon {\n      opacity: 1;\n      margin-left: 0;\n    }\n  }\n}\n\n@keyframes spin {\n  from {\n    transform: rotate(0);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n}",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 52
+            },
+            "templateData": "<button\n  class=\"button\"\n  [disabled]=\"loading\"\n>\n  <ng-container *ngIf=\"!loading\">\n    <span class=\"material-symbols-outlined button__icon\">{{ icon }}</span>{{ label }}\n  </ng-container>\n\n  <ng-container *ngIf=\"loading\">\n    <span class=\"material-symbols-outlined button__icon button__icon--spin\">{{ loadingIcon }}</span>{{ loadingLabel }}\n  </ng-container>\n</button>"
+        },
+        {
             "name": "DetailComponent",
             "id": "component-DetailComponent-c0adcf6da09781fcf806cee99d4ab1ced0bd37a4fa17f1f73bbb144859a0cb38abef4eeaad2c873d998f2226d6d68866bf6aa0886de171c5cf1d168eae3a48bb",
             "file": "src/app/pages/home/superheroes/detail/detail.component.ts",
@@ -2449,7 +2668,7 @@
                     }
                 ]
             },
-            "templateData": "<header class=\"header\">\n  <nav class=\"item-wrapper\">\n    <ul class=\"items\">\n      <li class=\"item item--title\">\n        Welcome back, <u>{{ user$ | async }}</u>!\n      </li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"home\"\n        routerLinkActive=\"item--active\"\n      >Home</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"superheroes\"\n        routerLinkActive=\"item--active\"\n      >Superheroes</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"favorites\"\n        routerLinkActive=\"item--active\"\n      >Favorites</li>\n\n      <li class=\"item item--button\">\n        <button\n          class=\"button\"\n          (click)=\"onLogout()\"\n        >\n          <span class=\"material-symbols-outlined button__icon\">logout</span>\n          Logout\n        </button>\n      </li>\n    </ul>\n  </nav>\n</header>"
+            "templateData": "<header class=\"header\">\n  <nav class=\"item-wrapper\">\n    <ul class=\"items\">\n      <li class=\"item item--title\">\n        Welcome back, <u>{{ user$ | async }}</u>!\n      </li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"home\"\n        routerLinkActive=\"item--active\"\n      >Home</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"superheroes\"\n        routerLinkActive=\"item--active\"\n      >Superheroes</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"favorites\"\n        routerLinkActive=\"item--active\"\n      >Favorites</li>\n\n      <li class=\"item item--button\">\n        <app-button\n          icon=\"logout\"\n          label=\"Logout\"\n          (click)=\"onLogout()\"\n        ></app-button>\n      </li>\n    </ul>\n  </nav>\n</header>"
         },
         {
             "name": "HomeComponent",
@@ -2532,8 +2751,566 @@
             "templateData": "<div class=\"root\">\n  <div class=\"hero\">\n    <div class=\"thumb\"></div>\n    <div class=\"content\">\n      <h2 class=\"title\">Sandbox</h2>\n      <p class=\"description\">\n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ipsam ipsum soluta vel\n        possimus impedit aut animi, blanditiis voluptate quod consequatur quis nemo eius ex tempore, debitis earum iusto\n        in.\n      </p>\n      <br>\n      <p class=\"description\">\n        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n        vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!\n        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n        vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!Lorem\n        ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n        vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!\n      </p>\n      <br>\n      <p class=\"description\">\n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ipsam ipsum soluta vel\n        possimus impedit aut animi, blanditiis voluptate quod consequatur quis nemo eius ex tempore, debitis earum iusto\n        in.\n      </p>\n    </div>\n  </div>\n\n  <div class=\"explore\">\n    <p class=\"description\">\n      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n      vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!\n      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n      vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!Lorem\n      ipsum, dolor sit amet consectetur adipisicing elit. Delectus impedit illum iusto quis nobis, blanditiis\n      vitae sequi saepe quam? Harum totam optio commodi ex magnam. Quibusdam reprehenderit nulla maxime illo!\n    </p>\n    <br>\n    <p class=\"description\">\n      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore ipsam ipsum soluta vel\n      possimus impedit aut animi, blanditiis voluptate quod consequatur quis nemo eius ex tempore, debitis earum iusto\n      in.\n    </p>\n  </div>\n</div>"
         },
         {
+            "name": "InputComponent",
+            "id": "component-InputComponent-78baa87e8373930c77bbdca9ca455624badd9c76abba4779fd9ab39a878ee3105c53c95ffd1e2b263d49c98a7e03f692325c926bb1a20bed743c63f5850628a9",
+            "file": "src/app/components/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "{\n    multi: true, provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => InputComponent)\n}",
+                    "type": "component"
+                }
+            ],
+            "selector": "app-input",
+            "styleUrls": [
+                "./input.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "autocomplete",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1215,
+                            "end": 1268,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1216,
+                                "end": 1227,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s autocomplete option</p>\n"
+                        }
+                    ],
+                    "line": 70,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "error",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1398,
+                            "end": 1445,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1399,
+                                "end": 1410,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s error message</p>\n"
+                        }
+                    ],
+                    "line": 84,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "formControlName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1568,
+                            "end": 1614,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1569,
+                                "end": 1580,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s control name</p>\n"
+                        }
+                    ],
+                    "line": 98,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1318,
+                            "end": 1356,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1319,
+                                "end": 1330,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s icon</p>\n"
+                        }
+                    ],
+                    "line": 77,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1038,
+                            "end": 1077,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1039,
+                                "end": 1050,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s label</p>\n"
+                        }
+                    ],
+                    "line": 56,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1120,
+                            "end": 1166,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1121,
+                                "end": 1132,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s placehholder</p>\n"
+                        }
+                    ],
+                    "line": 63,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 1488,
+                            "end": 1526,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1489,
+                                "end": 1500,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The input&#39;s type</p>\n"
+                        }
+                    ],
+                    "line": 91,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "<p>The value of the input</p>\n",
+                    "line": 22,
+                    "rawdescription": "\n\nThe value of the input\n",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "pos": 518,
+                            "end": 562,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 519,
+                                "end": 530,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The value of the input</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "onChangeCallback",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "function",
+                    "optional": false,
+                    "description": "<p>The form update method</p>\n",
+                    "line": 104,
+                    "rawdescription": "\n\nThe form update method\n",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "pos": 1667,
+                            "end": 1711,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 1668,
+                                "end": 1679,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The form update method</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "hasError",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 141,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nChecks if the control has any erro\n",
+                    "description": "<p>Checks if the control has any erro</p>\n",
+                    "jsdoctags": []
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 125,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 129,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": true,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 131,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 121,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, forwardRef, Input } from '@angular/core';\nimport { ControlContainer, ControlValueAccessor, FormControlDirective, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss'],\n  providers: [{\n    multi: true,\n    provide: NG_VALUE_ACCESSOR,\n    useExisting: forwardRef(() => InputComponent)\n  }]\n})\nexport class InputComponent implements ControlValueAccessor {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The value of the input\n   */\n  private _value: any;\n\n  /**\n   * @description\n   * The value of the input\n   */\n  set value(value: any) {\n    if (this._value !== value) {\n      this._value = value;\n      this.onChangeCallback(value);\n    }\n  }\n\n  /**\n   * @description\n   * The value of the input\n   */\n  get value(): any {\n    return this._value;\n  }\n\n  /**\n   * @description\n   * The parent form\n   */\n  get form() {\n    return ((this.parent as unknown as FormControlDirective).form);\n  }\n\n  /**\n   * @description\n   * The input's label\n   */\n  @Input()\n  label: string;\n\n  /**\n   * @description\n   * The input's placehholder\n   */\n  @Input()\n  placeholder: string;\n\n  /**\n   * @description\n   * The input's autocomplete option\n   */\n  @Input()\n  autocomplete: string;\n\n  /**\n   * @description\n   * The input's icon\n   */\n  @Input()\n  icon: string;\n\n  /**\n   * @description\n   * The input's error message\n   */\n  @Input()\n  error: string;\n\n  /**\n   * @description\n   * The input's type\n   */\n  @Input()\n  type: string;\n\n  /**\n   * @description\n   * The input's control name\n   */\n  @Input()\n  formControlName: string;\n\n  /**\n   * @description\n   * The form update method\n   */\n  private onChangeCallback: (_: any) => void = () => { };\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(private parent: ControlContainer) {\n    this.icon = '';\n    this.value = '';\n    this.error = '';\n    this.label = '';\n    this.type = 'text';\n    this.placeholder = '';\n    this.autocomplete = '';\n    this.formControlName = '';\n  }\n\n  writeValue(value: string): void {\n    this._value = value;\n  }\n\n  registerOnChange(fn: any): void {\n    this.onChangeCallback = fn;\n  }\n\n  registerOnTouched(fn: any): void { }\n\n  setDisabledState?(isDisabled: boolean): void { }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Checks if the control has any erro\n   */\n  hasError(): boolean {\n    return Boolean(this.form?.get(this.formControlName)?.touched && this.form?.get(this.formControlName)?.hasError('required'));\n  }\n\n  //#endregion\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".input {\n  display: flex;\n  margin-bottom: 25px;\n  flex-direction: column;\n\n  &__label {\n    color: #ffffff;\n    font-weight: 100;\n    margin-bottom: 5px;\n    \n    transition-duration: 0.2s;\n    transition-property: color;\n\n    display: flex;\n    align-items: center;\n  }\n  \n  &__icon {\n    font-size: 22px;\n    margin-right: 5px;\n  }\n  \n  &__field {\n    border: none;\n    border-radius: 5px;\n    \n    padding: 10px 15px;\n    background-color: #ffffff;\n    \n    font-weight: 400;\n    font-family: 'Noto Sans Display', sans-serif;\n    \n    transition-duration: 0.2s;\n    transition-property: outline;\n    \n    &:focus,\n    &:active {\n      outline: none;\n    }\n    \n    &:focus {\n      outline: 2px solid #080808;\n    }\n  }\n  \n  &__error {\n    margin: 5px 0 0 0;\n    \n    font-size: 14px;\n    font-weight: 300;\n    color: rgb(255 110 110);\n  }\n  \n  &:focus-within .input__label {\n    font-weight: 500;\n  }\n}",
+                    "styleUrl": "./input.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "parent",
+                        "type": "ControlContainer",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 104,
+                "jsdoctags": [
+                    {
+                        "name": "parent",
+                        "type": "ControlContainer",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "accessors": {
+                "value": {
+                    "name": "value",
+                    "setSignature": {
+                        "name": "value",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": "any",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 28,
+                        "rawdescription": "\n\nThe value of the input\n",
+                        "description": "<p>The value of the input</p>\n",
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "any",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    },
+                    "getSignature": {
+                        "name": "value",
+                        "type": "any",
+                        "returnType": "any",
+                        "line": 39,
+                        "rawdescription": "\n\nThe value of the input\n",
+                        "description": "<p>The value of the input</p>\n",
+                        "jsdoctags": [
+                            {
+                                "pos": 791,
+                                "end": 835,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 325,
+                                "tagName": {
+                                    "pos": 792,
+                                    "end": 803,
+                                    "flags": 4227072,
+                                    "modifierFlagsCache": 0,
+                                    "transformFlags": 0,
+                                    "kind": 79,
+                                    "escapedText": "description"
+                                },
+                                "comment": "<p>The value of the input</p>\n"
+                            }
+                        ]
+                    }
+                },
+                "form": {
+                    "name": "form",
+                    "getSignature": {
+                        "name": "form",
+                        "type": "",
+                        "returnType": "",
+                        "line": 47,
+                        "rawdescription": "\n\nThe parent form\n",
+                        "description": "<p>The parent form</p>\n",
+                        "jsdoctags": [
+                            {
+                                "pos": 899,
+                                "end": 936,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 325,
+                                "tagName": {
+                                    "pos": 900,
+                                    "end": 911,
+                                    "flags": 4227072,
+                                    "modifierFlagsCache": 0,
+                                    "transformFlags": 0,
+                                    "kind": 79,
+                                    "escapedText": "description"
+                                },
+                                "comment": "<p>The parent form</p>\n"
+                            }
+                        ]
+                    }
+                }
+            },
+            "templateData": "<label class=\"input input--email\">\n  <span class=\"input__label\">\n    <span class=\"material-symbols-outlined input__icon\">{{ icon }}</span>\n    {{ label }}\n  </span>\n\n  <input\n    #input\n    [type]=\"type\"\n    [(ngModel)]=\"value\"\n    class=\"input__field\"\n    [placeholder]=\"placeholder\"\n    [autocomplete]=\"autocomplete\"\n  >\n  <span\n    *ngIf=\"hasError()\"\n    class=\"input__error\"\n  >{{ error }}</span>\n</label>"
+        },
+        {
             "name": "LoaderComponent",
-            "id": "component-LoaderComponent-b4ac0dc1146dd0a126dd7d7c9987c6f0a1b1c1c5ee0ce8333e14e1a38709da9e31d79af28d0f862e44eba6d8c6d1e4f6eeb0078d69e8de0a005fd98d92c747e9",
+            "id": "component-LoaderComponent-30f05d357e620fd46e32afdaaffe13a7367bf9346f334e030caa150199004513cbe64682840d6a7d2709e429e756714d6c02195598cc2d0eb5a26ade2e611980",
             "file": "src/app/components/loader/loader.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2549,7 +3326,36 @@
                 "./loader.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "count",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 439,
+                            "end": 492,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 440,
+                                "end": 451,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The number of the loading cards</p>\n"
+                        }
+                    ],
+                    "line": 25,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
@@ -2563,15 +3369,15 @@
                     "rawdescription": "\n\nThe number of cards to show\n",
                     "jsdoctags": [
                         {
-                            "pos": 297,
-                            "end": 346,
+                            "pos": 351,
+                            "end": 400,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 298,
-                                "end": 309,
+                                "pos": 352,
+                                "end": 363,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2583,7 +3389,49 @@
                     ]
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "generateCards",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "ngOnChanges",
+                    "args": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "changes",
+                            "type": "SimpleChanges",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2591,7 +3439,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { environment } from 'src/environments/environment';\n\n\n@Component({\n  selector: 'app-loader',\n  templateUrl: './loader.component.html',\n  styleUrls: ['./loader.component.scss']\n})\nexport class LoaderComponent {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The number of cards to show\n   */\n  items: Array<number>;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor() {\n    this.items = [...Array(environment.pageSize)];\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\nimport { environment } from 'src/environments/environment';\n\n\n@Component({\n  selector: 'app-loader',\n  templateUrl: './loader.component.html',\n  styleUrls: ['./loader.component.scss']\n})\nexport class LoaderComponent implements OnChanges {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The number of cards to show\n   */\n  items: Array<number>;\n\n  /**\n   * @description\n   * The number of the loading cards\n   */\n  @Input()\n  count: number;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor() {\n    this.items = [];\n    this.count = environment.pageSize;\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if ('count' in changes) {\n      this.generateCards();\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  private generateCards(): void {\n    this.items = [...Array(this.count)];\n  }\n\n  //#endregion\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2606,13 +3454,16 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 18
+                "line": 25
             },
+            "implements": [
+                "OnChanges"
+            ],
             "templateData": "<div class=\"loader\">\n  <ul class=\"items\">\n    <li\n      *ngFor=\"let item of items\"\n      class=\"item\"\n    ><app-thumb [loader]=\"true\"></app-thumb></li>\n  </ul>\n</div>"
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-ac1e57732109f13d9580da11d728712e912bead679fa011e1c4b37b04e667b2618753a8f2e9fe961c372933a681677ab4d884d84b1d0536718764cc569a7f3cb",
+            "id": "component-LoginComponent-ed15e611ebf39c9b5f208db70743fa175e3f646d91002823588ba84425e5b4d66222611c733c9645e59c7c655b841ca03159831d39885fa398f9135217710ad1",
             "file": "src/app/pages/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2699,7 +3550,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 83,
+                    "line": 84,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nCreates the logign form\n",
@@ -2722,7 +3573,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 75,
+                    "line": 76,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nChecks if the control has any error\n\n",
@@ -2730,8 +3581,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1349,
-                                "end": 1360,
+                                "pos": 1375,
+                                "end": 1386,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2742,8 +3593,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 1343,
-                                "end": 1348,
+                                "pos": 1369,
+                                "end": 1374,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2785,7 +3636,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\n\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent implements OnInit {\n\n  //#region Properties\n\n  /**\n   * @description\n   * Loggin form\n   */\n  form!: FormGroup;\n\n  /**\n   * @description\n   * The loadingg state\n   */\n  loading: boolean;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private fb: FormBuilder,\n    private auth: AuthenticationService\n  ) {\n    this.loading = false;\n  }\n\n  ngOnInit(): void {\n    this.createForm();\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Logs the user in\n   */\n  onLogin(): void {\n    this.form.markAllAsTouched();\n\n    if (this.form.valid) {\n      this.loading = true;\n\n      const username = this.form.value.username;\n      const password = this.form.value.password;\n\n      this.auth.login(username, password)\n        .catch(() => alert('Invalid username or password!'))\n        .finally(() => this.loading = false)\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Checks if the control has any error\n   *\n   * @param controlName The target name of the control\n   */\n  hasError(controlName: string): boolean {\n    return Boolean(this.form.get(controlName)?.touched && this.form.get(controlName)?.hasError('required'));\n  }\n\n  /**\n   * @description\n   * Creates the logign form\n   */\n  private createForm(): void {\n    this.form = this.fb.group({\n      username: ['', [Validators.required]],\n      password: ['', [Validators.required]]\n    });\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\n\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent implements OnInit {\n\n  //#region Properties\n\n  /**\n   * @description\n   * Loggin form\n   */\n  form!: FormGroup;\n\n  /**\n   * @description\n   * The loadingg state\n   */\n  loading: boolean;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private fb: FormBuilder,\n    private auth: AuthenticationService\n  ) {\n    this.loading = false;\n  }\n\n  ngOnInit(): void {\n    this.createForm();\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Logs the user in\n   */\n  onLogin(): void {\n    console.log('login');\n    this.form.markAllAsTouched();\n\n    if (this.form.valid) {\n      this.loading = true;\n\n      const username = this.form.value.username;\n      const password = this.form.value.password;\n\n      this.auth.login(username, password)\n        .catch(() => alert('Invalid username or password!'))\n        .finally(() => this.loading = false)\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Checks if the control has any error\n   *\n   * @param controlName The target name of the control\n   */\n  hasError(controlName: string): boolean {\n    return Boolean(this.form.get(controlName)?.touched && this.form.get(controlName)?.hasError('required'));\n  }\n\n  /**\n   * @description\n   * Creates the logign form\n   */\n  private createForm(): void {\n    this.form = this.fb.group({\n      username: ['test', [Validators.required]],\n      password: ['', [Validators.required]]\n    });\n  }\n\n  //#endregion\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2838,11 +3689,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"root\">\n  <div class=\"root__left\">\n    <h1 class=\"title\">Sandbox</h1>\n    <h1 class=\"description\">\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ut rerum corporis in quaerat, non enim incidunt\n      beatae nostrum libero.\n    </h1>\n  </div>\n\n  <div class=\"root__right\">\n    <form\n      [formGroup]=\"form\"\n      class=\"form\"\n    >\n      <label class=\"input input--email\">\n        <span class=\"input__label\">\n          <span class=\"material-symbols-outlined input__icon\">account_circle</span>\n          Username\n        </span>\n\n        <input\n          type=\"text\"\n          autocomplete=\"username\"\n          placeholder=\"Enter your username\"\n          class=\"input__field\"\n          formControlName=\"username\"\n        >\n        <span\n          *ngIf=\"hasError('username')\"\n          class=\"input__error\"\n        >Fill in your username</span>\n      </label>\n\n      <label class=\"input input--password\">\n        <span class=\"input__label\">\n          <span class=\"material-symbols-outlined input__icon\">lock</span> Password\n        </span>\n\n        <input\n          type=\"password\"\n          autocomplete=\"current-password\"\n          placeholder=\"Enter your password\"\n          class=\"input__field\"\n          formControlName=\"password\"\n        >\n\n        <span\n          *ngIf=\"hasError('password')\"\n          class=\"input__error\"\n        >Fill in your password</span>\n      </label>\n\n      <button\n        class=\"button\"\n        (click)=\"onLogin()\"\n        [disabled]=\"loading\"\n      >\n        <ng-container *ngIf=\"!loading\">\n          <span class=\"material-symbols-outlined button__icon\">login</span>Login\n        </ng-container>\n\n        <ng-container *ngIf=\"loading\">\n          <span class=\"material-symbols-outlined button__icon button__icon--spin\">hourglass_top</span>Login-in...\n        </ng-container>\n      </button>\n    </form>\n  </div>\n</div>"
+            "templateData": "<div class=\"root\">\n  <div class=\"root__left\">\n    <h1 class=\"title\">Sandbox</h1>\n    <h1 class=\"description\">\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ut rerum corporis in quaerat, non enim incidunt\n      beatae nostrum libero.\n    </h1>\n  </div>\n\n  <div class=\"root__right\">\n    <form\n      [formGroup]=\"form\"\n      class=\"form\"\n    >\n      <app-input\n        label=\"Username\"\n        icon=\"account_circle\"\n        autocomplete=\"username\"\n        formControlName=\"username\"\n        error=\"Fill in your username\"\n        placeholder=\"Enter your username\"\n      ></app-input>\n\n      <app-input\n        icon=\"lock\"\n        type=\"password\"\n        label=\"Password\"\n        autocomplete=\"password\"\n        formControlName=\"password\"\n        error=\"Fill in your password\"\n        placeholder=\"Enter your password\"\n      ></app-input>\n\n      <app-button\n        icon=\"login\"\n        label=\"Login\"\n        [loading]=\"loading\"\n        (click)=\"onLogin()\"\n        loadingLabel=\"Login-in...\"\n      ></app-button>\n    </form>\n  </div>\n</div>"
         },
         {
             "name": "SuperheroesComponent",
-            "id": "component-SuperheroesComponent-a022b1788ea2e9af411b2443902408baafaa62989a8a2b015039267d9b5af2cab40c16df1136503555d05f9e326c5c74ac349e8cb008e922ae7cd995f633e8a0",
+            "id": "component-SuperheroesComponent-6be8b09cf982c83f658177adfaeb550e66455fe238e9d81c5176f0d6af7795aadfd29d7b3dfaf12972816d9a9c6fe32e09f3c335f18a1002c0136145a22f0ead",
             "file": "src/app/pages/home/superheroes/superheroes.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2851,7 +3702,8 @@
             "providers": [],
             "selector": "app-superheroes",
             "styleUrls": [
-                "./superheroes.component.scss"
+                "./superheroes.component.scss",
+                "./../../../components/input/input.component.scss"
             ],
             "styles": [],
             "templateUrl": [
@@ -2878,15 +3730,15 @@
                     ],
                     "jsdoctags": [
                         {
-                            "pos": 818,
-                            "end": 869,
+                            "pos": 870,
+                            "end": 921,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 819,
-                                "end": 830,
+                                "pos": 871,
+                                "end": 882,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2908,15 +3760,15 @@
                     "rawdescription": "\n\nThe current page\n",
                     "jsdoctags": [
                         {
-                            "pos": 678,
-                            "end": 716,
+                            "pos": 730,
+                            "end": 768,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 679,
-                                "end": 690,
+                                "pos": 731,
+                                "end": 742,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2938,15 +3790,15 @@
                     "rawdescription": "\n\nThe search query\n",
                     "jsdoctags": [
                         {
-                            "pos": 747,
-                            "end": 785,
+                            "pos": 799,
+                            "end": 837,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 748,
-                                "end": 759,
+                                "pos": 800,
+                                "end": 811,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2968,15 +3820,15 @@
                     "rawdescription": "\n\nList of superheroes\n",
                     "jsdoctags": [
                         {
-                            "pos": 571,
-                            "end": 612,
+                            "pos": 623,
+                            "end": 664,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 572,
-                                "end": 583,
+                                "pos": 624,
+                                "end": 635,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3123,12 +3975,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';\nimport { BehaviorSubject, debounceTime, fromEvent, merge } from 'rxjs';\nimport { Superhero } from 'src/app/models/superhero.model';\nimport { SuperheroService } from 'src/app/services/superhero/superhero.service';\n\n\n@Component({\n  selector: 'app-superheroes',\n  templateUrl: './superheroes.component.html',\n  styleUrls: ['./superheroes.component.scss']\n})\nexport class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {\n\n  //#region Properties\n\n  /**\n   * @description\n   * List of superheroes\n   */\n  superheroes$: BehaviorSubject<Array<Superhero>>;\n\n  /**\n   * @description\n   * The current page\n   */\n  page: number;\n\n  /**\n   * @description\n   * The search query\n   */\n  search: string;\n\n  /**\n   * @description\n   * Reference of the searcg input\n   */\n  @ViewChild('input') input!: ElementRef;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private superhero: SuperheroService\n  ) {\n    this.page = 1;\n    this.search = '';\n    this.superheroes$ = new BehaviorSubject<Array<Superhero>>([]);\n  }\n\n  ngOnInit(): void {\n    this.loadSuperheroes();\n  }\n\n  ngAfterViewInit(): void {\n    this.searchListen();\n    this.scrollListen();\n  }\n\n  ngOnDestroy(): void {\n    this.page = 1;\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Injects a searchh query\n   *\n   * @param e The search object\n   */\n  onSearch(): void {\n    if (this.search.length > 0) {\n      this.loadSuperheroes();\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Loads the list of superheroes\n   */\n  private async loadSuperheroes(): Promise<void> {\n    if (this.search.length > 0) {\n      this.paginateSearch();\n    } else {\n      this.paginate();\n    }\n  }\n\n  /**\n   * @description\n   * Paginates search results\n   */\n  private async paginateSearch(): Promise<void> {\n    this.page = 1;\n    this.superheroes$.next([]);\n\n    try {\n      const data = await this.superhero.getSuperheroBySearch(this.search);\n      this.superheroes$.next(data);\n    } catch (err) { }\n  }\n\n  /**\n   * @description\n   * Paginates the list\n   */\n  private async paginate(): Promise<void> {\n    if (this.page === 1) {\n      this.superheroes$.next([]);\n    }\n\n    const data = await this.superhero.getSuperheroes(this.page++);\n    const superheroes = [...this.superheroes$.getValue(), ...data]\n\n    this.superheroes$.next(superheroes);\n  }\n\n  /**\n   * @description\n   * Listens to search updates\n   */\n  private searchListen(): void {\n    merge(\n      fromEvent(this.input.nativeElement, 'search'),\n      fromEvent(this.input.nativeElement, 'input')\n    )\n      .pipe(debounceTime(300))\n      .subscribe(() => this.loadSuperheroes());\n  }\n\n  /**\n   * @description\n   * Listens to page scroll\n   */\n  private scrollListen(): void {\n    const cardLoader = document.querySelector('#cardLoader') as HTMLElement;\n    const options = {\n      rootMargin: '0px',\n      threshold: 0.1\n    };\n\n    const observer = new IntersectionObserver((entries, observer) => {\n      entries.forEach(entry => {\n        if (entry.isIntersecting) {\n          this.loadSuperheroes();\n        }\n      });\n    }, options);\n\n    observer.observe(cardLoader);\n  }\n  \n  //#endregion\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';\nimport { BehaviorSubject, debounceTime, fromEvent, merge } from 'rxjs';\nimport { Superhero } from 'src/app/models/superhero.model';\nimport { SuperheroService } from 'src/app/services/superhero/superhero.service';\n\n\n@Component({\n  selector: 'app-superheroes',\n  templateUrl: './superheroes.component.html',\n  styleUrls: ['./superheroes.component.scss', './../../../components/input/input.component.scss']\n})\nexport class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {\n\n  //#region Properties\n\n  /**\n   * @description\n   * List of superheroes\n   */\n  superheroes$: BehaviorSubject<Array<Superhero>>;\n\n  /**\n   * @description\n   * The current page\n   */\n  page: number;\n\n  /**\n   * @description\n   * The search query\n   */\n  search: string;\n\n  /**\n   * @description\n   * Reference of the searcg input\n   */\n  @ViewChild('input') input!: ElementRef;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private superhero: SuperheroService\n  ) {\n    this.page = 1;\n    this.search = '';\n    this.superheroes$ = new BehaviorSubject<Array<Superhero>>([]);\n  }\n\n  ngOnInit(): void {\n    this.loadSuperheroes();\n  }\n\n  ngAfterViewInit(): void {\n    this.searchListen();\n    this.scrollListen();\n  }\n\n  ngOnDestroy(): void {\n    this.page = 1;\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Injects a searchh query\n   *\n   * @param e The search object\n   */\n  onSearch(): void {\n    if (this.search.length > 0) {\n      this.loadSuperheroes();\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Loads the list of superheroes\n   */\n  private async loadSuperheroes(): Promise<void> {\n    if (this.search.length > 0) {\n      this.paginateSearch();\n    } else {\n      this.paginate();\n    }\n  }\n\n  /**\n   * @description\n   * Paginates search results\n   */\n  private async paginateSearch(): Promise<void> {\n    this.page = 1;\n    this.superheroes$.next([]);\n\n    try {\n      const data = await this.superhero.getSuperheroBySearch(this.search);\n      this.superheroes$.next(data);\n    } catch (err) { }\n  }\n\n  /**\n   * @description\n   * Paginates the list\n   */\n  private async paginate(): Promise<void> {\n    if (this.page === 1) {\n      this.superheroes$.next([]);\n    }\n\n    const data = await this.superhero.getSuperheroes(this.page++);\n    const superheroes = [...this.superheroes$.getValue(), ...data]\n\n    this.superheroes$.next(superheroes);\n  }\n\n  /**\n   * @description\n   * Listens to search updates\n   */\n  private searchListen(): void {\n    merge(\n      fromEvent(this.input.nativeElement, 'search'),\n      fromEvent(this.input.nativeElement, 'input')\n    )\n      .pipe(debounceTime(300))\n      .subscribe(() => this.loadSuperheroes());\n  }\n\n  /**\n   * @description\n   * Listens to page scroll\n   */\n  private scrollListen(): void {\n    const cardLoader = document.querySelector('#cardLoader') as HTMLElement;\n    const options = {\n      rootMargin: '0px',\n      threshold: 0.1\n    };\n\n    const observer = new IntersectionObserver((entries, observer) => {\n      entries.forEach(entry => {\n        if (entry.isIntersecting) {\n          this.loadSuperheroes();\n        }\n      });\n    }, options);\n\n    observer.observe(cardLoader);\n  }\n\n  //#endregion\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
                     "data": ".root {\n  .title,\n  .description {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n\n    color: #1f1f1f;\n    font-family: 'Bangers', cursive;\n  }\n\n  .title {\n    font-size: 72px;\n    margin-top: -24px;\n  }\n\n  .description {\n    font-size: 18px;\n    font-weight: 400;\n  }\n\n  .input {\n    padding: 20px;\n    margin-top: 20px;\n    border-radius: 5px;\n    background-color: #2727276e;\n  }\n}\n\n.superheroes-wrapper {\n  .superheroes {\n    margin: 0;\n    padding: 0;\n    margin-bottom: 30px;\n    list-style-type: none;\n\n    display: grid;\n    grid-gap: 30px;\n    grid-template-columns: repeat(5, 1fr);\n  }\n}",
                     "styleUrl": "./superheroes.component.scss"
+                },
+                {
+                    "data": ".input {\n  display: flex;\n  margin-bottom: 25px;\n  flex-direction: column;\n\n  &__label {\n    color: #ffffff;\n    font-weight: 100;\n    margin-bottom: 5px;\n    \n    transition-duration: 0.2s;\n    transition-property: color;\n\n    display: flex;\n    align-items: center;\n  }\n  \n  &__icon {\n    font-size: 22px;\n    margin-right: 5px;\n  }\n  \n  &__field {\n    border: none;\n    border-radius: 5px;\n    \n    padding: 10px 15px;\n    background-color: #ffffff;\n    \n    font-weight: 400;\n    font-family: 'Noto Sans Display', sans-serif;\n    \n    transition-duration: 0.2s;\n    transition-property: outline;\n    \n    &:focus,\n    &:active {\n      outline: none;\n    }\n    \n    &:focus {\n      outline: 2px solid #080808;\n    }\n  }\n  \n  &__error {\n    margin: 5px 0 0 0;\n    \n    font-size: 14px;\n    font-weight: 300;\n    color: rgb(255 110 110);\n  }\n  \n  &:focus-within .input__label {\n    font-weight: 500;\n  }\n}",
+                    "styleUrl": "./../../../components/input/input.component.scss"
                 }
             ],
             "stylesData": "",
@@ -3163,7 +4019,7 @@
                 "AfterViewInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"root\">\n  <h2 class=\"title\">Superheroes</h2>\n\n  <div class=\"content\">\n    <label class=\"input input--password\">\n      <span class=\"input__label\">\n        <span class=\"material-symbols-outlined input__icon\">search</span> Search\n      </span>\n\n      <input\n        #input\n        autocomplete\n        type=\"search\"\n        class=\"input__field\"\n        placeholder=\"Search for a superhero...\"\n        [(ngModel)]=\"search\"\n      >\n    </label>\n\n    <div class=\"superheroes-wrapper\">\n      <ul class=\"superheroes\">\n        <li\n          *ngFor=\"let superhero of superheroes$ | async\"\n          class=\"superheroe\"\n        >\n          <app-thumb [superhero]=\"superhero\"></app-thumb>\n        </li>\n      </ul>\n\n      <div [hidden]=\"search.length > 0\" id=\"cardLoader\">\n        <app-loader></app-loader>\n      </div>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"root\">\n  <h2 class=\"title\">Superheroes</h2>\n\n  <div class=\"content\">\n    <label class=\"input input--search\">\n      <span class=\"input__label\">\n        <span class=\"material-symbols-outlined input__icon\">search</span> Search\n      </span>\n\n      <input\n        #input\n        autocomplete\n        type=\"search\"\n        class=\"input__field\"\n        placeholder=\"Search for a superhero...\"\n        [(ngModel)]=\"search\"\n      >\n    </label>\n\n    <div class=\"superheroes-wrapper\">\n      <ul class=\"superheroes\">\n        <li\n          *ngFor=\"let superhero of superheroes$ | async\"\n          class=\"superheroe\"\n        >\n          <app-thumb [superhero]=\"superhero\"></app-thumb>\n        </li>\n      </ul>\n\n      <div [hidden]=\"search.length > 0\" id=\"cardLoader\">\n        <app-loader></app-loader>\n      </div>\n    </div>\n  </div>\n</div>"
         },
         {
             "name": "ThumbComponent",
@@ -3520,6 +4376,50 @@
             ]
         },
         {
+            "name": "ButtonModule",
+            "id": "module-ButtonModule-b48a171197f91cb3a8a99bcc8ecafee613ab0ba4283f1f2571839195c05638fb630b95ada87fc8ff66f38af5ef0596f44c947b318c6aaaab21ca4247b7a7f3d2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/button/button.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [ButtonComponent]\n})\nexport class ButtonModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "DetailModule",
             "id": "module-DetailModule-3bfe909f6a5a43852edcb76fde36eccee619c62f12caac816ed2774bc6e53651848116a56b481d145bf6e226a3fd071aa6646ce3ff6c220ea79d5bbe9465f6e9",
             "description": "",
@@ -3608,13 +4508,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-010e491bd1743242ef2036b63f85224de82543bd0592f2f95b3c05cc7347f39c1a67dc0dc61896aa373d2a076b8424bb367c16dacfac0e02118d6f6cd1333439",
+            "id": "module-HeaderModule-c7f4f0dbbcb5ef5dff606547781b893a6e712a9e8e38127277936f1ea509f3db5be875376b7886f9333ebb7b730051bd357f5ae4260b1cc43021d0d523288148",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/components/header/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HeaderComponent } from './header.component';\nimport { RouterModule } from '@angular/router';\n\n\n\n@NgModule({\n  declarations: [\n    HeaderComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule\n  ],\n  exports: [HeaderComponent]\n})\nexport class HeaderModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HeaderComponent } from './header.component';\nimport { RouterModule } from '@angular/router';\nimport { ButtonModule } from '../button/button.module';\n\n\n\n@NgModule({\n  declarations: [\n    HeaderComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n    ButtonModule\n  ],\n  exports: [HeaderComponent]\n})\nexport class HeaderModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -3630,7 +4530,11 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -3774,6 +4678,50 @@
             ]
         },
         {
+            "name": "InputModule",
+            "id": "module-InputModule-5165b8509dcb17f5a19c4dda39330be81e217dcd244d7ee22d83709d44b38d0b4be387f29fc81ceee58fdefb31612ed80b9d3cbeac99176084aca468aaad2a7b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/input/input.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { InputComponent } from './input.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n\n\n@NgModule({\n  declarations: [\n    InputComponent\n  ],\n  imports: [\n    CommonModule,\n    FormsModule,\n    ReactiveFormsModule\n  ],\n  exports: [InputComponent]\n})\nexport class InputModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "InputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "InputComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "LoaderModule",
             "id": "module-LoaderModule-a9146536e5b537fc0bdd7d087493dbdb8c0d8b6d789922ac29348108d51b5fc1fded1265e54f8984274f591005469509196de5ddfa70ca40fec710c0ee84bcf6",
             "description": "",
@@ -3823,13 +4771,13 @@
         },
         {
             "name": "LoginModule",
-            "id": "module-LoginModule-ea20b7b946ef67511946ad47fa46b52ac800758ce02b9e6e01f597a6bbfef45715b0078c55478b4b3737ecb5dcc7d3de2a3a523576bb1e67da64bc89c92385a6",
+            "id": "module-LoginModule-c5682ffb0af379b7541073ce2c39a4d42812bcb0c8192c91bc1367cefea753546d55f4a1e456957b49c736ef45acc4aa816b09158c4735ec6a8238179cd8484b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/pages/login/login.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { LoginComponent } from './login.component';\nimport { RouterModule } from '@angular/router';\nimport { ReactiveFormsModule } from '@angular/forms';\n\n\n\n@NgModule({\n  declarations: [\n    LoginComponent\n  ],\n  imports: [\n    CommonModule,\n    ReactiveFormsModule,\n    RouterModule.forChild([\n      {\n        path: '',\n        component: LoginComponent\n      }\n    ])\n  ]\n})\nexport class LoginModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { LoginComponent } from './login.component';\nimport { RouterModule } from '@angular/router';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { InputModule } from 'src/app/components/input/input.module';\nimport { ButtonModule } from 'src/app/components/button/button.module';\n\n\n\n@NgModule({\n  declarations: [\n    LoginComponent\n  ],\n  imports: [\n    CommonModule,\n    InputModule,\n    ButtonModule,\n    ReactiveFormsModule,\n    RouterModule.forChild([\n      {\n        path: '',\n        component: LoginComponent\n      }\n    ])\n  ]\n})\nexport class LoginModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -3845,7 +4793,14 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "ButtonModule"
+                        },
+                        {
+                            "name": "InputModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -3966,6 +4921,16 @@
                 "defaultValue": "createRehydrateReducer(\n  StateKey.auth,\n  initialState,\n  on(login, (state, action) => ({ ...state, id: action.id, username: action.username })),\n  on(logout, (state) => ({ ...state, ...initialState }))\n)"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3984,6 +4949,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createRehydrateReducer(\n  StateKey.favorites,\n  initialState,\n  on(update, (state, action) => ({ ...state, favorites: action.favorites })),\n  on(reset, state => ({ ...state, favorites: [] }))\n)"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "initialState",
@@ -4116,14 +5091,14 @@
                 "defaultValue": "trigger('routeAnimations', [\n  transition('* <=> *', [\n    style({ position: 'relative' }),\n    query(':enter, :leave', [\n      style({\n        position: 'absolute',\n        top: 0,\n        left: 0,\n        width: '100%'\n      })], { optional: true }),\n    query(':enter', [style({ left: '-100%' })], { optional: true }),\n    query(':leave', animateChild(), { optional: true }),\n    group([\n      query(':leave', [animate('800ms ease-in', style({ left: '100%' }))], { optional: true }),\n      query(':enter', [animate('400ms ease-out', style({ left: '0%' }))], { optional: true }),\n      query('@*', animateChild(), { optional: true })\n    ]),\n  ])\n])"
             },
             {
-                "name": "Text",
+                "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/Loader.stories.ts",
+                "file": "src/stories/Button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "() => ({\n  component: LoaderComponent,\n  props: {\n    text: 'Hello Button',\n    onClick: action('clicked'),\n  },\n})"
+                "type": "Story",
+                "defaultValue": "args => ({\n  props: {\n    ...args\n  },\n})"
             },
             {
                 "name": "update",
@@ -4292,6 +5267,38 @@
                     "defaultValue": "{\n  id: null,\n  username: null\n}"
                 }
             ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\n  props: {\n    ...args\n  },\n})"
+                }
+            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -4457,18 +5464,6 @@
                     "type": "",
                     "defaultValue": "trigger('routeAnimations', [\n  transition('* <=> *', [\n    style({ position: 'relative' }),\n    query(':enter, :leave', [\n      style({\n        position: 'absolute',\n        top: 0,\n        left: 0,\n        width: '100%'\n      })], { optional: true }),\n    query(':enter', [style({ left: '-100%' })], { optional: true }),\n    query(':leave', animateChild(), { optional: true }),\n    group([\n      query(':leave', [animate('800ms ease-in', style({ left: '100%' }))], { optional: true }),\n      query(':enter', [animate('400ms ease-out', style({ left: '0%' }))], { optional: true }),\n      query('@*', animateChild(), { optional: true })\n    ]),\n  ])\n])"
                 }
-            ],
-            "src/stories/Loader.stories.ts": [
-                {
-                    "name": "Text",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Loader.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "() => ({\n  component: LoaderComponent,\n  props: {\n    text: 'Hello Button',\n    onClick: action('clicked'),\n  },\n})"
-                }
             ]
         },
         "groupedFunctions": {
@@ -4615,7 +5610,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 18,
+        "count": 17,
         "status": "low",
         "files": [
             {
@@ -4647,6 +5642,15 @@
                 "status": "medium"
             },
             {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 12,
+                "coverageCount": "1/8",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4656,13 +5660,22 @@
                 "status": "medium"
             },
             {
+                "filePath": "src/app/components/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 18,
+                "coverageCount": "3/16",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/loader/loader.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LoaderComponent",
-                "coveragePercent": 33,
-                "coverageCount": "1/3",
-                "status": "medium"
+                "coveragePercent": 16,
+                "coverageCount": "1/6",
+                "status": "low"
             },
             {
                 "filePath": "src/app/components/thumb/thumb.component.ts",
@@ -5033,11 +6046,31 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Loader.stories.ts",
+                "filePath": "src/stories/Button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Text",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

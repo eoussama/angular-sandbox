@@ -25,6 +25,13 @@ export class ButtonComponent {
 
   /**
    * @description
+   * The button's width fill
+   */
+  @Input()
+  full: boolean;
+
+  /**
+   * @description
    * The loading state
    */
   @Input()
@@ -58,11 +65,24 @@ export class ButtonComponent {
   constructor() {
     this.icon = '';
     this.label = '';
+    this.full = false;
     this.loading = false;
-    this.loadingLabel = '';
+    this.loadingLabel = 'Loading...';
     this.loadingIcon = 'hourglass_top';
 
     this.click = new EventEmitter();
+  }
+
+  //#endregion
+
+  //#region Methods
+
+  /**
+   * @description
+   * Checks if button has an icon
+   */
+  hasIcon(): boolean {
+    return this.icon.length > 0;
   }
 
   //#endregion
