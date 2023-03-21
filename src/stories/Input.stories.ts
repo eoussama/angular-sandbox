@@ -19,23 +19,26 @@ export default {
 
 const Template: Story = args => ({
   props: {
-    ...args
+    ...args,
   },
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  label: 'Input'
+  label: 'Input',
+  placeholder: 'Placeholder...'
 };
 
 export const Password = Template.bind({});
 Password.args = {
   label: 'Password',
-  type: 'password'
+  type: 'password',
+  placeholder: 'Enter your password here...'
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
   label: 'Login',
-  icon: 'person'
+  icon: 'person',
+  placeholder: 'Enter your username here...'
 };

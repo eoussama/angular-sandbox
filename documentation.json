@@ -1268,7 +1268,7 @@
     "guards": [
         {
             "name": "AuthenticationGuard",
-            "id": "injectable-AuthenticationGuard-030fb5b0d6ee907609485248b34de141f2ad50331eb25b047aacbafc9e48c0f1e26e356280f1499f37cff0882731a40ab83bce36d44597cec2974cbf091276fd",
+            "id": "injectable-AuthenticationGuard-680aa08915f3424371343ec230ad78546b42ea6b640fd902460fd1e558fccebb987f1c7d0fb11ff73cd65c8705207d5ed2f4f5bafa666d0b49aac56fbe70eeb4",
             "file": "src/app/guards/authentication/authentication.guard.ts",
             "properties": [],
             "methods": [
@@ -1363,7 +1363,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Route, Router, RouterStateSnapshot, UrlTree } from '@angular/router';\nimport { Observable } from 'rxjs';\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class AuthenticationGuard implements CanActivate, CanActivateChild {\n\n  constructor(\n    private router: Router,\n    private auth: AuthenticationService,\n  ) { }\n\n  canActivate(\n    route: ActivatedRouteSnapshot,\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\n    return new Promise(resolve => {\n      this.auth.isLoggedIn().subscribe(authorized => {\n        if (!authorized) {\n          this.router.navigate(['/login'])\n        }\n\n        resolve(authorized);\n      });\n    });\n  }\n\n  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {\n    return this.canActivate(childRoute, state);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Route, Router, RouterStateSnapshot, UrlTree } from '@angular/router';\r\nimport { Observable } from 'rxjs';\r\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class AuthenticationGuard implements CanActivate, CanActivateChild {\r\n\r\n  constructor(\r\n    private router: Router,\r\n    private auth: AuthenticationService,\r\n  ) { }\r\n\r\n  canActivate(\r\n    route: ActivatedRouteSnapshot,\r\n    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {\r\n    return new Promise(resolve => {\r\n      this.auth.isLoggedIn().subscribe(authorized => {\r\n        if (!authorized) {\r\n          this.router.navigate(['/login'])\r\n        }\r\n\r\n        resolve(authorized);\r\n      });\r\n    });\r\n  }\r\n\r\n  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {\r\n    return this.canActivate(childRoute, state);\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1635,13 +1635,240 @@
     "interceptors": [],
     "classes": [
         {
+            "name": "Stats",
+            "id": "class-Stats-66ed57ea3ee3a7b0fa7498ef6e209781b294b18ff7d829bf7a6e8d08de4aa9e75f2bfea911ff6db585dc5665b2c6681033d817d47e38649822322689aac5acd3",
+            "file": "src/app/models/stats.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class Stats {\r\n\r\n  /**\r\n   * @description\r\n   * The combat stats\r\n   */\r\n  combat: number;\r\n\r\n  /**\r\n   * @description\r\n   * The durability stats\r\n   */\r\n  durability: number;\r\n\r\n  /**\r\n   * @description\r\n   * The intelligence stats\r\n   */\r\n  intelligence: number;\r\n\r\n  /**\r\n   * @description\r\n   * The power stats\r\n   */\r\n  power: number;\r\n\r\n  /**\r\n   * @description\r\n   * The speed stats\r\n   */\r\n  speed: number;\r\n\r\n  /**\r\n   * @description\r\n   * The strength stat\r\n   */\r\n  strength: number;\r\n\r\n  constructor(model?: { [key in keyof Stats]: number | string }) {\r\n    this.combat = parseInt(model?.combat as string);\r\n    this.durability = parseInt(model?.durability as string);\r\n    this.intelligence = parseInt(model?.intelligence as string);\r\n    this.power = parseInt(model?.power as string);\r\n    this.speed = parseInt(model?.speed as string);\r\n    this.strength = parseInt(model?.strength as string);\r\n  }\r\n}",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "model",
+                        "type": "",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true
+                    }
+                ],
+                "line": 42,
+                "jsdoctags": [
+                    {
+                        "name": "model",
+                        "type": "",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "optional": true,
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "combat",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The combat stats</p>\n",
+                    "line": 12,
+                    "rawdescription": "\n\nThe combat stats\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 115,
+                            "end": 155,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 116,
+                                "end": 127,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The combat stats</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "durability",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The durability stats</p>\n",
+                    "line": 18,
+                    "rawdescription": "\n\nThe durability stats\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 192,
+                            "end": 236,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 193,
+                                "end": 204,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The durability stats</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "intelligence",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The intelligence stats</p>\n",
+                    "line": 24,
+                    "rawdescription": "\n\nThe intelligence stats\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 277,
+                            "end": 323,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 278,
+                                "end": 289,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The intelligence stats</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "power",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The power stats</p>\n",
+                    "line": 30,
+                    "rawdescription": "\n\nThe power stats\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 366,
+                            "end": 405,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 367,
+                                "end": 378,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The power stats</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "speed",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The speed stats</p>\n",
+                    "line": 36,
+                    "rawdescription": "\n\nThe speed stats\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 441,
+                            "end": 480,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 442,
+                                "end": 453,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The speed stats</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "strength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "<p>The strength stat</p>\n",
+                    "line": 42,
+                    "rawdescription": "\n\nThe strength stat\n",
+                    "jsdoctags": [
+                        {
+                            "pos": 516,
+                            "end": 557,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 517,
+                                "end": 528,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The strength stat</p>\n"
+                        }
+                    ]
+                }
+            ],
+            "description": "<p>The stats model, subset of Superhero</p>\n",
+            "rawdescription": "\n\nThe stats model, subset of Superhero\n",
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
             "name": "Superhero",
-            "id": "class-Superhero-f72884121ceac4b9f9f9351b9d4fd6bf46302624a87ebdf0f7d463f8949e616b88668a78bd135cbf5eb9869972ebeff96121e9817c839fb88f27ee584b7d11d6",
+            "id": "class-Superhero-8a357b128eadc8391b159fb8f6eb6e75e86c76acb4db791952970e8c8afcc7057c377f2f692452e0ecbec892058119361671e54e433b1defe70f420fdc49432f",
             "file": "src/app/models/superhero.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { ISuperheroBaseResponse } from '../types/superhero-response-base.type';\n\n\nexport class Superhero {\n  id: number;\n  name: string;\n  image: string;\n\n  stats: {\n    combat: number;\n    durability: number;\n    intelligence: number;\n    power: number;\n    speed: number;\n    strength: number;\n  };\n\n  bases: Array<string>;\n  occupation: string;\n\n  race: string;\n  gender: string;\n  height: number;\n  weight: number;\n  eyeColor: string;\n  hairColor: string;\n\n  debute: string;\n  alterEgo: string;\n  fullName: string;\n  publisher: string;\n  alignment: string;\n  birthPlace: string;\n  aliases: Array<string>;\n\n  affiliations: Array<string>;\n  relatives: Array<string>;\n\n  /**\n   * @description\n   * If the superhero is favorited.\n   */\n  favorite: boolean;\n\n  constructor(model?: ISuperheroBaseResponse, isFavorite: boolean = false) {\n    this.name = model?.name ?? '';\n    this.id = parseInt(model?.id ?? '');\n    this.image = model?.image?.url ?? '';\n\n    this.occupation = model?.work?.occupation ?? '';\n    this.bases = model?.work?.base?.split(', ') ?? [];\n\n    this.race = model?.appearance?.race ?? '';\n    this.gender = model?.appearance?.gender ?? '';\n    this.eyeColor = model?.appearance ? (model?.appearance['eye-color'] ?? '') : '';\n    this.hairColor = model?.appearance ? (model?.appearance['hair-color'] ?? '') : '';\n    this.height = parseInt(model?.appearance?.height[1] ?? '');\n    this.weight = parseInt(model?.appearance?.weight[1] ?? '');\n\n    this.aliases = model?.biography?.aliases ?? [];\n    this.publisher = model?.biography?.publisher ?? '';\n    this.alignment = model?.biography?.alignment ?? '';\n    this.fullName = model?.biography ? (model?.biography['full-name'] ?? '') : '';\n    this.alterEgo = model?.biography ? (model?.biography['alter-egos'] ?? '') : '';\n    this.debute = model?.biography ? (model?.biography['first-appearance'] ?? '') : '';\n    this.birthPlace = model?.biography ? (model?.biography['place-of-birth'] ?? '') : '';\n\n    this.relatives = model?.connections?.relatives?.split(', ') ?? [];\n    this.affiliations = model?.connections ? (model?.connections['group-affiliation']?.split(', ') ?? []) : [];\n\n    this.stats = {\n      power: parseInt(model?.powerstats?.power ?? ''),\n      speed: parseInt(model?.powerstats?.speed ?? ''),\n      combat: parseInt(model?.powerstats?.combat ?? ''),\n      strength: parseInt(model?.powerstats?.strength ?? ''),\n      durability: parseInt(model?.powerstats?.durability ?? ''),\n      intelligence: parseInt(model?.powerstats?.intelligence ?? '')\n    }\n\n    this.favorite = isFavorite;\n  }\n}",
+            "sourceCode": "import { ISuperheroBaseResponse } from '../types/superhero-response-base.type';\r\nimport { Stats } from './stats.model';\r\n\r\n\r\nexport class Superhero {\r\n  id: number;\r\n  name: string;\r\n  image: string;\r\n\r\n  stats: Stats;\r\n\r\n  bases: Array<string>;\r\n  occupation: string;\r\n\r\n  race: string;\r\n  gender: string;\r\n  height: number;\r\n  weight: number;\r\n  eyeColor: string;\r\n  hairColor: string;\r\n\r\n  debute: string;\r\n  alterEgo: string;\r\n  fullName: string;\r\n  publisher: string;\r\n  alignment: string;\r\n  birthPlace: string;\r\n  aliases: Array<string>;\r\n\r\n  affiliations: Array<string>;\r\n  relatives: Array<string>;\r\n\r\n  /**\r\n   * @description\r\n   * If the superhero is favorited.\r\n   */\r\n  favorite: boolean;\r\n\r\n  constructor(model?: ISuperheroBaseResponse, isFavorite: boolean = false) {\r\n    this.name = model?.name ?? '';\r\n    this.id = parseInt(model?.id ?? '');\r\n    this.image = model?.image?.url ?? '';\r\n\r\n    this.occupation = model?.work?.occupation ?? '';\r\n    this.bases = model?.work?.base?.split(', ') ?? [];\r\n\r\n    this.race = model?.appearance?.race ?? '';\r\n    this.gender = model?.appearance?.gender ?? '';\r\n    this.eyeColor = model?.appearance ? (model?.appearance['eye-color'] ?? '') : '';\r\n    this.hairColor = model?.appearance ? (model?.appearance['hair-color'] ?? '') : '';\r\n    this.height = parseInt(model?.appearance?.height[1] ?? '');\r\n    this.weight = parseInt(model?.appearance?.weight[1] ?? '');\r\n\r\n    this.aliases = model?.biography?.aliases ?? [];\r\n    this.publisher = model?.biography?.publisher ?? '';\r\n    this.alignment = model?.biography?.alignment ?? '';\r\n    this.fullName = model?.biography ? (model?.biography['full-name'] ?? '') : '';\r\n    this.alterEgo = model?.biography ? (model?.biography['alter-egos'] ?? '') : '';\r\n    this.debute = model?.biography ? (model?.biography['first-appearance'] ?? '') : '';\r\n    this.birthPlace = model?.biography ? (model?.biography['place-of-birth'] ?? '') : '';\r\n\r\n    this.stats = new Stats(model?.powerstats);\r\n    this.relatives = model?.connections?.relatives?.split(', ') ?? [];\r\n    this.affiliations = model?.connections ? (model?.connections['group-affiliation']?.split(', ') ?? []) : [];\r\n\r\n    this.favorite = isFavorite;\r\n  }\r\n}",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1663,7 +1890,7 @@
                         "defaultValue": "false"
                     }
                 ],
-                "line": 43,
+                "line": 37,
                 "jsdoctags": [
                     {
                         "name": "model",
@@ -1695,7 +1922,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 30
                 },
                 {
                     "name": "aliases",
@@ -1704,7 +1931,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 28
                 },
                 {
                     "name": "alignment",
@@ -1713,7 +1940,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 26
                 },
                 {
                     "name": "alterEgo",
@@ -1722,7 +1949,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 23
                 },
                 {
                     "name": "bases",
@@ -1731,7 +1958,7 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 12
                 },
                 {
                     "name": "birthPlace",
@@ -1740,7 +1967,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 27
                 },
                 {
                     "name": "debute",
@@ -1749,7 +1976,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 28
+                    "line": 22
                 },
                 {
                     "name": "eyeColor",
@@ -1758,7 +1985,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 19
                 },
                 {
                     "name": "favorite",
@@ -1767,19 +1994,19 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "<p>If the superhero is favorited.</p>\n",
-                    "line": 43,
+                    "line": 37,
                     "rawdescription": "\n\nIf the superhero is favorited.\n",
                     "jsdoctags": [
                         {
-                            "pos": 681,
-                            "end": 733,
+                            "pos": 623,
+                            "end": 677,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 682,
-                                "end": 693,
+                                "pos": 624,
+                                "end": 635,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -1797,7 +2024,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 24
                 },
                 {
                     "name": "gender",
@@ -1806,7 +2033,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 16
                 },
                 {
                     "name": "hairColor",
@@ -1815,7 +2042,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 20
                 },
                 {
                     "name": "height",
@@ -1824,7 +2051,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 17
                 },
                 {
                     "name": "id",
@@ -1833,7 +2060,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 6
                 },
                 {
                     "name": "image",
@@ -1842,7 +2069,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "name",
@@ -1851,7 +2078,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 6
+                    "line": 7
                 },
                 {
                     "name": "occupation",
@@ -1860,7 +2087,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 13
                 },
                 {
                     "name": "publisher",
@@ -1869,7 +2096,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 25
                 },
                 {
                     "name": "race",
@@ -1878,7 +2105,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 15
                 },
                 {
                     "name": "relatives",
@@ -1887,16 +2114,16 @@
                     "type": "Array<string>",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 31
                 },
                 {
                     "name": "stats",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "literal type",
+                    "type": "Stats",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 },
                 {
                     "name": "weight",
@@ -1905,7 +2132,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 24
+                    "line": 18
                 }
             ],
             "methods": [],
@@ -2032,7 +2259,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c66a46a9024e151487fea875e8b39b3f221fec0505593f15b1e43d988e4801e038242c6a56c29f48929347f0de40e72bf4bf2ec2f321e9347ed180d33f37835f",
+            "id": "component-ButtonComponent-ebb03a2aa72bc514524ab0d33eeb77afc4e52dd89e219f30b28a7fe4f9e96857a66c013f5c0badd2dd1677adfb79ddc69b95b3088763c9ab287d482c68bce620",
             "file": "src/app/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2050,20 +2277,48 @@
             "viewProviders": [],
             "inputsClass": [
                 {
-                    "name": "icon",
+                    "name": "full",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 347,
-                            "end": 386,
+                            "pos": 454,
+                            "end": 501,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 348,
-                                "end": 359,
+                                "pos": 455,
+                                "end": 466,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The button&#39;s width fill</p>\n"
+                        }
+                    ],
+                    "line": 31,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 366,
+                            "end": 407,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 367,
+                                "end": 378,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2083,15 +2338,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 265,
-                            "end": 305,
+                            "pos": 277,
+                            "end": 319,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 266,
-                                "end": 277,
+                                "pos": 278,
+                                "end": 289,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2111,15 +2366,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 428,
-                            "end": 467,
+                            "pos": 549,
+                            "end": 590,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 429,
-                                "end": 440,
+                                "pos": 550,
+                                "end": 561,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2129,7 +2384,7 @@
                             "comment": "<p>The loading state</p>\n"
                         }
                     ],
-                    "line": 31,
+                    "line": 38,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2139,15 +2394,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 513,
-                            "end": 551,
+                            "pos": 641,
+                            "end": 681,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 514,
-                                "end": 525,
+                                "pos": 642,
+                                "end": 653,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2157,7 +2412,7 @@
                             "comment": "<p>The loading icon</p>\n"
                         }
                     ],
-                    "line": 38,
+                    "line": 45,
                     "type": "string",
                     "decorators": []
                 },
@@ -2167,15 +2422,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 600,
-                            "end": 639,
+                            "pos": 735,
+                            "end": 776,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 601,
-                                "end": 612,
+                                "pos": 736,
+                                "end": 747,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2185,7 +2440,7 @@
                             "comment": "<p>The loading label</p>\n"
                         }
                     ],
-                    "line": 45,
+                    "line": 52,
                     "type": "string",
                     "decorators": []
                 }
@@ -2199,15 +2454,15 @@
                     "description": "<p>Thhe click event</p>\n",
                     "jsdoctags": [
                         {
-                            "pos": 689,
-                            "end": 727,
+                            "pos": 831,
+                            "end": 871,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 690,
-                                "end": 701,
+                                "pos": 832,
+                                "end": 843,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2217,12 +2472,26 @@
                             "comment": "<p>Thhe click event</p>\n"
                         }
                     ],
-                    "line": 52,
+                    "line": 59,
                     "type": "EventEmitter<void>"
                 }
             ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "hasIcon",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nChecks if button has an icon\n",
+                    "description": "<p>Checks if button has an icon</p>\n",
+                    "jsdoctags": []
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2230,11 +2499,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss']\n})\nexport class ButtonComponent {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The button's lavel\n   */\n  @Input()\n  label: string\n\n  /**\n   * @description\n   * The button's icon\n   */\n  @Input()\n  icon: string;\n\n  /**\n   * @description\n   * The loading state\n   */\n  @Input()\n  loading: boolean;\n\n  /**\n   * @description\n   * The loading icon\n   */\n  @Input()\n  loadingIcon: string;\n\n  /**\n   * @description\n   * The loading label\n   */\n  @Input()\n  loadingLabel: string;\n\n  /**\n   * @description\n   * Thhe click event\n   */\n  @Output()\n  click: EventEmitter<void>;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor() {\n    this.icon = '';\n    this.label = '';\n    this.loading = false;\n    this.loadingLabel = '';\n    this.loadingIcon = 'hourglass_top';\n\n    this.click = new EventEmitter();\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss']\r\n})\r\nexport class ButtonComponent {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * The button's lavel\r\n   */\r\n  @Input()\r\n  label: string\r\n\r\n  /**\r\n   * @description\r\n   * The button's icon\r\n   */\r\n  @Input()\r\n  icon: string;\r\n\r\n  /**\r\n   * @description\r\n   * The button's width fill\r\n   */\r\n  @Input()\r\n  full: boolean;\r\n\r\n  /**\r\n   * @description\r\n   * The loading state\r\n   */\r\n  @Input()\r\n  loading: boolean;\r\n\r\n  /**\r\n   * @description\r\n   * The loading icon\r\n   */\r\n  @Input()\r\n  loadingIcon: string;\r\n\r\n  /**\r\n   * @description\r\n   * The loading label\r\n   */\r\n  @Input()\r\n  loadingLabel: string;\r\n\r\n  /**\r\n   * @description\r\n   * Thhe click event\r\n   */\r\n  @Output()\r\n  click: EventEmitter<void>;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor() {\r\n    this.icon = '';\r\n    this.label = '';\r\n    this.full = false;\r\n    this.loading = false;\r\n    this.loadingLabel = 'Loading...';\r\n    this.loadingIcon = 'hourglass_top';\r\n\r\n    this.click = new EventEmitter();\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Methods\r\n\r\n  /**\r\n   * @description\r\n   * Checks if button has an icon\r\n   */\r\n  hasIcon(): boolean {\r\n    return this.icon.length > 0;\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".button {\n  cursor: pointer;\n\n  border: none;\n  border-radius: 5px;\n  \n  padding: 20px 50px;\n  max-height: 45px;\n\n  color: #ffffff;\n  background-color: #000000;\n\n  font-weight: 400;\n  font-family: 'Noto Sans Display', sans-serif;\n\n  transition-duration: 0.2s;\n  transition-property: background-color outline;\n\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  &__icon {\n    opacity: 0;\n    font-size: 22px;\n\n    // margin-right: 5px;\n    // margin-left: -25px;\n    \n    transition-duration: 0.2s;\n    transition-property: margin opacity;\n    \n    &--spin {\n      opacity: 1;\n      margin-left: 0;\n\n      animation-name: spin;\n      animation-duration: 2s;\n      animation-timing-function: linear;\n      animation-iteration-count: infinite;\n    }\n  }\n  \n  &:disabled {\n    opacity: 0.8;\n  }\n\n  &:hover {\n    background-color: #141414;\n\n    .button__icon {\n      opacity: 1;\n      margin-left: 0;\n    }\n  }\n}\n\n@keyframes spin {\n  from {\n    transform: rotate(0);\n  }\n\n  to {\n    transform: rotate(360deg);\n  }\n}",
+                    "data": ".button {\r\n  cursor: pointer;\r\n\r\n  border: none;\r\n  border-radius: 5px;\r\n\r\n  padding: 20px 50px;\r\n  max-height: 45px;\r\n\r\n  color: #ffffff;\r\n  background-color: #000000;\r\n\r\n  font-weight: 400;\r\n  font-family: 'Noto Sans Display', sans-serif;\r\n\r\n  transition-duration: 0.2s;\r\n  transition-property: background-color outline;\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n\r\n  &__icon {\r\n    opacity: 0;\r\n    font-size: 22px;\r\n\r\n    min-width: 20px;\r\n    margin-left: -20px;\r\n\r\n    transition-duration: 0.2s;\r\n    transition-property: margin opacity;\r\n\r\n    &--spin {\r\n      opacity: 1;\r\n      margin-left: 0;\r\n\r\n      animation-name: spin;\r\n      animation-duration: 2s;\r\n      animation-timing-function: linear;\r\n      animation-iteration-count: infinite;\r\n    }\r\n  }\r\n\r\n  &__button {\r\n    transition-duration: 0.2s;\r\n    transition-property: margin-left;\r\n  }\r\n\r\n  &:disabled {\r\n    opacity: 0.8;\r\n  }\r\n\r\n  &:hover {\r\n    background-color: #141414;\r\n\r\n    .button__icon {\r\n      opacity: 1;\r\n      margin-left: 0;\r\n    }\r\n\r\n    .button__label {\r\n      margin-left: 5px;\r\n    }\r\n  }\r\n\r\n  &:not(&--icon) &__icon {\r\n    display: none;\r\n  }\r\n\r\n  &--full {\r\n    width: 100%;\r\n    padding: 20px;\r\n  }\r\n\r\n  &--loading {\r\n    .button__label {\r\n      margin-left: 5px;\r\n    }\r\n  }\r\n}\r\n\r\n@keyframes spin {\r\n  from {\r\n    transform: rotate(0);\r\n  }\r\n\r\n  to {\r\n    transform: rotate(360deg);\r\n  }\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -2245,13 +2514,90 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 52
+                "line": 59
             },
-            "templateData": "<button\n  class=\"button\"\n  [disabled]=\"loading\"\n>\n  <ng-container *ngIf=\"!loading\">\n    <span class=\"material-symbols-outlined button__icon\">{{ icon }}</span>{{ label }}\n  </ng-container>\n\n  <ng-container *ngIf=\"loading\">\n    <span class=\"material-symbols-outlined button__icon button__icon--spin\">{{ loadingIcon }}</span>{{ loadingLabel }}\n  </ng-container>\n</button>"
+            "templateData": "<button\r\n  class=\"button\"\r\n  [ngClass]=\"{\r\n    'button--full': full,\r\n    'button--icon': hasIcon(),\r\n    'button--loading': loading\r\n  }\"\r\n  [disabled]=\"loading\"\r\n>\r\n  <ng-container *ngIf=\"!loading\">\r\n    <span class=\"material-symbols-outlined button__icon\">{{ icon }}</span>\r\n    <span class=\"button__label\">{{ label }}</span>\r\n  </ng-container>\r\n\r\n  <ng-container *ngIf=\"loading\">\r\n    <span class=\"material-symbols-outlined button__icon button__icon--spin\">{{ loadingIcon }}</span>\r\n    <span class=\"button__label\">{{ loadingLabel }}</span>\r\n  </ng-container>\r\n</button>"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-eed2aa1f12cd83e1b462aef07e6728d8c0da8d3acf3633fa7f096024de8fa833d46b8d99c5bc4a7a9fb239e3585fdb4f4678456bed6c1212a617a89106204520",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [
+                "./card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 247,
+                            "end": 292,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 325,
+                            "tagName": {
+                                "pos": 248,
+                                "end": 259,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "description"
+                            },
+                            "comment": "<p>The title of the card</p>\n"
+                        }
+                    ],
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  templateUrl: './card.component.html',\r\n  styleUrls: ['./card.component.scss']\r\n})\r\nexport class CardComponent {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * The title of the card\r\n   */\r\n  @Input()\r\n  title: string;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifefcycle\r\n\r\n  constructor() {\r\n    this.title = '';\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".card {\r\n  padding: 20px;\r\n  border-radius: 8px;\r\n  box-sizing: border-box;\r\n  background-color: #ffffff;\r\n  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n\r\n  width: 100%;\r\n  height: 100%;\r\n\r\n  &__title {\r\n    margin: 0;\r\n    padding: 0;\r\n\r\n    font-size: 18px;\r\n    font-weight: 600;\r\n    margin-bottom: 10px;\r\n  }\r\n\r\n  &__body {\r\n    margin: 0;\r\n    padding: 0;\r\n    margin-right: 60px;\r\n    list-style-type: none;\r\n\r\n    font-size: 16px;\r\n    color: rgb(126, 126, 126);\r\n\r\n    .highlight {\r\n      color: rgb(27, 27, 27);\r\n    }\r\n  }\r\n}",
+                    "styleUrl": "./card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "templateData": "<div class=\"card\">\r\n  <h5 class=\"card__title\">{{ title }}</h5>\r\n\r\n  <ul class=\"card__body\">\r\n    <ng-content></ng-content>\r\n  </ul>\r\n</div>"
         },
         {
             "name": "DetailComponent",
-            "id": "component-DetailComponent-c0adcf6da09781fcf806cee99d4ab1ced0bd37a4fa17f1f73bbb144859a0cb38abef4eeaad2c873d998f2226d6d68866bf6aa0886de171c5cf1d168eae3a48bb",
+            "id": "component-DetailComponent-9f362390d5a0ea2ef389ba5e7987877a4399d3fdf2c4ca41ca2bbda6e044956f7008255e935b403acfdb29595762de1cda3202f2d6aa460046f3c7b51ea4483e",
             "file": "src/app/pages/home/superheroes/detail/detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2278,11 +2624,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { map, Observable } from 'rxjs';\nimport { Superhero } from 'src/app/models/superhero.model';\n\n@Component({\n  selector: 'app-detail',\n  templateUrl: './detail.component.html',\n  styleUrls: ['./detail.component.scss']\n})\nexport class DetailComponent {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The superhero in question\n   */\n  get superhero$(): Observable<Superhero> {\n    return this.activatedRpute.data.pipe(map((e: any) => e.superhero))\n  }\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(private activatedRpute: ActivatedRoute) { }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ActivatedRoute } from '@angular/router';\r\nimport { map, Observable } from 'rxjs';\r\nimport { Superhero } from 'src/app/models/superhero.model';\r\n\r\n@Component({\r\n  selector: 'app-detail',\r\n  templateUrl: './detail.component.html',\r\n  styleUrls: ['./detail.component.scss']\r\n})\r\nexport class DetailComponent {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * The superhero in question\r\n   */\r\n  get superhero$(): Observable<Superhero> {\r\n    return this.activatedRpute.data.pipe(map((e: any) => e.superhero))\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor(private activatedRpute: ActivatedRoute) { }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".root {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 20px;\n\n  .left {\n    .image {\n      width: 100%;\n      height: 100%;\n      max-width: 250px;\n\n      border-radius: 8px;\n      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n    }\n  }\n\n  .right {\n    flex: 1;\n    padding: 0 20px;\n\n    .info {\n      padding: 20px;\n      border-radius: 8px;\n      box-sizing: border-box;\n      background-color: #ffffff;\n      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n\n      width: 100%;\n      height: 100%;\n\n      .title {\n        border-bottom: 1px solid #eeeeee;\n\n        margin: 0;\n        padding: 0;\n        margin-top: -10px;\n\n        width: 100%;\n\n        font-size: 72px;\n        font-family: 'Bangers', cursive;\n\n        color: #f1f1f1;\n        text-shadow: 1px 1px #000000, -1px -1px #000000;\n      }\n\n      .content {\n        margin: 15px 0;\n\n        display: flex;\n        flex-direction: row;\n      }\n    }\n  }\n}\n\n.connections {\n  display: grid;\n  grid-gap: 20px;\n  grid-template-columns: repeat(3, 1fr);\n\n  .stats,\n  .groups,\n  .relatives {\n    padding: 20px;\n    border-radius: 8px;\n    box-sizing: border-box;\n    background-color: #ffffff;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\n\n    width: 100%;\n    height: 100%;\n  }\n\n  .subtitle {\n    margin: 0;\n    padding: 0;\n\n    font-size: 18px;\n    font-weight: 600;\n    margin-bottom: 10px;\n  }\n}\n\n.list {\n  margin: 0;\n  padding: 0;\n  margin-right: 60px;\n  list-style-type: none;\n\n  font-size: 16px;\n  color: rgb(126, 126, 126);\n\n  .highlight {\n    color: rgb(27, 27, 27);\n  }\n\n  &--progress {\n    width: 100%;\n\n    .item {\n      width: 100%;\n      display: flex;\n      flex-direction: row;\n      align-items: center;\n\n      .label {\n        width: 100px;\n      }\n\n      .bar {\n        flex: 1;\n        width: 100%;\n\n        &--power {\n          accent-color: rgb(230, 230, 230);\n        }\n\n        &--speed {\n          accent-color: rgb(230, 230, 230);\n        }\n\n        &--combat {\n          accent-color: rgb(230, 230, 230);\n        }\n\n        &--strength {\n          accent-color: rgb(230, 230, 230);\n        }\n\n        &--durability {\n          accent-color: rgb(230, 230, 230);\n        }\n\n        &--intelligence {\n          accent-color: rgb(230, 230, 230);\n        }\n      }\n    }\n  }\n}",
+                    "data": ".root {\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin-bottom: 20px;\r\n\r\n  .left {\r\n    .image {\r\n      width: 100%;\r\n      height: 100%;\r\n      max-width: 250px;\r\n\r\n      border-radius: 8px;\r\n      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n    }\r\n  }\r\n\r\n  .right {\r\n    flex: 1;\r\n    padding: 0 0 0 20px;\r\n\r\n    .info {\r\n      padding: 20px;\r\n      border-radius: 8px;\r\n      box-sizing: border-box;\r\n      background-color: #ffffff;\r\n      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\r\n\r\n      width: 100%;\r\n      height: 100%;\r\n\r\n      .title {\r\n        border-bottom: 1px solid #eeeeee;\r\n\r\n        margin: 0;\r\n        padding: 0;\r\n        margin-top: -10px;\r\n\r\n        width: 100%;\r\n\r\n        font-size: 72px;\r\n        font-family: 'Bangers', cursive;\r\n\r\n        color: #f1f1f1;\r\n        text-shadow: 1px 1px #000000, -1px -1px #000000;\r\n      }\r\n\r\n      .content {\r\n        margin: 15px 0;\r\n\r\n        display: flex;\r\n        flex-direction: row;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n.more {\r\n  display: grid;\r\n  grid-gap: 20px;\r\n  grid-template-columns: repeat(3, 1fr);\r\n}\r\n\r\n.list {\r\n  margin: 0;\r\n  padding: 0;\r\n  margin-right: 60px;\r\n  list-style-type: none;\r\n\r\n  font-size: 16px;\r\n  color: rgb(126, 126, 126);\r\n\r\n  .highlight {\r\n    color: rgb(27, 27, 27);\r\n  }\r\n}",
                     "styleUrl": "./detail.component.scss"
                 }
             ],
@@ -2325,15 +2671,15 @@
                         "description": "<p>The superhero in question</p>\n",
                         "jsdoctags": [
                             {
-                                "pos": 386,
-                                "end": 433,
+                                "pos": 401,
+                                "end": 450,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 325,
                                 "tagName": {
-                                    "pos": 387,
-                                    "end": 398,
+                                    "pos": 402,
+                                    "end": 413,
                                     "flags": 4227072,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -2346,7 +2692,7 @@
                     }
                 }
             },
-            "templateData": "<ng-container *ngIf=\"superhero$ | async as superhero\">\n  <div class=\"root\">\n    <div class=\"left\">\n      <img\n        loading=\"lazy\"\n        class=\"image\"\n        [src]=\"superhero.image\"\n        [alt]=\"superhero.name + '\\'s picture'\"\n      />\n    </div>\n\n    <div class=\"right\">\n      <div class=\"info\">\n        <h3 class=\"title\">#{{ superhero.id}} - {{ superhero.name }}</h3>\n        <div class=\"content\">\n          <ul class=\"list llist--personal\">\n            <li>Fullname: <span class=\"highlight\">{{ superhero.fullName }}</span></li>\n            <li>Race: <span class=\"highlight\">{{ superhero.race }}</span></li>\n            <li>Gender: <span class=\"highlight\">{{ superhero.gender }}</span></li>\n            <li>Height: <span class=\"highlight\">{{ superhero.height }}</span> cm</li>\n            <li>Weight: <span class=\"highlight\">{{ superhero.weight }}</span> Kg</li>\n            <li>Eye color: <span class=\"highlight\">{{ superhero.eyeColor }}</span></li>\n            <li>Hair color: <span class=\"highlight\">{{ superhero.hairColor }}</span></li>\n            <li>Birth place: <span class=\"highlight\">{{ superhero.birthPlace }}</span></li>\n          </ul>\n\n          <ul class=\"list llist--professional\">\n            <li>Alignment: <span class=\"highlight\">{{ superhero.alignment }}</span></li>\n            <li>Occupation: <span class=\"highlight\">{{ superhero.occupation }}</span></li>\n            <li>Alter-ego: <span class=\"highlight\">{{ superhero.alterEgo }}</span></li>\n            <li>Aliases: <span class=\"highlight\">{{ superhero.aliases }}</span></li>\n            <li>Bases: <span class=\"highlight\">{{ superhero.bases }}</span></li>\n            <li>Debute: <span class=\"highlight\">{{ superhero.debute }}</span></li>\n            <li>Publisher: <span class=\"highlight\">{{ superhero.publisher }}</span></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"connections\">\n    <div class=\"stats\">\n      <h5 class=\"subtitle\">Stats</h5>\n\n      <ul class=\"list list--progress\">\n        <li class=\"item\">\n          <span class=\"label\">Power</span>\n          <progress\n            class=\"bar bar--power\"\n            max=\"100\"\n            [value]=\"superhero.stats.power\"\n          ></progress>\n        </li>\n\n        <li class=\"item\">\n          <span class=\"label\">Speed</span>\n          <progress\n            class=\"bar bar--speed\"\n            max=\"100\"\n            [value]=\"superhero.stats.speed\"\n          ></progress>\n        </li>\n\n        <li class=\"item\">\n          <span class=\"label\">Combat</span>\n          <progress\n            class=\"bar bar--combat\"\n            max=\"100\"\n            [value]=\"superhero.stats.combat\"\n          ></progress>\n        </li>\n\n        <li class=\"item\">\n          <span class=\"label\">Strength</span>\n          <progress\n            class=\"bar bar--strength\"\n            max=\"100\"\n            [value]=\"superhero.stats.strength\"\n          ></progress>\n        </li>\n\n        <li class=\"item\">\n          <span class=\"label\">Durability</span>\n          <progress\n            class=\"bar bar--durability\"\n            max=\"100\"\n            [value]=\"superhero.stats.durability\"\n          ></progress>\n        </li>\n\n        <li class=\"item\">\n          <span class=\"label\">Intelligence</span>\n          <progress\n            class=\"bar bar--intelligence\"\n            max=\"100\"\n            [value]=\"superhero.stats.intelligence\"\n          ></progress>\n        </li>\n      </ul>\n    </div>\n\n    <div class=\"groups\">\n      <h5 class=\"subtitle\">Affiliations</h5>\n\n      <ul class=\"list\">\n        <li *ngFor=\"let group of superhero.affiliations\"><span class=\"highlight\">{{ group }}</span></li>\n      </ul>\n    </div>\n\n    <div class=\"relatives\">\n      <h5 class=\"subtitle\">Relatives</h5>\n\n      <ul class=\"list\">\n        <li *ngFor=\"let relative of superhero.relatives\"><span class=\"highlight\">{{ relative }}</span></li>\n      </ul>\n    </div>\n  </div>\n</ng-container>"
+            "templateData": "<ng-container *ngIf=\"superhero$ | async as superhero\">\r\n  <div class=\"root\">\r\n    <div class=\"left\">\r\n      <img\r\n        loading=\"lazy\"\r\n        class=\"image\"\r\n        [src]=\"superhero.image\"\r\n        [alt]=\"superhero.name + '\\'s picture'\"\r\n      />\r\n    </div>\r\n\r\n    <div class=\"right\">\r\n      <div class=\"info\">\r\n        <h3 class=\"title\">#{{ superhero.id}} - {{ superhero.name }}</h3>\r\n        <div class=\"content\">\r\n          <ul class=\"list llist--personal\">\r\n            <li>Fullname: <span class=\"highlight\">{{ superhero.fullName }}</span></li>\r\n            <li>Race: <span class=\"highlight\">{{ superhero.race }}</span></li>\r\n            <li>Gender: <span class=\"highlight\">{{ superhero.gender }}</span></li>\r\n            <li>Height: <span class=\"highlight\">{{ superhero.height }}</span> cm</li>\r\n            <li>Weight: <span class=\"highlight\">{{ superhero.weight }}</span> Kg</li>\r\n            <li>Eye color: <span class=\"highlight\">{{ superhero.eyeColor }}</span></li>\r\n            <li>Hair color: <span class=\"highlight\">{{ superhero.hairColor }}</span></li>\r\n            <li>Birth place: <span class=\"highlight\">{{ superhero.birthPlace }}</span></li>\r\n          </ul>\r\n\r\n          <ul class=\"list llist--professional\">\r\n            <li>Alignment: <span class=\"highlight\">{{ superhero.alignment }}</span></li>\r\n            <li>Occupation: <span class=\"highlight\">{{ superhero.occupation }}</span></li>\r\n            <li>Alter-ego: <span class=\"highlight\">{{ superhero.alterEgo }}</span></li>\r\n            <li>Aliases: <span class=\"highlight\">{{ superhero.aliases }}</span></li>\r\n            <li>Bases: <span class=\"highlight\">{{ superhero.bases }}</span></li>\r\n            <li>Debute: <span class=\"highlight\">{{ superhero.debute }}</span></li>\r\n            <li>Publisher: <span class=\"highlight\">{{ superhero.publisher }}</span></li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"more\">\r\n    <app-stats [stats]=\"superhero.stats\"></app-stats>\r\n\r\n    <app-card title=\"Affiliations\">\r\n      <li *ngFor=\"let group of superhero.affiliations\"><span class=\"highlight\">{{ group }}</span></li>\r\n    </app-card>\r\n\r\n    <app-card title=\"Relatives\">\r\n      <li *ngFor=\"let relative of superhero.relatives\"><span class=\"highlight\">{{ relative }}</span></li>\r\n    </app-card>\r\n  </div>\r\n</ng-container>"
         },
         {
             "name": "FavoritesComponent",
@@ -2668,7 +3014,7 @@
                     }
                 ]
             },
-            "templateData": "<header class=\"header\">\n  <nav class=\"item-wrapper\">\n    <ul class=\"items\">\n      <li class=\"item item--title\">\n        Welcome back, <u>{{ user$ | async }}</u>!\n      </li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"home\"\n        routerLinkActive=\"item--active\"\n      >Home</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"superheroes\"\n        routerLinkActive=\"item--active\"\n      >Superheroes</li>\n\n      <li\n        class=\"item item--link\"\n        routerLink=\"favorites\"\n        routerLinkActive=\"item--active\"\n      >Favorites</li>\n\n      <li class=\"item item--button\">\n        <app-button\n          icon=\"logout\"\n          label=\"Logout\"\n          (click)=\"onLogout()\"\n        ></app-button>\n      </li>\n    </ul>\n  </nav>\n</header>"
+            "templateData": "<header class=\"header\">\r\n  <nav class=\"item-wrapper\">\r\n    <ul class=\"items\">\r\n      <li class=\"item item--title\">\r\n        Welcome back, <u>{{ user$ | async }}</u>!\r\n      </li>\r\n\r\n      <li\r\n        class=\"item item--link\"\r\n        routerLink=\"home\"\r\n        routerLinkActive=\"item--active\"\r\n      >Home</li>\r\n\r\n      <li\r\n        class=\"item item--link\"\r\n        routerLink=\"superheroes\"\r\n        routerLinkActive=\"item--active\"\r\n      >Superheroes</li>\r\n\r\n      <li\r\n        class=\"item item--link\"\r\n        routerLink=\"favorites\"\r\n        routerLinkActive=\"item--active\"\r\n      >Favorites</li>\r\n\r\n      <li class=\"item item--button\">\r\n        <app-button\r\n          [full]=\"true\"\r\n          icon=\"logout\"\r\n          label=\"Logout\"\r\n          (click)=\"onLogout()\"\r\n        ></app-button>\r\n      </li>\r\n    </ul>\r\n  </nav>\r\n</header>"
         },
         {
             "name": "HomeComponent",
@@ -2752,7 +3098,7 @@
         },
         {
             "name": "InputComponent",
-            "id": "component-InputComponent-78baa87e8373930c77bbdca9ca455624badd9c76abba4779fd9ab39a878ee3105c53c95ffd1e2b263d49c98a7e03f692325c926bb1a20bed743c63f5850628a9",
+            "id": "component-InputComponent-0aa5abef2aeb946f05e3e3719455d68a31deebc4397678e92b98e46308adbd954b85012d0a2337c7624489cd6e0ed8a7911c9b63161579faaaf50d470aff558b",
             "file": "src/app/components/input/input.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2780,15 +3126,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1215,
-                            "end": 1268,
+                            "pos": 1280,
+                            "end": 1335,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1216,
-                                "end": 1227,
+                                "pos": 1281,
+                                "end": 1292,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2808,15 +3154,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1398,
-                            "end": 1445,
+                            "pos": 1477,
+                            "end": 1526,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1399,
-                                "end": 1410,
+                                "pos": 1478,
+                                "end": 1489,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2836,15 +3182,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1568,
-                            "end": 1614,
+                            "pos": 1661,
+                            "end": 1709,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1569,
-                                "end": 1580,
+                                "pos": 1662,
+                                "end": 1673,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2864,15 +3210,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1318,
-                            "end": 1356,
+                            "pos": 1390,
+                            "end": 1430,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1319,
-                                "end": 1330,
+                                "pos": 1391,
+                                "end": 1402,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2892,15 +3238,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1038,
-                            "end": 1077,
+                            "pos": 1089,
+                            "end": 1130,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1039,
-                                "end": 1050,
+                                "pos": 1090,
+                                "end": 1101,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2920,15 +3266,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1120,
-                            "end": 1166,
+                            "pos": 1178,
+                            "end": 1226,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1121,
-                                "end": 1132,
+                                "pos": 1179,
+                                "end": 1190,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2948,15 +3294,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 1488,
-                            "end": 1526,
+                            "pos": 1574,
+                            "end": 1614,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1489,
-                                "end": 1500,
+                                "pos": 1575,
+                                "end": 1586,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -2987,15 +3333,15 @@
                     ],
                     "jsdoctags": [
                         {
-                            "pos": 518,
-                            "end": 562,
+                            "pos": 536,
+                            "end": 582,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 519,
-                                "end": 530,
+                                "pos": 537,
+                                "end": 548,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3021,15 +3367,15 @@
                     ],
                     "jsdoctags": [
                         {
-                            "pos": 1667,
-                            "end": 1711,
+                            "pos": 1767,
+                            "end": 1813,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 1668,
-                                "end": 1679,
+                                "pos": 1768,
+                                "end": 1779,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3175,11 +3521,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, forwardRef, Input } from '@angular/core';\nimport { ControlContainer, ControlValueAccessor, FormControlDirective, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n  selector: 'app-input',\n  templateUrl: './input.component.html',\n  styleUrls: ['./input.component.scss'],\n  providers: [{\n    multi: true,\n    provide: NG_VALUE_ACCESSOR,\n    useExisting: forwardRef(() => InputComponent)\n  }]\n})\nexport class InputComponent implements ControlValueAccessor {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The value of the input\n   */\n  private _value: any;\n\n  /**\n   * @description\n   * The value of the input\n   */\n  set value(value: any) {\n    if (this._value !== value) {\n      this._value = value;\n      this.onChangeCallback(value);\n    }\n  }\n\n  /**\n   * @description\n   * The value of the input\n   */\n  get value(): any {\n    return this._value;\n  }\n\n  /**\n   * @description\n   * The parent form\n   */\n  get form() {\n    return ((this.parent as unknown as FormControlDirective).form);\n  }\n\n  /**\n   * @description\n   * The input's label\n   */\n  @Input()\n  label: string;\n\n  /**\n   * @description\n   * The input's placehholder\n   */\n  @Input()\n  placeholder: string;\n\n  /**\n   * @description\n   * The input's autocomplete option\n   */\n  @Input()\n  autocomplete: string;\n\n  /**\n   * @description\n   * The input's icon\n   */\n  @Input()\n  icon: string;\n\n  /**\n   * @description\n   * The input's error message\n   */\n  @Input()\n  error: string;\n\n  /**\n   * @description\n   * The input's type\n   */\n  @Input()\n  type: string;\n\n  /**\n   * @description\n   * The input's control name\n   */\n  @Input()\n  formControlName: string;\n\n  /**\n   * @description\n   * The form update method\n   */\n  private onChangeCallback: (_: any) => void = () => { };\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(private parent: ControlContainer) {\n    this.icon = '';\n    this.value = '';\n    this.error = '';\n    this.label = '';\n    this.type = 'text';\n    this.placeholder = '';\n    this.autocomplete = '';\n    this.formControlName = '';\n  }\n\n  writeValue(value: string): void {\n    this._value = value;\n  }\n\n  registerOnChange(fn: any): void {\n    this.onChangeCallback = fn;\n  }\n\n  registerOnTouched(fn: any): void { }\n\n  setDisabledState?(isDisabled: boolean): void { }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Checks if the control has any erro\n   */\n  hasError(): boolean {\n    return Boolean(this.form?.get(this.formControlName)?.touched && this.form?.get(this.formControlName)?.hasError('required'));\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, forwardRef, Input } from '@angular/core';\r\nimport { ControlContainer, ControlValueAccessor, FormControlDirective, NG_VALUE_ACCESSOR } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-input',\r\n  templateUrl: './input.component.html',\r\n  styleUrls: ['./input.component.scss'],\r\n  providers: [{\r\n    multi: true,\r\n    provide: NG_VALUE_ACCESSOR,\r\n    useExisting: forwardRef(() => InputComponent)\r\n  }]\r\n})\r\nexport class InputComponent implements ControlValueAccessor {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * The value of the input\r\n   */\r\n  private _value: any;\r\n\r\n  /**\r\n   * @description\r\n   * The value of the input\r\n   */\r\n  set value(value: any) {\r\n    if (this._value !== value) {\r\n      this._value = value;\r\n      this.onChangeCallback(value);\r\n    }\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * The value of the input\r\n   */\r\n  get value(): any {\r\n    return this._value;\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * The parent form\r\n   */\r\n  get form() {\r\n    return ((this.parent as unknown as FormControlDirective).form);\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * The input's label\r\n   */\r\n  @Input()\r\n  label: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's placehholder\r\n   */\r\n  @Input()\r\n  placeholder: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's autocomplete option\r\n   */\r\n  @Input()\r\n  autocomplete: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's icon\r\n   */\r\n  @Input()\r\n  icon: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's error message\r\n   */\r\n  @Input()\r\n  error: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's type\r\n   */\r\n  @Input()\r\n  type: string;\r\n\r\n  /**\r\n   * @description\r\n   * The input's control name\r\n   */\r\n  @Input()\r\n  formControlName: string;\r\n\r\n  /**\r\n   * @description\r\n   * The form update method\r\n   */\r\n  private onChangeCallback: (_: any) => void = () => { };\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor(private parent: ControlContainer) {\r\n    this.icon = '';\r\n    this.value = '';\r\n    this.error = '';\r\n    this.label = '';\r\n    this.type = 'text';\r\n    this.placeholder = '';\r\n    this.autocomplete = '';\r\n    this.formControlName = '';\r\n  }\r\n\r\n  writeValue(value: string): void {\r\n    this._value = value;\r\n  }\r\n\r\n  registerOnChange(fn: any): void {\r\n    this.onChangeCallback = fn;\r\n  }\r\n\r\n  registerOnTouched(fn: any): void { }\r\n\r\n  setDisabledState?(isDisabled: boolean): void { }\r\n\r\n  //#endregion\r\n\r\n  //#region Methods\r\n\r\n  /**\r\n   * @description\r\n   * Checks if the control has any erro\r\n   */\r\n  hasError(): boolean {\r\n    return Boolean(this.form?.get(this.formControlName)?.touched && this.form?.get(this.formControlName)?.hasError('required'));\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".input {\n  display: flex;\n  margin-bottom: 25px;\n  flex-direction: column;\n\n  &__label {\n    color: #ffffff;\n    font-weight: 100;\n    margin-bottom: 5px;\n    \n    transition-duration: 0.2s;\n    transition-property: color;\n\n    display: flex;\n    align-items: center;\n  }\n  \n  &__icon {\n    font-size: 22px;\n    margin-right: 5px;\n  }\n  \n  &__field {\n    border: none;\n    border-radius: 5px;\n    \n    padding: 10px 15px;\n    background-color: #ffffff;\n    \n    font-weight: 400;\n    font-family: 'Noto Sans Display', sans-serif;\n    \n    transition-duration: 0.2s;\n    transition-property: outline;\n    \n    &:focus,\n    &:active {\n      outline: none;\n    }\n    \n    &:focus {\n      outline: 2px solid #080808;\n    }\n  }\n  \n  &__error {\n    margin: 5px 0 0 0;\n    \n    font-size: 14px;\n    font-weight: 300;\n    color: rgb(255 110 110);\n  }\n  \n  &:focus-within .input__label {\n    font-weight: 500;\n  }\n}",
+                    "data": ".input {\r\n  display: flex;\r\n  margin-bottom: 25px;\r\n  flex-direction: column;\r\n\r\n  &__label {\r\n    color: #ffffff;\r\n    font-weight: 100;\r\n    margin-bottom: 5px;\r\n    \r\n    transition-duration: 0.2s;\r\n    transition-property: color;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  &__icon {\r\n    font-size: 22px;\r\n    margin-right: 5px;\r\n  }\r\n  \r\n  &__field {\r\n    border: none;\r\n    border-radius: 5px;\r\n    \r\n    padding: 10px 15px;\r\n    background-color: #ffffff;\r\n    \r\n    font-weight: 400;\r\n    font-family: 'Noto Sans Display', sans-serif;\r\n    \r\n    transition-duration: 0.2s;\r\n    transition-property: outline;\r\n    \r\n    &:focus,\r\n    &:active {\r\n      outline: none;\r\n    }\r\n    \r\n    &:focus {\r\n      outline: 2px solid #080808;\r\n    }\r\n  }\r\n  \r\n  &__error {\r\n    margin: 5px 0 0 0;\r\n    \r\n    font-size: 14px;\r\n    font-weight: 300;\r\n    color: rgb(255 110 110);\r\n  }\r\n  \r\n  &:focus-within .input__label {\r\n    font-weight: 500;\r\n  }\r\n}",
                     "styleUrl": "./input.component.scss"
                 }
             ],
@@ -3254,15 +3600,15 @@
                         "description": "<p>The value of the input</p>\n",
                         "jsdoctags": [
                             {
-                                "pos": 791,
-                                "end": 835,
+                                "pos": 826,
+                                "end": 872,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 325,
                                 "tagName": {
-                                    "pos": 792,
-                                    "end": 803,
+                                    "pos": 827,
+                                    "end": 838,
                                     "flags": 4227072,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -3285,15 +3631,15 @@
                         "description": "<p>The parent form</p>\n",
                         "jsdoctags": [
                             {
-                                "pos": 899,
-                                "end": 936,
+                                "pos": 942,
+                                "end": 981,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
                                 "kind": 325,
                                 "tagName": {
-                                    "pos": 900,
-                                    "end": 911,
+                                    "pos": 943,
+                                    "end": 954,
                                     "flags": 4227072,
                                     "modifierFlagsCache": 0,
                                     "transformFlags": 0,
@@ -3306,11 +3652,11 @@
                     }
                 }
             },
-            "templateData": "<label class=\"input input--email\">\n  <span class=\"input__label\">\n    <span class=\"material-symbols-outlined input__icon\">{{ icon }}</span>\n    {{ label }}\n  </span>\n\n  <input\n    #input\n    [type]=\"type\"\n    [(ngModel)]=\"value\"\n    class=\"input__field\"\n    [placeholder]=\"placeholder\"\n    [autocomplete]=\"autocomplete\"\n  >\n  <span\n    *ngIf=\"hasError()\"\n    class=\"input__error\"\n  >{{ error }}</span>\n</label>"
+            "templateData": "<label class=\"input input--email\">\r\n  <span class=\"input__label\">\r\n    <span class=\"material-symbols-outlined input__icon\">{{ icon }}</span>\r\n    {{ label }}\r\n  </span>\r\n\r\n  <input\r\n    #input\r\n    [type]=\"type\"\r\n    [(ngModel)]=\"value\"\r\n    class=\"input__field\"\r\n    [placeholder]=\"placeholder\"\r\n    [autocomplete]=\"autocomplete\"\r\n  >\r\n  <span\r\n    *ngIf=\"hasError()\"\r\n    class=\"input__error\"\r\n  >{{ error }}</span>\r\n</label>"
         },
         {
             "name": "LoaderComponent",
-            "id": "component-LoaderComponent-30f05d357e620fd46e32afdaaffe13a7367bf9346f334e030caa150199004513cbe64682840d6a7d2709e429e756714d6c02195598cc2d0eb5a26ade2e611980",
+            "id": "component-LoaderComponent-fe8e34352faa25e38d30652ad90fb051f2d2c66ca33c197908074de36b930f54ed9697db1362553b5d8b8e4aa28277bfcc78dc4a28a59e93b628fbad52d23b92",
             "file": "src/app/components/loader/loader.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3333,15 +3679,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 439,
-                            "end": 492,
+                            "pos": 459,
+                            "end": 514,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 440,
-                                "end": 451,
+                                "pos": 460,
+                                "end": 471,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3369,15 +3715,15 @@
                     "rawdescription": "\n\nThe number of cards to show\n",
                     "jsdoctags": [
                         {
-                            "pos": 351,
-                            "end": 400,
+                            "pos": 365,
+                            "end": 416,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 352,
-                                "end": 363,
+                                "pos": 366,
+                                "end": 377,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3439,7 +3785,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\nimport { environment } from 'src/environments/environment';\n\n\n@Component({\n  selector: 'app-loader',\n  templateUrl: './loader.component.html',\n  styleUrls: ['./loader.component.scss']\n})\nexport class LoaderComponent implements OnChanges {\n\n  //#region Properties\n\n  /**\n   * @description\n   * The number of cards to show\n   */\n  items: Array<number>;\n\n  /**\n   * @description\n   * The number of the loading cards\n   */\n  @Input()\n  count: number;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor() {\n    this.items = [];\n    this.count = environment.pageSize;\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if ('count' in changes) {\n      this.generateCards();\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  private generateCards(): void {\n    this.items = [...Array(this.count)];\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';\r\nimport { environment } from 'src/environments/environment';\r\n\r\n\r\n@Component({\r\n  selector: 'app-loader',\r\n  templateUrl: './loader.component.html',\r\n  styleUrls: ['./loader.component.scss']\r\n})\r\nexport class LoaderComponent implements OnChanges {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * The number of cards to show\r\n   */\r\n  items: Array<number>;\r\n\r\n  /**\r\n   * @description\r\n   * The number of the loading cards\r\n   */\r\n  @Input()\r\n  count: number;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor() {\r\n    this.items = [];\r\n    this.count = environment.pageSize;\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if ('count' in changes) {\r\n      this.generateCards();\r\n    }\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Methods\r\n\r\n  private generateCards(): void {\r\n    this.items = [...Array(this.count)];\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3463,7 +3809,7 @@
         },
         {
             "name": "LoginComponent",
-            "id": "component-LoginComponent-ed15e611ebf39c9b5f208db70743fa175e3f646d91002823588ba84425e5b4d66222611c733c9645e59c7c655b841ca03159831d39885fa398f9135217710ad1",
+            "id": "component-LoginComponent-1637c34f6d1712ed7b02464529b91a1bf7b20665c379fab1136dca326ab993c6e947991d2d3293cd249889cc092a92db2f97d039855eb6ba5f4105669e5c5d45",
             "file": "src/app/pages/login/login.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3493,15 +3839,15 @@
                     "rawdescription": "\n\nLoggin form\n",
                     "jsdoctags": [
                         {
-                            "pos": 424,
-                            "end": 457,
+                            "pos": 439,
+                            "end": 474,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 425,
-                                "end": 436,
+                                "pos": 440,
+                                "end": 451,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3523,15 +3869,15 @@
                     "rawdescription": "\n\nThe loadingg state\n",
                     "jsdoctags": [
                         {
-                            "pos": 492,
-                            "end": 532,
+                            "pos": 513,
+                            "end": 555,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 493,
-                                "end": 504,
+                                "pos": 514,
+                                "end": 525,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3581,8 +3927,8 @@
                     "jsdoctags": [
                         {
                             "name": {
-                                "pos": 1375,
-                                "end": 1386,
+                                "pos": 1448,
+                                "end": 1459,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3593,8 +3939,8 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "pos": 1369,
-                                "end": 1374,
+                                "pos": 1442,
+                                "end": 1447,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3636,7 +3982,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\n\n\n@Component({\n  selector: 'app-login',\n  templateUrl: './login.component.html',\n  styleUrls: ['./login.component.scss']\n})\nexport class LoginComponent implements OnInit {\n\n  //#region Properties\n\n  /**\n   * @description\n   * Loggin form\n   */\n  form!: FormGroup;\n\n  /**\n   * @description\n   * The loadingg state\n   */\n  loading: boolean;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private fb: FormBuilder,\n    private auth: AuthenticationService\n  ) {\n    this.loading = false;\n  }\n\n  ngOnInit(): void {\n    this.createForm();\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Logs the user in\n   */\n  onLogin(): void {\n    console.log('login');\n    this.form.markAllAsTouched();\n\n    if (this.form.valid) {\n      this.loading = true;\n\n      const username = this.form.value.username;\n      const password = this.form.value.password;\n\n      this.auth.login(username, password)\n        .catch(() => alert('Invalid username or password!'))\n        .finally(() => this.loading = false)\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Checks if the control has any error\n   *\n   * @param controlName The target name of the control\n   */\n  hasError(controlName: string): boolean {\n    return Boolean(this.form.get(controlName)?.touched && this.form.get(controlName)?.hasError('required'));\n  }\n\n  /**\n   * @description\n   * Creates the logign form\n   */\n  private createForm(): void {\n    this.form = this.fb.group({\n      username: ['test', [Validators.required]],\n      password: ['', [Validators.required]]\n    });\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\r\nimport { AuthenticationService } from 'src/app/services/authentication/authentication.service';\r\n\r\n\r\n@Component({\r\n  selector: 'app-login',\r\n  templateUrl: './login.component.html',\r\n  styleUrls: ['./login.component.scss']\r\n})\r\nexport class LoginComponent implements OnInit {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * Loggin form\r\n   */\r\n  form!: FormGroup;\r\n\r\n  /**\r\n   * @description\r\n   * The loadingg state\r\n   */\r\n  loading: boolean;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor(\r\n    private fb: FormBuilder,\r\n    private auth: AuthenticationService\r\n  ) {\r\n    this.loading = false;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.createForm();\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Event listeners\r\n\r\n  /**\r\n   * @description\r\n   * Logs the user in\r\n   */\r\n  onLogin(): void {\r\n    console.log('login');\r\n    this.form.markAllAsTouched();\r\n\r\n    if (this.form.valid) {\r\n      this.loading = true;\r\n\r\n      const username = this.form.value.username;\r\n      const password = this.form.value.password;\r\n\r\n      this.auth.login(username, password)\r\n        .catch(() => alert('Invalid username or password!'))\r\n        .finally(() => this.loading = false)\r\n    }\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Methods\r\n\r\n  /**\r\n   * @description\r\n   * Checks if the control has any error\r\n   *\r\n   * @param controlName The target name of the control\r\n   */\r\n  hasError(controlName: string): boolean {\r\n    return Boolean(this.form.get(controlName)?.touched && this.form.get(controlName)?.hasError('required'));\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * Creates the logign form\r\n   */\r\n  private createForm(): void {\r\n    this.form = this.fb.group({\r\n      username: ['test', [Validators.required]],\r\n      password: ['', [Validators.required]]\r\n    });\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3689,11 +4035,68 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"root\">\n  <div class=\"root__left\">\n    <h1 class=\"title\">Sandbox</h1>\n    <h1 class=\"description\">\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ut rerum corporis in quaerat, non enim incidunt\n      beatae nostrum libero.\n    </h1>\n  </div>\n\n  <div class=\"root__right\">\n    <form\n      [formGroup]=\"form\"\n      class=\"form\"\n    >\n      <app-input\n        label=\"Username\"\n        icon=\"account_circle\"\n        autocomplete=\"username\"\n        formControlName=\"username\"\n        error=\"Fill in your username\"\n        placeholder=\"Enter your username\"\n      ></app-input>\n\n      <app-input\n        icon=\"lock\"\n        type=\"password\"\n        label=\"Password\"\n        autocomplete=\"password\"\n        formControlName=\"password\"\n        error=\"Fill in your password\"\n        placeholder=\"Enter your password\"\n      ></app-input>\n\n      <app-button\n        icon=\"login\"\n        label=\"Login\"\n        [loading]=\"loading\"\n        (click)=\"onLogin()\"\n        loadingLabel=\"Login-in...\"\n      ></app-button>\n    </form>\n  </div>\n</div>"
+            "templateData": "<div class=\"root\">\r\n  <div class=\"root__left\">\r\n    <h1 class=\"title\">Sandbox</h1>\r\n    <h1 class=\"description\">\r\n      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ut rerum corporis in quaerat, non enim incidunt\r\n      beatae nostrum libero.\r\n    </h1>\r\n  </div>\r\n\r\n  <div class=\"root__right\">\r\n    <form\r\n      [formGroup]=\"form\"\r\n      class=\"form\"\r\n    >\r\n      <app-input\r\n        label=\"Username\"\r\n        icon=\"account_circle\"\r\n        autocomplete=\"username\"\r\n        formControlName=\"username\"\r\n        error=\"Fill in your username\"\r\n        placeholder=\"Enter your username\"\r\n      ></app-input>\r\n\r\n      <app-input\r\n        icon=\"lock\"\r\n        type=\"password\"\r\n        label=\"Password\"\r\n        autocomplete=\"password\"\r\n        formControlName=\"password\"\r\n        error=\"Fill in your password\"\r\n        placeholder=\"Enter your password\"\r\n      ></app-input>\r\n\r\n      <app-button\r\n        icon=\"login\"\r\n        label=\"Login\"\r\n        [full]=\"true\"\r\n        [loading]=\"loading\"\r\n        (click)=\"onLogin()\"\r\n        loadingLabel=\"Login-in...\"\r\n      ></app-button>\r\n    </form>\r\n  </div>\r\n</div>"
+        },
+        {
+            "name": "StatsComponent",
+            "id": "component-StatsComponent-c2ba34b04b09e27b1dee45047527f14511a46624991d01fa5bd99f75bd0c7e333cea2e1850a5944ec7461db28f8da5dc219d4d2ed2b60586ca528980373ab692",
+            "file": "src/app/components/stats/stats.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stats",
+            "styleUrls": [
+                "./stats.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./stats.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "stats",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "Stats",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { Stats } from 'src/app/models/stats.model';\r\n\r\n@Component({\r\n  selector: 'app-stats',\r\n  templateUrl: './stats.component.html',\r\n  styleUrls: ['./stats.component.scss']\r\n})\r\nexport class StatsComponent {\r\n\r\n  //#region Properties\r\n\r\n  @Input()\r\n  stats: Stats;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor() {\r\n    this.stats = new Stats();\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".list {\r\n  margin: 0;\r\n  padding: 0;\r\n  width: 100%;\r\n  margin-right: 60px;\r\n  list-style-type: none;\r\n\r\n  font-size: 16px;\r\n  color: rgb(126, 126, 126);\r\n\r\n  .highlight {\r\n    color: rgb(27, 27, 27);\r\n  }\r\n\r\n  .item {\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n\r\n    .label {\r\n      width: 100px;\r\n    }\r\n\r\n    .bar {\r\n      flex: 1;\r\n      width: 100%;\r\n\r\n      &--power {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n\r\n      &--speed {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n\r\n      &--combat {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n\r\n      &--strength {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n\r\n      &--durability {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n\r\n      &--intelligence {\r\n        accent-color: rgb(230, 230, 230);\r\n      }\r\n    }\r\n  }\r\n}",
+                    "styleUrl": "./stats.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "templateData": "<app-card title=\"Stats\">\r\n  <ul class=\"list list--progress\">\r\n    <li class=\"item\">\r\n      <span class=\"label\">Power</span>\r\n      <progress\r\n        class=\"bar bar--power\"\r\n        max=\"100\"\r\n        [value]=\"stats.power\"\r\n      ></progress>\r\n    </li>\r\n\r\n    <li class=\"item\">\r\n      <span class=\"label\">Speed</span>\r\n      <progress\r\n        class=\"bar bar--speed\"\r\n        max=\"100\"\r\n        [value]=\"stats.speed\"\r\n      ></progress>\r\n    </li>\r\n\r\n    <li class=\"item\">\r\n      <span class=\"label\">Combat</span>\r\n      <progress\r\n        class=\"bar bar--combat\"\r\n        max=\"100\"\r\n        [value]=\"stats.combat\"\r\n      ></progress>\r\n    </li>\r\n\r\n    <li class=\"item\">\r\n      <span class=\"label\">Strength</span>\r\n      <progress\r\n        class=\"bar bar--strength\"\r\n        max=\"100\"\r\n        [value]=\"stats.strength\"\r\n      ></progress>\r\n    </li>\r\n\r\n    <li class=\"item\">\r\n      <span class=\"label\">Durability</span>\r\n      <progress\r\n        class=\"bar bar--durability\"\r\n        max=\"100\"\r\n        [value]=\"stats.durability\"\r\n      ></progress>\r\n    </li>\r\n\r\n    <li class=\"item\">\r\n      <span class=\"label\">Intelligence</span>\r\n      <progress\r\n        class=\"bar bar--intelligence\"\r\n        max=\"100\"\r\n        [value]=\"stats.intelligence\"\r\n      ></progress>\r\n    </li>\r\n  </ul>\r\n</app-card>"
         },
         {
             "name": "SuperheroesComponent",
-            "id": "component-SuperheroesComponent-6be8b09cf982c83f658177adfaeb550e66455fe238e9d81c5176f0d6af7795aadfd29d7b3dfaf12972816d9a9c6fe32e09f3c335f18a1002c0136145a22f0ead",
+            "id": "component-SuperheroesComponent-5373c0c6cb179e985067749d00bd1bde9fa701c8405cd4b84432ecc8ed3ccb25b62727ebd0a0d6195aec4add883d485f5e69bf258353a91fe1a53eaa7d1a74f1",
             "file": "src/app/pages/home/superheroes/superheroes.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3730,15 +4133,15 @@
                     ],
                     "jsdoctags": [
                         {
-                            "pos": 870,
-                            "end": 921,
+                            "pos": 904,
+                            "end": 957,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 871,
-                                "end": 882,
+                                "pos": 905,
+                                "end": 916,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3760,15 +4163,15 @@
                     "rawdescription": "\n\nThe current page\n",
                     "jsdoctags": [
                         {
-                            "pos": 730,
-                            "end": 768,
+                            "pos": 752,
+                            "end": 792,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 731,
-                                "end": 742,
+                                "pos": 753,
+                                "end": 764,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3790,15 +4193,15 @@
                     "rawdescription": "\n\nThe search query\n",
                     "jsdoctags": [
                         {
-                            "pos": 799,
-                            "end": 837,
+                            "pos": 827,
+                            "end": 867,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 800,
-                                "end": 811,
+                                "pos": 828,
+                                "end": 839,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3820,15 +4223,15 @@
                     "rawdescription": "\n\nList of superheroes\n",
                     "jsdoctags": [
                         {
-                            "pos": 623,
-                            "end": 664,
+                            "pos": 639,
+                            "end": 682,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 624,
-                                "end": 635,
+                                "pos": 640,
+                                "end": 651,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -3975,7 +4378,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';\nimport { BehaviorSubject, debounceTime, fromEvent, merge } from 'rxjs';\nimport { Superhero } from 'src/app/models/superhero.model';\nimport { SuperheroService } from 'src/app/services/superhero/superhero.service';\n\n\n@Component({\n  selector: 'app-superheroes',\n  templateUrl: './superheroes.component.html',\n  styleUrls: ['./superheroes.component.scss', './../../../components/input/input.component.scss']\n})\nexport class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {\n\n  //#region Properties\n\n  /**\n   * @description\n   * List of superheroes\n   */\n  superheroes$: BehaviorSubject<Array<Superhero>>;\n\n  /**\n   * @description\n   * The current page\n   */\n  page: number;\n\n  /**\n   * @description\n   * The search query\n   */\n  search: string;\n\n  /**\n   * @description\n   * Reference of the searcg input\n   */\n  @ViewChild('input') input!: ElementRef;\n\n  //#endregion\n\n  //#region Lifecycle\n\n  constructor(\n    private superhero: SuperheroService\n  ) {\n    this.page = 1;\n    this.search = '';\n    this.superheroes$ = new BehaviorSubject<Array<Superhero>>([]);\n  }\n\n  ngOnInit(): void {\n    this.loadSuperheroes();\n  }\n\n  ngAfterViewInit(): void {\n    this.searchListen();\n    this.scrollListen();\n  }\n\n  ngOnDestroy(): void {\n    this.page = 1;\n  }\n\n  //#endregion\n\n  //#region Event listeners\n\n  /**\n   * @description\n   * Injects a searchh query\n   *\n   * @param e The search object\n   */\n  onSearch(): void {\n    if (this.search.length > 0) {\n      this.loadSuperheroes();\n    }\n  }\n\n  //#endregion\n\n  //#region Methods\n\n  /**\n   * @description\n   * Loads the list of superheroes\n   */\n  private async loadSuperheroes(): Promise<void> {\n    if (this.search.length > 0) {\n      this.paginateSearch();\n    } else {\n      this.paginate();\n    }\n  }\n\n  /**\n   * @description\n   * Paginates search results\n   */\n  private async paginateSearch(): Promise<void> {\n    this.page = 1;\n    this.superheroes$.next([]);\n\n    try {\n      const data = await this.superhero.getSuperheroBySearch(this.search);\n      this.superheroes$.next(data);\n    } catch (err) { }\n  }\n\n  /**\n   * @description\n   * Paginates the list\n   */\n  private async paginate(): Promise<void> {\n    if (this.page === 1) {\n      this.superheroes$.next([]);\n    }\n\n    const data = await this.superhero.getSuperheroes(this.page++);\n    const superheroes = [...this.superheroes$.getValue(), ...data]\n\n    this.superheroes$.next(superheroes);\n  }\n\n  /**\n   * @description\n   * Listens to search updates\n   */\n  private searchListen(): void {\n    merge(\n      fromEvent(this.input.nativeElement, 'search'),\n      fromEvent(this.input.nativeElement, 'input')\n    )\n      .pipe(debounceTime(300))\n      .subscribe(() => this.loadSuperheroes());\n  }\n\n  /**\n   * @description\n   * Listens to page scroll\n   */\n  private scrollListen(): void {\n    const cardLoader = document.querySelector('#cardLoader') as HTMLElement;\n    const options = {\n      rootMargin: '0px',\n      threshold: 0.1\n    };\n\n    const observer = new IntersectionObserver((entries, observer) => {\n      entries.forEach(entry => {\n        if (entry.isIntersecting) {\n          this.loadSuperheroes();\n        }\n      });\n    }, options);\n\n    observer.observe(cardLoader);\n  }\n\n  //#endregion\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';\r\nimport { BehaviorSubject, debounceTime, fromEvent, merge } from 'rxjs';\r\nimport { Superhero } from 'src/app/models/superhero.model';\r\nimport { SuperheroService } from 'src/app/services/superhero/superhero.service';\r\n\r\n\r\n@Component({\r\n  selector: 'app-superheroes',\r\n  templateUrl: './superheroes.component.html',\r\n  styleUrls: ['./superheroes.component.scss', './../../../components/input/input.component.scss']\r\n})\r\nexport class SuperheroesComponent implements OnInit, AfterViewInit, OnDestroy {\r\n\r\n  //#region Properties\r\n\r\n  /**\r\n   * @description\r\n   * List of superheroes\r\n   */\r\n  superheroes$: BehaviorSubject<Array<Superhero>>;\r\n\r\n  /**\r\n   * @description\r\n   * The current page\r\n   */\r\n  page: number;\r\n\r\n  /**\r\n   * @description\r\n   * The search query\r\n   */\r\n  search: string;\r\n\r\n  /**\r\n   * @description\r\n   * Reference of the searcg input\r\n   */\r\n  @ViewChild('input') input!: ElementRef;\r\n\r\n  //#endregion\r\n\r\n  //#region Lifecycle\r\n\r\n  constructor(\r\n    private superhero: SuperheroService\r\n  ) {\r\n    this.page = 1;\r\n    this.search = '';\r\n    this.superheroes$ = new BehaviorSubject<Array<Superhero>>([]);\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.loadSuperheroes();\r\n  }\r\n\r\n  ngAfterViewInit(): void {\r\n    this.searchListen();\r\n    this.scrollListen();\r\n  }\r\n\r\n  ngOnDestroy(): void {\r\n    this.page = 1;\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Event listeners\r\n\r\n  /**\r\n   * @description\r\n   * Injects a searchh query\r\n   *\r\n   * @param e The search object\r\n   */\r\n  onSearch(): void {\r\n    if (this.search.length > 0) {\r\n      this.loadSuperheroes();\r\n    }\r\n  }\r\n\r\n  //#endregion\r\n\r\n  //#region Methods\r\n\r\n  /**\r\n   * @description\r\n   * Loads the list of superheroes\r\n   */\r\n  private async loadSuperheroes(): Promise<void> {\r\n    if (this.search.length > 0) {\r\n      this.paginateSearch();\r\n    } else {\r\n      this.paginate();\r\n    }\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * Paginates search results\r\n   */\r\n  private async paginateSearch(): Promise<void> {\r\n    this.page = 1;\r\n    this.superheroes$.next([]);\r\n\r\n    try {\r\n      const data = await this.superhero.getSuperheroBySearch(this.search);\r\n      this.superheroes$.next(data);\r\n    } catch (err) { }\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * Paginates the list\r\n   */\r\n  private async paginate(): Promise<void> {\r\n    if (this.page === 1) {\r\n      this.superheroes$.next([]);\r\n    }\r\n\r\n    const data = await this.superhero.getSuperheroes(this.page++);\r\n    const superheroes = [...this.superheroes$.getValue(), ...data]\r\n\r\n    this.superheroes$.next(superheroes);\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * Listens to search updates\r\n   */\r\n  private searchListen(): void {\r\n    merge(\r\n      fromEvent(this.input.nativeElement, 'search'),\r\n      fromEvent(this.input.nativeElement, 'input')\r\n    )\r\n      .pipe(debounceTime(300))\r\n      .subscribe(() => this.loadSuperheroes());\r\n  }\r\n\r\n  /**\r\n   * @description\r\n   * Listens to page scroll\r\n   */\r\n  private scrollListen(): void {\r\n    const cardLoader = document.querySelector('#cardLoader') as HTMLElement;\r\n    const options = {\r\n      rootMargin: '0px',\r\n      threshold: 0.1\r\n    };\r\n\r\n    const observer = new IntersectionObserver((entries, observer) => {\r\n      entries.forEach(entry => {\r\n        if (entry.isIntersecting) {\r\n          this.loadSuperheroes();\r\n        }\r\n      });\r\n    }, options);\r\n\r\n    observer.observe(cardLoader);\r\n  }\r\n\r\n  //#endregion\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3983,7 +4386,7 @@
                     "styleUrl": "./superheroes.component.scss"
                 },
                 {
-                    "data": ".input {\n  display: flex;\n  margin-bottom: 25px;\n  flex-direction: column;\n\n  &__label {\n    color: #ffffff;\n    font-weight: 100;\n    margin-bottom: 5px;\n    \n    transition-duration: 0.2s;\n    transition-property: color;\n\n    display: flex;\n    align-items: center;\n  }\n  \n  &__icon {\n    font-size: 22px;\n    margin-right: 5px;\n  }\n  \n  &__field {\n    border: none;\n    border-radius: 5px;\n    \n    padding: 10px 15px;\n    background-color: #ffffff;\n    \n    font-weight: 400;\n    font-family: 'Noto Sans Display', sans-serif;\n    \n    transition-duration: 0.2s;\n    transition-property: outline;\n    \n    &:focus,\n    &:active {\n      outline: none;\n    }\n    \n    &:focus {\n      outline: 2px solid #080808;\n    }\n  }\n  \n  &__error {\n    margin: 5px 0 0 0;\n    \n    font-size: 14px;\n    font-weight: 300;\n    color: rgb(255 110 110);\n  }\n  \n  &:focus-within .input__label {\n    font-weight: 500;\n  }\n}",
+                    "data": ".input {\r\n  display: flex;\r\n  margin-bottom: 25px;\r\n  flex-direction: column;\r\n\r\n  &__label {\r\n    color: #ffffff;\r\n    font-weight: 100;\r\n    margin-bottom: 5px;\r\n    \r\n    transition-duration: 0.2s;\r\n    transition-property: color;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n  }\r\n  \r\n  &__icon {\r\n    font-size: 22px;\r\n    margin-right: 5px;\r\n  }\r\n  \r\n  &__field {\r\n    border: none;\r\n    border-radius: 5px;\r\n    \r\n    padding: 10px 15px;\r\n    background-color: #ffffff;\r\n    \r\n    font-weight: 400;\r\n    font-family: 'Noto Sans Display', sans-serif;\r\n    \r\n    transition-duration: 0.2s;\r\n    transition-property: outline;\r\n    \r\n    &:focus,\r\n    &:active {\r\n      outline: none;\r\n    }\r\n    \r\n    &:focus {\r\n      outline: 2px solid #080808;\r\n    }\r\n  }\r\n  \r\n  &__error {\r\n    margin: 5px 0 0 0;\r\n    \r\n    font-size: 14px;\r\n    font-weight: 300;\r\n    color: rgb(255 110 110);\r\n  }\r\n  \r\n  &:focus-within .input__label {\r\n    font-weight: 500;\r\n  }\r\n}",
                     "styleUrl": "./../../../components/input/input.component.scss"
                 }
             ],
@@ -4019,7 +4422,7 @@
                 "AfterViewInit",
                 "OnDestroy"
             ],
-            "templateData": "<div class=\"root\">\n  <h2 class=\"title\">Superheroes</h2>\n\n  <div class=\"content\">\n    <label class=\"input input--search\">\n      <span class=\"input__label\">\n        <span class=\"material-symbols-outlined input__icon\">search</span> Search\n      </span>\n\n      <input\n        #input\n        autocomplete\n        type=\"search\"\n        class=\"input__field\"\n        placeholder=\"Search for a superhero...\"\n        [(ngModel)]=\"search\"\n      >\n    </label>\n\n    <div class=\"superheroes-wrapper\">\n      <ul class=\"superheroes\">\n        <li\n          *ngFor=\"let superhero of superheroes$ | async\"\n          class=\"superheroe\"\n        >\n          <app-thumb [superhero]=\"superhero\"></app-thumb>\n        </li>\n      </ul>\n\n      <div [hidden]=\"search.length > 0\" id=\"cardLoader\">\n        <app-loader></app-loader>\n      </div>\n    </div>\n  </div>\n</div>"
+            "templateData": "<div class=\"root\">\r\n  <h2 class=\"title\">Superheroes</h2>\r\n\r\n  <div class=\"content\">\r\n    <label class=\"input input--search\">\r\n      <span class=\"input__label\">\r\n        <span class=\"material-symbols-outlined input__icon\">search</span> Search\r\n      </span>\r\n\r\n      <input\r\n        #input\r\n        autocomplete\r\n        type=\"search\"\r\n        class=\"input__field\"\r\n        placeholder=\"Search for a superhero...\"\r\n        [(ngModel)]=\"search\"\r\n      >\r\n    </label>\r\n\r\n    <div class=\"superheroes-wrapper\">\r\n      <ul class=\"superheroes\">\r\n        <li\r\n          *ngFor=\"let superhero of superheroes$ | async\"\r\n          class=\"superheroe\"\r\n        >\r\n          <app-thumb [superhero]=\"superhero\"></app-thumb>\r\n        </li>\r\n      </ul>\r\n\r\n      <div [hidden]=\"search.length > 0\" id=\"cardLoader\">\r\n        <app-loader></app-loader>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
         },
         {
             "name": "ThumbComponent",
@@ -4287,7 +4690,7 @@
                     }
                 ]
             },
-            "templateData": "<div\n  class=\"card\"\n  [id]=\"'superheroe-' + getId()\"\n  [ngClass]=\"{\n    'card--loading': loader,\n    'card--favorited': isFavorited()\n  }\"\n  (click)=\"onClick()\"\n>\n  <ng-container *ngIf=\"!loader\">\n    <span class=\"card__id\">#{{ superhero.id }}</span>\n\n    <img\n      loading=\"lazy\"\n      class=\"card__image\"\n      [src]=\"superhero.image\"\n      [alt]=\"superhero.name + '\\'s picture'\"\n    />\n\n    <div class=\"card__content\">\n      <div class=\"card__title\">{{ superhero.name }}</div>\n      <div class=\"card__favorite\">\n        <span\n          *ngIf=\"!superhero.favorite\"\n          class=\"material-symbols-outlined\"\n          (click)=\"onFavorite($event)\"\n        >\n          heart_plus\n        </span>\n\n        <span\n          *ngIf=\"superhero.favorite\"\n          class=\"material-symbols-outlined\"\n          (click)=\"onUnfavorite($event)\"\n        >\n          favorite\n        </span>\n      </div>\n    </div>\n  </ng-container>\n</div>"
+            "templateData": "<div\r\n  class=\"card\"\r\n  [id]=\"'superheroe-' + getId()\"\r\n  [ngClass]=\"{\r\n    'card--loading': loader,\r\n    'card--favorited': isFavorited()\r\n  }\"\r\n  (click)=\"onClick()\"\r\n>\r\n  <ng-container *ngIf=\"!loader\">\r\n    <span class=\"card__id\">#{{ superhero.id }}</span>\r\n\r\n    <img\r\n      loading=\"lazy\"\r\n      class=\"card__image\"\r\n      [src]=\"superhero.image\"\r\n      [alt]=\"superhero.name + '\\'s picture'\"\r\n    />\r\n\r\n    <div class=\"card__content\">\r\n      <div class=\"card__title\">{{ superhero.name }}</div>\r\n      <div class=\"card__favorite\">\r\n        <span\r\n          *ngIf=\"!superhero.favorite\"\r\n          class=\"material-symbols-outlined\"\r\n          (click)=\"onFavorite($event)\"\r\n        >\r\n          heart_plus\r\n        </span>\r\n\r\n        <span\r\n          *ngIf=\"superhero.favorite\"\r\n          class=\"material-symbols-outlined\"\r\n          (click)=\"onUnfavorite($event)\"\r\n        >\r\n          favorite\r\n        </span>\r\n      </div>\r\n    </div>\r\n  </ng-container>\r\n</div>"
         }
     ],
     "modules": [
@@ -4377,13 +4780,13 @@
         },
         {
             "name": "ButtonModule",
-            "id": "module-ButtonModule-b48a171197f91cb3a8a99bcc8ecafee613ab0ba4283f1f2571839195c05638fb630b95ada87fc8ff66f38af5ef0596f44c947b318c6aaaab21ca4247b7a7f3d2",
+            "id": "module-ButtonModule-d12c43524b392e58061793bb01a50baf45c9b659b4ec997450f7ecea3b232d5433226394207f207488071622c59ae331247e3c69d016ab1c2e1a4773fab2985f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/components/button/button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ButtonComponent } from './button.component';\n\n\n\n@NgModule({\n  declarations: [\n    ButtonComponent\n  ],\n  imports: [\n    CommonModule\n  ],\n  exports: [ButtonComponent]\n})\nexport class ButtonModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ButtonComponent } from './button.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ButtonComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [ButtonComponent]\r\n})\r\nexport class ButtonModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4420,14 +4823,58 @@
             ]
         },
         {
+            "name": "CardModule",
+            "id": "module-CardModule-6b6167e8e19c1cf1566fa84bf650429671d6184cfd0b1774690ccb7c31cec9f4cc887745bb644eda39e89ff6fa197d1fb0cff9013f0dd731615c0acc814affdf",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/card/card.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { CardComponent } from './card.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    CardComponent\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [CardComponent]\r\n})\r\nexport class CardModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CardComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "DetailModule",
-            "id": "module-DetailModule-3bfe909f6a5a43852edcb76fde36eccee619c62f12caac816ed2774bc6e53651848116a56b481d145bf6e226a3fd071aa6646ce3ff6c220ea79d5bbe9465f6e9",
+            "id": "module-DetailModule-2dfe3f5dfd1054af11325cf32e85b073de9adac0fc55d113e86216222082cfa5a211240879c505a71d62c2cb1f4ed40987503b7d1f43bbb387d810ed47c9fb52",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/pages/home/superheroes/detail/detail.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { DetailComponent } from './detail.component';\nimport { RouterModule } from '@angular/router';\n\n\n\n@NgModule({\n  declarations: [\n    DetailComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule.forChild([\n      {\n        path: '',\n        component: DetailComponent\n      }\n    ])\n  ]\n})\nexport class DetailModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { DetailComponent } from './detail.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { CardModule } from 'src/app/components/card/card.module';\r\nimport { StatsModule } from 'src/app/components/stats/stats.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    DetailComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    StatsModule,\r\n    CardModule,\r\n    RouterModule.forChild([\r\n      {\r\n        path: '',\r\n        component: DetailComponent\r\n      }\r\n    ])\r\n  ]\r\n})\r\nexport class DetailModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4443,7 +4890,14 @@
                 },
                 {
                     "type": "imports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "CardModule"
+                        },
+                        {
+                            "name": "StatsModule"
+                        }
+                    ]
                 },
                 {
                     "type": "exports",
@@ -4508,13 +4962,13 @@
         },
         {
             "name": "HeaderModule",
-            "id": "module-HeaderModule-c7f4f0dbbcb5ef5dff606547781b893a6e712a9e8e38127277936f1ea509f3db5be875376b7886f9333ebb7b730051bd357f5ae4260b1cc43021d0d523288148",
+            "id": "module-HeaderModule-bab74b6101c13e98cb2dc3715d5acb553493a50fe48cfddd5f14257e22360d3c02108abb6c3fe4564303b82c4dff3902e4b3886cf296d9216b9ffdb7f5fac078",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/components/header/header.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { HeaderComponent } from './header.component';\nimport { RouterModule } from '@angular/router';\nimport { ButtonModule } from '../button/button.module';\n\n\n\n@NgModule({\n  declarations: [\n    HeaderComponent\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n    ButtonModule\n  ],\n  exports: [HeaderComponent]\n})\nexport class HeaderModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { HeaderComponent } from './header.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ButtonModule } from '../button/button.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    HeaderComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n    ButtonModule\r\n  ],\r\n  exports: [HeaderComponent]\r\n})\r\nexport class HeaderModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4679,13 +5133,13 @@
         },
         {
             "name": "InputModule",
-            "id": "module-InputModule-5165b8509dcb17f5a19c4dda39330be81e217dcd244d7ee22d83709d44b38d0b4be387f29fc81ceee58fdefb31612ed80b9d3cbeac99176084aca468aaad2a7b",
+            "id": "module-InputModule-14c9b725848e793ff55e280cb34c9bfe1c7c6a44b62ab5ad462ee0dbf571fb92861e94703238b320839bb0dec299c78671a8dabb3cae81dd5a04917aec57dda6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/components/input/input.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { InputComponent } from './input.component';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\n\n\n\n@NgModule({\n  declarations: [\n    InputComponent\n  ],\n  imports: [\n    CommonModule,\n    FormsModule,\n    ReactiveFormsModule\n  ],\n  exports: [InputComponent]\n})\nexport class InputModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { InputComponent } from './input.component';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    InputComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    ReactiveFormsModule\r\n  ],\r\n  exports: [InputComponent]\r\n})\r\nexport class InputModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4771,13 +5225,13 @@
         },
         {
             "name": "LoginModule",
-            "id": "module-LoginModule-c5682ffb0af379b7541073ce2c39a4d42812bcb0c8192c91bc1367cefea753546d55f4a1e456957b49c736ef45acc4aa816b09158c4735ec6a8238179cd8484b",
+            "id": "module-LoginModule-8ea40f88bb26162aede684915ee4a2e1cb22fec0863a2ca8de72370dfe91e40377fd3edb7dfcd4521cc9897b02a86bb0eb349b77322c44338880f7f0dcd67a3a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/pages/login/login.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { LoginComponent } from './login.component';\nimport { RouterModule } from '@angular/router';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { InputModule } from 'src/app/components/input/input.module';\nimport { ButtonModule } from 'src/app/components/button/button.module';\n\n\n\n@NgModule({\n  declarations: [\n    LoginComponent\n  ],\n  imports: [\n    CommonModule,\n    InputModule,\n    ButtonModule,\n    ReactiveFormsModule,\n    RouterModule.forChild([\n      {\n        path: '',\n        component: LoginComponent\n      }\n    ])\n  ]\n})\nexport class LoginModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LoginComponent } from './login.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { ReactiveFormsModule } from '@angular/forms';\r\nimport { InputModule } from 'src/app/components/input/input.module';\r\nimport { ButtonModule } from 'src/app/components/button/button.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    LoginComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    InputModule,\r\n    ButtonModule,\r\n    ReactiveFormsModule,\r\n    RouterModule.forChild([\r\n      {\r\n        path: '',\r\n        component: LoginComponent\r\n      }\r\n    ])\r\n  ]\r\n})\r\nexport class LoginModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4805,6 +5259,54 @@
                 {
                     "type": "exports",
                     "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "StatsModule",
+            "id": "module-StatsModule-e18d05172171004ce2a4056589721a65bb3714f5d7ca51b630491624adb6008d4c1720fb8e3123f99c1d000730a5c4a6c37c621a56059aa1ebc2d560ad0f52a2",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/stats/stats.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { StatsComponent } from './stats.component';\r\nimport { CardModule } from '../card/card.module';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    StatsComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    CardModule\r\n  ],\r\n  exports: [StatsComponent]\r\n})\r\nexport class StatsModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "StatsComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "CardModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "StatsComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -4921,10 +5423,60 @@
                 "defaultValue": "createRehydrateReducer(\n  StateKey.auth,\n  initialState,\n  on(login, (state, action) => ({ ...state, id: action.id, username: action.username })),\n  on(logout, (state) => ({ ...state, ...initialState }))\n)"
             },
             {
+                "name": "Click",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Thumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Stats.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4951,10 +5503,30 @@
                 "defaultValue": "createRehydrateReducer(\n  StateKey.favorites,\n  initialState,\n  on(update, (state, action) => ({ ...state, favorites: action.favorites })),\n  on(reset, state => ({ ...state, favorites: [] }))\n)"
             },
             {
+                "name": "FullWidth",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Icon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4981,6 +5553,36 @@
                 "defaultValue": "{\n  favorites: []\n}"
             },
             {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Thumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Stats.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "login",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4999,6 +5601,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "createAction(AuthAction.Logout)"
+            },
+            {
+                "name": "Password",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "reducers",
@@ -5091,6 +5703,16 @@
                 "defaultValue": "trigger('routeAnimations', [\n  transition('* <=> *', [\n    style({ position: 'relative' }),\n    query(':enter, :leave', [\n      style({\n        position: 'absolute',\n        top: 0,\n        left: 0,\n        width: '100%'\n      })], { optional: true }),\n    query(':enter', [style({ left: '-100%' })], { optional: true }),\n    query(':leave', animateChild(), { optional: true }),\n    group([\n      query(':leave', [animate('800ms ease-in', style({ left: '100%' }))], { optional: true }),\n      query(':enter', [animate('400ms ease-out', style({ left: '0%' }))], { optional: true }),\n      query('@*', animateChild(), { optional: true })\n    ]),\n  ])\n])"
             },
             {
+                "name": "superhero",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Thumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  \"id\": \"1\",\r\n  \"name\": \"A-Bomb\",\r\n  \"powerstats\": {\r\n    \"intelligence\": \"38\",\r\n    \"strength\": \"100\",\r\n    \"speed\": \"17\",\r\n    \"durability\": \"80\",\r\n    \"power\": \"24\",\r\n    \"combat\": \"64\"\r\n  },\r\n  \"biography\": {\r\n    \"full-name\": \"Richard Milhouse Jones\",\r\n    \"alter-egos\": \"No alter egos found.\",\r\n    \"aliases\": [\r\n      \"Rick Jones\"\r\n    ],\r\n    \"place-of-birth\": \"Scarsdale, Arizona\",\r\n    \"first-appearance\": \"Hulk Vol 2 #2 (April, 2008) (as A-Bomb)\",\r\n    \"publisher\": \"Marvel Comics\",\r\n    \"alignment\": \"good\"\r\n  },\r\n  \"appearance\": {\r\n    \"gender\": \"Male\",\r\n    \"race\": \"Human\",\r\n    \"height\": [\r\n      \"6'8\",\r\n      \"203 cm\"\r\n    ],\r\n    \"weight\": [\r\n      \"980 lb\",\r\n      \"441 kg\"\r\n    ],\r\n    \"eye-color\": \"Yellow\",\r\n    \"hair-color\": \"No Hair\"\r\n  },\r\n  \"work\": {\r\n    \"occupation\": \"Musician, adventurer, author; formerly talk show host\",\r\n    \"base\": \"-\"\r\n  },\r\n  \"connections\": {\r\n    \"group-affiliation\": \"Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom\",\r\n    \"relatives\": \"Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)\"\r\n  },\r\n  \"image\": {\r\n    \"url\": \"https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg\"\r\n  }\r\n}"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5098,7 +5720,47 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "args => ({\n  props: {\n    ...args\n  },\n})"
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n  template: `\r\n    <app-card title=\"Card Title\">\r\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\r\n      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\r\n      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\r\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n    </app-card>\r\n  `\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Thumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Stats.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
             },
             {
                 "name": "update",
@@ -5269,7 +5931,27 @@
             ],
             "src/stories/Button.stories.ts": [
                 {
+                    "name": "Click",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "FullWidth",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
@@ -5289,6 +5971,16 @@
                     "defaultValue": "Template.bind({})"
                 },
                 {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -5296,7 +5988,145 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "args => ({\n  props: {\n    ...args\n  },\n})"
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+                }
+            ],
+            "src/stories/Card.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n  template: `\r\n    <app-card title=\"Card Title\">\r\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\r\n      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco\r\n      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\r\n      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat\r\n      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n    </app-card>\r\n  `\r\n})"
+                }
+            ],
+            "src/stories/Input.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Password",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+                }
+            ],
+            "src/stories/Thumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Thumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Thumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "superhero",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Thumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  \"id\": \"1\",\r\n  \"name\": \"A-Bomb\",\r\n  \"powerstats\": {\r\n    \"intelligence\": \"38\",\r\n    \"strength\": \"100\",\r\n    \"speed\": \"17\",\r\n    \"durability\": \"80\",\r\n    \"power\": \"24\",\r\n    \"combat\": \"64\"\r\n  },\r\n  \"biography\": {\r\n    \"full-name\": \"Richard Milhouse Jones\",\r\n    \"alter-egos\": \"No alter egos found.\",\r\n    \"aliases\": [\r\n      \"Rick Jones\"\r\n    ],\r\n    \"place-of-birth\": \"Scarsdale, Arizona\",\r\n    \"first-appearance\": \"Hulk Vol 2 #2 (April, 2008) (as A-Bomb)\",\r\n    \"publisher\": \"Marvel Comics\",\r\n    \"alignment\": \"good\"\r\n  },\r\n  \"appearance\": {\r\n    \"gender\": \"Male\",\r\n    \"race\": \"Human\",\r\n    \"height\": [\r\n      \"6'8\",\r\n      \"203 cm\"\r\n    ],\r\n    \"weight\": [\r\n      \"980 lb\",\r\n      \"441 kg\"\r\n    ],\r\n    \"eye-color\": \"Yellow\",\r\n    \"hair-color\": \"No Hair\"\r\n  },\r\n  \"work\": {\r\n    \"occupation\": \"Musician, adventurer, author; formerly talk show host\",\r\n    \"base\": \"-\"\r\n  },\r\n  \"connections\": {\r\n    \"group-affiliation\": \"Hulk Family; Excelsior (sponsor), Avengers (honorary member); formerly partner of the Hulk, Captain America and Captain Marvel; Teen Brigade; ally of Rom\",\r\n    \"relatives\": \"Marlo Chandler-Jones (wife); Polly (aunt); Mrs. Chandler (mother-in-law); Keith Chandler, Ray Chandler, three unidentified others (brothers-in-law); unidentified father (deceased); Jackie Shorr (alleged mother; unconfirmed)\"\r\n  },\r\n  \"image\": {\r\n    \"url\": \"https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg\"\r\n  }\r\n}"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Thumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  },\r\n})"
+                }
+            ],
+            "src/stories/Stats.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Stats.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Stats.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Stats.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "args => ({\r\n  props: {\r\n    ...args\r\n  }\r\n})"
                 }
             ],
             "src/environments/environment.ts": [
@@ -5610,7 +6440,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 17,
+        "count": 13,
         "status": "low",
         "files": [
             {
@@ -5646,8 +6476,17 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 12,
-                "coverageCount": "1/8",
+                "coveragePercent": 20,
+                "coverageCount": "2/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5675,6 +6514,15 @@
                 "name": "LoaderComponent",
                 "coveragePercent": 16,
                 "coverageCount": "1/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/stats/stats.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StatsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5713,6 +6561,15 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
+            },
+            {
+                "filePath": "src/app/models/stats.model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "Stats",
+                "coveragePercent": 87,
+                "coverageCount": "7/8",
+                "status": "very-good"
             },
             {
                 "filePath": "src/app/models/superhero.model.ts",
@@ -6050,7 +6907,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Click",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FullWidth",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6067,6 +6944,146 @@
             },
             {
                 "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Password",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Stats.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Stats.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Stats.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Thumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Thumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Thumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "superhero",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Thumb.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
