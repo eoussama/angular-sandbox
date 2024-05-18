@@ -1,15 +1,21 @@
-<div *ngIf="favorites$ | async as favorites" class="root">
+  <div *ngIf="favorites$ | async as favorites" class="root">
   <h2 class="title">Favorites [{{ favorites.length }}]</h2>
 
   <div class="content">
     <div class="superheroes-wrapper">
       <ul class="superheroes">
-        <ng-container *ngFor="let superhero of favorites | favorite | async">
-          <li *ngIf="superhero.favorite" class="superheroe">
-            <app-thumb [superhero]="superhero"></app-thumb>
-          </li>
+        <ng-container *ngIf="favorites | favorite | async as favs; else loadingTemplate">
+          <ng-container *ngFor="let superhero of favs">
+            <li *ngIf="superhero.favorite" class="superheroe">
+              <app-thumb [superhero]="superhero"></app-thumb>
+            </li>
+          </ng-container>
         </ng-container>
       </ul>
     </div>
   </div>
 </div>
+
+<ng-template #loadingTemplate>
+  <app-loader></app-loader>
+</ng-template>

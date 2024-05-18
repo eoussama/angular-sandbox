@@ -4,6 +4,7 @@ import { FavoritesComponent } from './favorites.component';
 import { RouterModule } from '@angular/router';
 import { FavoritePipe } from 'src/app/pipes/favorite/favorite.pipe';
 import { ThumbModule } from 'src/app/components/thumb/thumb.module';
+import { LoaderModule } from 'src/app/components/loader/loader.module';
 
 
 
@@ -14,6 +15,7 @@ import { ThumbModule } from 'src/app/components/thumb/thumb.module';
   ],
   imports: [
     CommonModule,
+    LoaderModule,
     ThumbModule,
     RouterModule.forChild([
       {

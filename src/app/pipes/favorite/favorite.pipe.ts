@@ -16,12 +16,12 @@ export class FavoritePipe implements PipeTransform {
 
   //#region Methods
 
-  transform(value: Array<number>): any {
+  transform(value: Array<number>): Observable<Array<any>> {
     return new Observable(observer => {
       new Promise(async (resolve) => {
         const superheroes = await this.favorites.loadFavorites(value);
         observer.next(superheroes);
-        resolve(0);
+        resolve([]);
       })
     });
   }
