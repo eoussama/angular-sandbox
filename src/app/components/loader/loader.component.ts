@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
 
@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss']
 })
-export class LoaderComponent implements OnChanges {
+export class LoaderComponent implements OnInit, OnChanges {
 
   //#region Properties
 
@@ -31,6 +31,10 @@ export class LoaderComponent implements OnChanges {
   constructor() {
     this.items = [];
     this.count = environment.pageSize;
+  }
+
+  ngOnInit(): void {
+    this.generateCards();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
