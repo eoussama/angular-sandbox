@@ -23,3 +23,29 @@ Sample Superhero project for the sake of teaching. It uses all the mundane Angul
     ```sh
     npm start
     ```
+
+## Testing
+
+### Coverage
+
+```sh
+npm run cov
+```
+
+### Unit Tests
+
+```sh
+npm test
+```
+
+### E2E Tests
+
+```sh
+npm run e2e
+```
+
+### Storybook
+
+```sh
+npm run storybook
+```
