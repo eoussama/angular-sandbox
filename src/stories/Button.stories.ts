@@ -1,52 +1,52 @@
 import { CommonModule } from '@angular/common';
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 
-export default {
+const meta: Meta<ButtonComponent> = {
   title: 'Components/Button',
-  excludeStories: /.*Data$/,
   component: ButtonComponent,
+  excludeStories: /.*Data$/,
   decorators: [
     moduleMetadata({
-      declarations: [],
       imports: [CommonModule],
     })
   ]
-} as Meta;
-
-const Template: Story = args => ({
-  props: {
-    ...args
-  },
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Button'
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  label: 'Brainstorm',
-  icon: 'lightbulb'
+export default meta;
+type Story = StoryObj<ButtonComponent>;
+
+export const Default: Story = {
+  args: {
+    label: 'Button'
+  }
 };
 
-export const Click = Template.bind({});
-Click.args = {
-  label: 'Click Me!',
-  icon: 'arrow_selector_tool'
+export const Icon: Story = {
+  args: {
+    label: 'Brainstorm',
+    icon: 'lightbulb'
+  }
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-  label: 'Start Action',
-  icon: 'play_arrow',
-  loading: true
+export const Click: Story = {
+  args: {
+    label: 'Click Me!',
+    icon: 'arrow_selector_tool'
+  }
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
-  label: 'Full Width',
-  full: true
+export const Loading: Story = {
+  args: {
+    label: 'Start Action',
+    icon: 'play_arrow',
+    loading: true
+  }
+};
+
+export const FullWidth: Story = {
+  args: {
+    label: 'Full Width',
+    full: true
+  }
 };

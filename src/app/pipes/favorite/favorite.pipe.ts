@@ -4,6 +4,7 @@ import { FavoritesService } from 'src/app/services/favorites/favorites.service';
 
 
 @Pipe({
+  standalone: false,
   name: 'favorite'
 })
 export class FavoritePipe implements PipeTransform {

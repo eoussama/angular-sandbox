@@ -5,6 +5,7 @@ import { FavoritesService } from 'src/app/services/favorites/favorites.service';
 
 
 @Component({
+  standalone: false,
   selector: 'app-thumb',
   templateUrl: './thumb.component.html',
   styleUrls: ['./thumb.component.scss']

@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 
 
 @Component({
+  standalone: false,
   selector: 'app-loader',
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss']

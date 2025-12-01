@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-sandbox:build:production"
+              "buildTarget": "angular-sandbox:build:production"
             },
             "development": {
-              "browserTarget": "angular-sandbox:build:development"
+              "buildTarget": "angular-sandbox:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,20 +76,22 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-sandbox:build"
+            "buildTarget": "angular-sandbox:build"
           }
         },
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "browserTarget": "angular-cli:build",
+            "configDir": ".storybook",
+            "browserTarget": "angular-sandbox:build",
             "port": 6006
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "browserTarget": "angular-cli:build"
+            "configDir": ".storybook",
+            "browserTarget": "angular-sandbox:build"
           }
         }
       }

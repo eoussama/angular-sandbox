@@ -7,6 +7,7 @@ import { IAppState } from 'src/app/state/app/app.type';
 
 
 @Component({
+  standalone: false,
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']

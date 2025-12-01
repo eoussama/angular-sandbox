@@ -4,6 +4,7 @@ import { AuthenticationService } from 'src/app/services/authentication/authentic
 
 
 @Component({
+  standalone: false,
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']

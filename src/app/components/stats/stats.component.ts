@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Stats } from 'src/app/models/stats.model';
 
 @Component({
+  standalone: false,
   selector: 'app-stats',
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.scss']

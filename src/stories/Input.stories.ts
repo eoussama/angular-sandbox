@@ -1,44 +1,54 @@
 import { CommonModule } from '@angular/common';
-import { ControlContainer, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { FormsModule, ReactiveFormsModule, ControlContainer, FormGroupDirective, FormGroup, FormControl } from '@angular/forms';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { InputComponent } from 'src/app/components/input/input.component';
 
-export default {
-  title: 'Components/Input',
-  excludeStories: /.*Data$/,
-  component: InputComponent,
-  decorators: [
-    moduleMetadata({
-      declarations: [],
-      imports: [CommonModule, FormsModule, ReactiveFormsModule],
-      providers: [ControlContainer]
-    })
-  ]
-} as Meta;
-
-const Template: Story = args => ({
-  props: {
-    ...args,
-  },
+const formGroup = new FormGroup({
+  input: new FormControl('')
 });
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Input',
-  placeholder: 'Placeholder...'
+const formGroupDirective = new FormGroupDirective([], []);
+formGroupDirective.form = formGroup;
+
+const meta: Meta<InputComponent> = {
+  title: 'Components/Input',
+  component: InputComponent,
+  excludeStories: /.*Data$/,
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, FormsModule, ReactiveFormsModule],
+      providers: [
+        { provide: ControlContainer, useValue: formGroupDirective }
+      ]
+    })
+  ]
 };
 
-export const Password = Template.bind({});
-Password.args = {
-  label: 'Password',
-  type: 'password',
-  placeholder: 'Enter your password here...'
+export default meta;
+type Story = StoryObj<InputComponent>;
+
+export const Default: Story = {
+  args: {
+    label: 'Input',
+    placeholder: 'Placeholder...',
+    formControlName: 'input'
+  }
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  label: 'Login',
-  icon: 'person',
-  placeholder: 'Enter your username here...'
+export const Password: Story = {
+  args: {
+    label: 'Password',
+    type: 'password',
+    placeholder: 'Enter your password here...',
+    formControlName: 'input'
+  }
+};
+
+export const Icon: Story = {
+  args: {
+    label: 'Login',
+    icon: 'person',
+    placeholder: 'Enter your username here...',
+    formControlName: 'input'
+  }
 };

@@ -1,0 +1,224 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+<style>
+  {`
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .version-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    .subheading {
+      font-weight: 700;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 4px;
+      line-height: 24px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      margin-top: 48px;
+    }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .component-card {
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      transition: all 150ms ease-out;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .component-card:hover {
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+    }
+
+    .component-card h4 {
+      margin: 0 0 8px 0;
+      color: #333;
+      font-size: 16px;
+    }
+
+    .component-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tech-badge {
+      background: #f0f0f0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      border-left: 4px solid #667eea;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+    }
+
+    .info-box code {
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    .link-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .link-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .link-item {
+      display: block;
+      padding: 16px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 150ms ease-out;
+    }
+
+    .link-item:hover {
+      border-color: #667eea;
+      background: #fafafa;
+    }
+
+    .link-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .link-item span {
+      font-size: 13px;
+      color: #666;
+    }
+  `}
+</style>
+
+<div className="hero">
+  <h1>🦸 Angular Sandbox</h1>
+  <p>
+    A sample Superhero project for learning Angular. Explore reusable UI components 
+    built with modern Angular features and best practices.
+  </p>
+  <span className="version-badge">Angular 19 • NgRx • Storybook 8</span>
+</div>
+
+## About This Project
+
+This component library is part of the **Angular Sandbox** — a teaching project that demonstrates common Angular patterns and features. 
+Browse the sidebar to explore individual components and their variations.
+
+<div className="subheading">Available Components</div>
+
+<div className="component-grid">
+  <div className="component-card">
+    <h4>🔘 Button</h4>
+    <p>Primary action buttons with multiple variants and states</p>
+  </div>
+  <div className="component-card">
+    <h4>🃏 Card</h4>
+    <p>Content container for displaying superhero information</p>
+  </div>
+  <div className="component-card">
+    <h4>📝 Input</h4>
+    <p>Form input fields with validation support</p>
+  </div>
+  <div className="component-card">
+    <h4>📊 Stats</h4>
+    <p>Statistics display component for hero metrics</p>
+  </div>
+  <div className="component-card">
+    <h4>👍 Thumb</h4>
+    <p>Thumbnail component for hero avatars</p>
+  </div>
+</div>
+
+<div className="subheading">Tech Stack</div>
+
+<div className="tech-stack">
+  <span className="tech-badge">Angular 19</span>
+  <span className="tech-badge">NgRx</span>
+  <span className="tech-badge">RxJS</span>
+  <span className="tech-badge">TypeScript</span>
+  <span className="tech-badge">Jest</span>
+  <span className="tech-badge">Cypress</span>
+  <span className="tech-badge">Storybook</span>
+</div>
+
+<div className="subheading">Getting Started</div>
+
+<div className="info-box">
+  <strong>Run the app locally:</strong><br/>
+  Clone the repo, install dependencies with <code>pnpm install</code>, start the API with <code>pnpm api</code>, 
+  then run <code>pnpm start</code>. Default credentials are <code>admin/123</code>.
+</div>
+
+<div className="subheading">Resources</div>
+
+<div className="link-list">
+  <a className="link-item" href="https://github.com/eoussama/angular-sandbox" target="_blank">
+    <strong>📦 GitHub Repository</strong>
+    <span>View source code and contribute</span>
+  </a>
+  <a className="link-item" href="https://angular.dev" target="_blank">
+    <strong>📚 Angular Documentation</strong>
+    <span>Official Angular developer guides</span>
+  </a>
+</div>

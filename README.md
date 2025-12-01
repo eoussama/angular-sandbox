@@ -1,6 +1,6 @@
 # Angular Sandbox
 
-Sample Superhero project for the sake of teaching. It uses all the mundane Angular features that you might run across.
+Sample Superhero project for the sake of teaching. It uses all the mundane Angular features that you might run across. (Count stopped at ng15).
 
 ## Usage
 

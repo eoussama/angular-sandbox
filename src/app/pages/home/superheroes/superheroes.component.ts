@@ -5,6 +5,7 @@ import { SuperheroService } from 'src/app/services/superhero/superhero.service';
 
 
 @Component({
+  standalone: false,
   selector: 'app-superheroes',
   templateUrl: './superheroes.component.html',
   styleUrls: ['./superheroes.component.scss', './../../../components/input/input.component.scss']

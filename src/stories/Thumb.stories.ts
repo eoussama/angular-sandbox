@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
+import { moduleMetadata, type Meta, type StoryObj } from '@storybook/angular';
 import { ThumbComponent } from 'src/app/components/thumb/thumb.component';
 import { Superhero } from 'src/app/models/superhero.model';
 import { FavoritesService } from 'src/app/services/favorites/favorites.service';
@@ -54,34 +53,32 @@ const superhero = {
   "image": {
     "url": "https://www.superherodb.com/pictures2/portraits/10/100/10060.jpg"
   }
-}
+};
 
-export default {
+const meta: Meta<ThumbComponent> = {
   title: 'Components/Thumb',
-  excludeStories: /.*Data$/,
   component: ThumbComponent,
+  excludeStories: /.*Data$/,
   decorators: [
     moduleMetadata({
-      declarations: [],
-      imports: [CommonModule, HttpClientModule, StoreModule.forRoot()],
+      imports: [CommonModule, HttpClientModule, StoreModule.forRoot({})],
       providers: [FavoritesService]
     })
   ]
-} as Meta;
-
-const Template: Story = args => ({
-  props: {
-    ...args
-  },
-});
-
-export const Loading = Template.bind({});
-Loading.args = {
-  loader: true
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  superhero: new Superhero(superhero)
+export default meta;
+type Story = StoryObj<ThumbComponent>;
+
+export const Loading: Story = {
+  args: {
+    loader: true
+  }
+};
+
+export const Default: Story = {
+  args: {
+    superhero: new Superhero(superhero)
+  }
 };
 

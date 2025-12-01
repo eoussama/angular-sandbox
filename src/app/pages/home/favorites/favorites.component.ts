@@ -7,6 +7,7 @@ import { Superhero } from 'src/app/models/superhero.model';
 
 
 @Component({
+  standalone: false,
   selector: 'app-favorites',
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
