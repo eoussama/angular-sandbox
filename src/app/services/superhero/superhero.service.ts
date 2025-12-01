@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, forkJoin, map } from 'rxjs';
 import { Superhero } from 'src/app/models/superhero.model';
 import { environment } from 'src/environments/environment';
 import { ISuperheroResponse } from 'src/app/types/superhero-response.type';
 import { ISuperheroSearchResponse } from 'src/app/types/superhero-search-response.type';
+import { ISuperheroBaseResponse } from 'src/app/types/superhero-response-base.type';
 import { selectFavorites } from 'src/app/state/favorites/favorites.selector';
 import { IAppState } from 'src/app/state/app/app.type';
 import { Store } from '@ngrx/store';
@@ -35,7 +36,7 @@ export class SuperheroService {
   getSuperheroById(id: number): Promise<Superhero> {
     return new Promise((resolve, reject) => {
       firstValueFrom(this.http.get<ISuperheroResponse>(`${environment.api.superheroes}/${id}`))
-        .then(data => {
+        .then((data: ISuperheroResponse) => {
           resolve(new Superhero(data));
         })
         .catch(() => reject())
@@ -51,13 +52,13 @@ export class SuperheroService {
   getSuperheroBySearch(search: string): Promise<Array<Superhero>> {
     return new Promise((resolve, reject) => {
       firstValueFrom(this.http.get<ISuperheroSearchResponse>(`${environment.api.superheroes}/search/${search}`))
-        .then(async data => {
+        .then(async (data: ISuperheroSearchResponse) => {
           if (data.error) {
             reject();
           }
 
           const favorites = await firstValueFrom(this.store.select(selectFavorites))
-          const superheroes = data.results?.map(e => new Superhero(e, favorites.includes(parseInt(e.id)))) ?? [];
+          const superheroes = data.results?.map((e: ISuperheroBaseResponse) => new Superhero(e, favorites.includes(parseInt(e.id)))) ?? [];
 
           resolve(superheroes);
         })

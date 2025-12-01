@@ -24,6 +24,10 @@ Sample Superhero project for the sake of teaching. It uses all the mundane Angul
     npm start
     ```
 
+
+### Notice
+> Default credentials are `admin/123`.
+
 ## Testing
 
 ### Coverage
