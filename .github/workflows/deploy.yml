@@ -18,11 +18,16 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build Angular app
-        run: npm run build
+        run: pnpm run build --base-href /angular-sandbox/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
